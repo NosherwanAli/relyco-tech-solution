@@ -154,6 +154,7 @@ const BUTTON_SELECTORS = [
   '.ai-cta',
   '.about-cta',
   '.final-cta-button',
+  '.solutions-detail-btn',
 ].join(', ');
 
 function initButtonHoverSplit() {

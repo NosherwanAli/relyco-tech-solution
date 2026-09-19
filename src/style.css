@@ -629,9 +629,12 @@ button:focus-visible {
   transition: grid-template-rows 0.35s ease;
 }
 
-.solutions-panel-text {
+.solutions-panel-inner {
   overflow: hidden;
   padding-left: 178px;
+}
+
+.solutions-panel-text {
   font-size: 16px;
   line-height: 1.6;
   color: #9a9a9a;
@@ -642,8 +645,21 @@ button:focus-visible {
   grid-template-rows: 1fr;
 }
 
-.solutions-item.is-open .solutions-panel-text {
+.solutions-item.is-open .solutions-panel-inner {
   padding-bottom: 32px;
+}
+
+.solutions-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 22px;
+  border-radius: 100px;
+  background: #f8fafc;
+  color: #0a0a0a;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .solutions-toggle svg {
@@ -995,7 +1011,8 @@ button:focus-visible {
 .tech-cta,
 .ai-cta,
 .about-cta,
-.final-cta-button {
+.final-cta-button,
+.solutions-detail-btn {
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
@@ -1003,7 +1020,8 @@ button:focus-visible {
 .tech-cta:hover,
 .ai-cta:hover,
 .about-cta:hover,
-.final-cta-button:hover {
+.final-cta-button:hover,
+.solutions-detail-btn:hover {
   transform: translateY(-2px);
   background: #ffffff;
   box-shadow: 0 10px 24px 0 rgba(248, 250, 252, 0.18);
@@ -1013,7 +1031,8 @@ button:focus-visible {
 .tech-cta:active,
 .ai-cta:active,
 .about-cta:active,
-.final-cta-button:active {
+.final-cta-button:active,
+.solutions-detail-btn:active {
   transform: translateY(0);
   background: #e9edf1;
   box-shadow: none;
@@ -1415,6 +1434,10 @@ button:focus-visible {
 
   .solutions-title {
     font-size: 24px;
+  }
+
+  .solutions-panel-inner {
+    padding-left: 0;
   }
 
   .tech-heading {
