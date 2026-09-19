@@ -1,6 +1,9 @@
 import './style.css';
+import { initAnimations } from './animations.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+  initAnimations();
+
   var revealEls = document.querySelectorAll('.reveal');
 
   if (!('IntersectionObserver' in window)) {

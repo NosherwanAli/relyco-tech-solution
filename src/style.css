@@ -1133,6 +1133,46 @@ button:focus-visible {
   transform: translate(0, 0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .big-idea-item.align-left.reveal,
+  .big-idea-item.align-right.reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ---------- GSAP: split-text headings & About Reylco reveal ---------- */
+.split-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ---------- GSAP: button hover text flip ---------- */
+.btn-text-flip {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.btn-text-row {
+  display: block;
+  white-space: nowrap;
+}
+
+.btn-text-row--bottom {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.flip-char {
+  display: inline-block;
+  will-change: transform;
+}
+
 /* ==========================================================
    Responsive
    Breakpoints only alter layout below 1024px; everything at
