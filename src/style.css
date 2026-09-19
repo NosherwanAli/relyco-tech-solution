@@ -110,7 +110,11 @@ button:focus-visible {
 .hero-title,
 .hero-desc,
 .hero-buttons,
-.scroll-indicator {
+.scroll-indicator,
+.solution-hero-title,
+.solution-hero-desc,
+.solution-scroll,
+.solution-hero-visual {
   opacity: 0;
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -121,6 +125,11 @@ button:focus-visible {
 .hero-desc { animation-delay: 0.5s; }
 .hero-buttons { animation-delay: 0.62s; }
 .scroll-indicator { animation-delay: 0.78s; }
+
+.solution-hero-title { animation-delay: 0.32s; }
+.solution-hero-desc { animation-delay: 0.5s; }
+.solution-scroll { animation-delay: 0.62s; }
+.solution-hero-visual { animation-delay: 0.3s; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -233,6 +242,19 @@ button:focus-visible {
   height: 1px;
   background: #ff5a2c;
   display: inline-block;
+}
+
+/* Solution page's accent dash uses a gradient line instead of the solid
+   orange used elsewhere - border-image is the only way to render a
+   gradient-colored line, so height collapses to 0 and the visible 1px
+   line comes from border-bottom instead of background. */
+.solution-hero .label-line {
+  height: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  border-image-source: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+  border-image-slice: 1;
 }
 
 .label-text {
@@ -1192,6 +1214,269 @@ button:focus-visible {
   will-change: transform;
 }
 
+/* ----------------------------------------------------------------
+   Anchor hover: gradient accent border (additive, on top of each
+   anchor's existing hover effect - color/transform/shadow etc. are
+   untouched, this only adds a new pseudo-element on hover).
+
+   `border-image` cannot be used directly: browsers ignore
+   `border-style: dashed` whenever `border-image-source` is set (it
+   always renders solid), and `border-image` ignores `border-radius`
+   entirely, which would break every pill-shaped button here. So two
+   techniques are used instead, chosen per anchor's actual shape:
+
+   1) Plain/no-radius links (nav, footer, logo): a ::after using
+      `border-image-source: repeating-linear-gradient(...)`, which
+      *does* produce real dashes since there's no radius to clip.
+   2) Pill/rounded buttons: a ::after using the standard
+      mask-composite "gradient ring" technique, which correctly
+      follows `border-radius` (via `border-radius: inherit`) but
+      renders as a solid ring rather than literal dashes - dashes +
+      gradient + arbitrary border-radius together aren't achievable
+      with plain CSS on a rounded shape.
+
+   Both are opacity-faded in on hover only, are `pointer-events: none`
+   so they never intercept clicks, and are absolutely positioned so
+   they add no layout width/height and cause no movement.
+   ---------------------------------------------------------------- */
+
+/* Technique 1: dashed gradient border for plain (no-radius) links.
+   Nav links are excluded here - they get their own dedicated gradient
+   underline treatment further down instead (see "Navbar: gradient
+   underline" below), so they don't end up with two competing gradient
+   hover effects stacked on the same element. */
+.logo,
+.footer-col a,
+.footer-legal a {
+  position: relative;
+}
+
+.logo::after,
+.footer-col a::after,
+.footer-legal a::after {
+  content: '';
+  position: absolute;
+  inset: -6px -8px;
+  border: 1px dashed transparent;
+  border-image-source: repeating-linear-gradient(
+    90deg,
+    #FF5A1F 0px, #FF3D6E 6px,
+    transparent 6px, transparent 10px
+  );
+  border-image-slice: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover::after,
+.footer-col a:hover::after,
+.footer-legal a:hover::after {
+  opacity: 1;
+}
+
+/* Technique 2: gradient ring for pill/rounded buttons (respects radius) */
+.btn-start,
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.solutions-cta,
+.tech-cta,
+.ai-cta,
+.about-cta,
+.final-cta-button,
+.solutions-detail-btn {
+  position: relative;
+}
+
+.btn-start::after,
+.btn-primary::after,
+.btn-secondary::after,
+.cta-button::after,
+.solutions-cta::after,
+.tech-cta::after,
+.ai-cta::after,
+.about-cta::after,
+.final-cta-button::after,
+.solutions-detail-btn::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-start:hover::after,
+.btn-primary:hover::after,
+.btn-secondary:hover::after,
+.cta-button:hover::after,
+.solutions-cta:hover::after,
+.tech-cta:hover::after,
+.ai-cta:hover::after,
+.about-cta:hover::after,
+.final-cta-button:hover::after,
+.solutions-detail-btn:hover::after {
+  opacity: 1;
+}
+
+/* ---------- Navbar: gradient underline (hover + active page) ----------
+   .active is added/removed automatically by initActiveNav() in
+   animations.js, based on the current page's URL - never hardcoded
+   in the HTML. Uses scaleX() + transform-origin rather than animating
+   width, so it's a transform-only transition (no layout recalculation)
+   and reuses the .nav-links a position:relative already set above. */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 280ms ease;
+  pointer-events: none;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Solution page: hero ---------- */
+.solution-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-glow-ellipse {
+  position: absolute;
+  right: -126px;
+  bottom: -79px;
+  width: 385px;
+  height: 358px;
+  border-radius: 50%;
+  background: #FF3D6E;
+  filter: blur(150px);
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.solution-hero-content {
+  position: relative;
+  z-index: 5;
+  margin-top: 205px;
+  padding: 0 80px 40px;
+  max-width: 980px;
+}
+
+.solution-hero-title {
+  margin-top: 75px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  letter-spacing: 0.5%;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.solution-hero-title-line {
+  display: inline-block;
+  width: 760px;
+  max-width: 100%;
+  height: 144px;
+  line-height: 72px;
+}
+
+.solution-hero-title .gradient-text {
+  line-height: 65px;
+  background-image: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+}
+
+.solution-hero-desc {
+  margin-top: 26px;
+  max-width: 760px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #A9A9A9;
+}
+
+.solution-scroll {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.solution-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.solution-scroll-label {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+/* ---------- Solution page: hero visual ---------- */
+.solution-hero-visual {
+  /* The source PNG has built-in transparent padding (50px left, 12px top)
+     around the visible graphic, so the box is nudged to compensate and
+     land the visible cube at the intended 764/219 position. Left is then
+     pushed further right (850) to give a clean 60px gap - matching the
+     .ai-body text/image gap elsewhere on the site - from the paragraph's
+     right edge, instead of the ~76px overlap that was there before. */
+  position: absolute;
+  top: 207px;
+  left: 850px;
+  width: 730px;
+  height: 487px;
+  opacity: 1;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ==========================================================
    Responsive
    Breakpoints only alter layout below 1024px; everything at
@@ -1237,6 +1522,35 @@ button:focus-visible {
   .hero-bg {
     width: 85%;
     min-width: 0;
+  }
+
+  /* Solution hero */
+  .solution-hero-content {
+    padding: 0 40px 40px;
+    max-width: 100%;
+  }
+
+  .solution-hero-title {
+    font-size: 42px;
+  }
+
+  .solution-hero-title-line {
+    width: 100%;
+    height: auto;
+    line-height: 1.15;
+  }
+
+  .solution-hero-title .gradient-text {
+    line-height: 1.15;
+  }
+
+  .solution-hero-visual {
+    top: 40px;
+    left: auto;
+    right: 2%;
+    width: 420px;
+    height: 280px;
+    opacity: 0.7;
   }
 
   /* Big Idea */
@@ -1362,6 +1676,12 @@ button:focus-visible {
 
 /* ---------- Tablet portrait (<=768px) ---------- */
 @media (max-width: 768px) {
+  .solution-hero-visual {
+    width: 300px;
+    height: 200px;
+    opacity: 0.5;
+  }
+
   .big-idea-eyebrow,
   .solutions-eyebrow,
   .tech-eyebrow,
@@ -1475,6 +1795,29 @@ button:focus-visible {
 
   .hero-desc {
     font-size: 15px;
+  }
+
+  .solution-hero-content {
+    margin-top: 150px;
+    padding: 0 24px 24px;
+  }
+
+  .solution-hero-title {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .solution-scroll {
+    margin-top: 36px;
+  }
+
+  .solution-scroll-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .solution-hero-visual {
+    display: none;
   }
 
   .hero-label {
@@ -1659,6 +2002,14 @@ button:focus-visible {
 
   .hero-content {
     margin-top: 130px;
+  }
+
+  .solution-hero-content {
+    margin-top: 130px;
+  }
+
+  .solution-hero-title {
+    font-size: 26px;
   }
 
   .hero-title {

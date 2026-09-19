@@ -202,6 +202,24 @@ function initButtonHoverSplit() {
 }
 
 /* ----------------------------------------------------------------
+   4. Navbar active-page indicator - determined from the current URL,
+      not hardcoded in any page's HTML, so it works the same way on
+      every page (including ones not built yet).
+   ---------------------------------------------------------------- */
+
+function initActiveNav() {
+  const normalize = (path) => path.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+  const currentPath = normalize(window.location.pathname);
+
+  document.querySelectorAll('.nav-links a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    link.classList.toggle('active', normalize(href) === currentPath);
+  });
+}
+
+/* ----------------------------------------------------------------
    Init
    ---------------------------------------------------------------- */
 
@@ -209,6 +227,7 @@ export function initAnimations() {
   initScrollTextReveals();
   initAboutReveal();
   initButtonHoverSplit();
+  initActiveNav();
 
   // Recalculate trigger positions once every asset (images, fonts) has
   // finished loading, since late-loading images can shift section heights.
