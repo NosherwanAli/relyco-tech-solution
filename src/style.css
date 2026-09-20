@@ -52,7 +52,15 @@ button:focus-visible {
 .tech-stack,
 .ai-solutions,
 .about,
-.final-cta {
+.final-cta,
+.web-dev,
+.mobile-app,
+.ai-services,
+.ux-ui,
+.ecommerce,
+.digital-marketing,
+.erp,
+.blockchain {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -133,7 +141,7 @@ button:focus-visible {
 
 /* ---------- Navbar ---------- */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 38px;
   left: 80px;
   width: 1280px;
@@ -220,6 +228,43 @@ button:focus-visible {
   transform: translateY(0);
   box-shadow: 0px 8px 20px 0px #00000033;
   filter: brightness(0.97);
+}
+
+/* Mobile menu button - hidden on desktop, shown once .nav-links collapses */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ---------- Hero content ---------- */
@@ -376,7 +421,10 @@ button:focus-visible {
 .big-idea {
   position: relative;
   background: #000000;
-  padding: 96px 80px 80px;
+  /* Top padding accounts for the fixed navbar (~118px tall incl. its
+     own top offset) so this section's heading never scrolls in
+     underneath it. */
+  padding: 136px 80px 80px;
 }
 
 .big-idea-header {
@@ -391,7 +439,15 @@ button:focus-visible {
 .tech-eyebrow,
 .ai-eyebrow,
 .about-eyebrow,
-.final-cta-eyebrow {
+.final-cta-eyebrow,
+.web-dev-eyebrow,
+.mobile-app-eyebrow,
+.ai-services-eyebrow,
+.ux-ui-eyebrow,
+.ecommerce-eyebrow,
+.digital-marketing-eyebrow,
+.erp-eyebrow,
+.blockchain-eyebrow {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -408,7 +464,15 @@ button:focus-visible {
 .solutions-eyebrow,
 .tech-eyebrow,
 .ai-eyebrow,
-.about-eyebrow {
+.about-eyebrow,
+.web-dev-eyebrow,
+.mobile-app-eyebrow,
+.ai-services-eyebrow,
+.ux-ui-eyebrow,
+.ecommerce-eyebrow,
+.digital-marketing-eyebrow,
+.erp-eyebrow,
+.blockchain-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -418,7 +482,15 @@ button:focus-visible {
 .solutions-counter,
 .tech-counter,
 .ai-counter,
-.about-counter {
+.about-counter,
+.web-dev-counter,
+.mobile-app-counter,
+.ai-services-counter,
+.ux-ui-counter,
+.ecommerce-counter,
+.digital-marketing-counter,
+.erp-counter,
+.blockchain-counter {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -597,7 +669,7 @@ button:focus-visible {
 .solutions {
   position: relative;
   background: #000000;
-  padding: 96px 80px 120px;
+  padding: 136px 80px 120px;
 }
 
 .solutions-header {
@@ -740,7 +812,7 @@ button:focus-visible {
 .tech-stack {
   position: relative;
   background: #000000;
-  padding: 96px 80px 120px;
+  padding: 136px 80px 120px;
 }
 
 .tech-header {
@@ -794,7 +866,9 @@ button:focus-visible {
   animation-duration: 36s;
 }
 
-.tech-marquee:hover .tech-track {
+/* Hover each track directly (not the shared .tech-marquee parent) so the
+   two rows pause independently instead of both stopping together. */
+.tech-track:hover {
   animation-play-state: paused;
 }
 
@@ -848,7 +922,7 @@ button:focus-visible {
 .ai-solutions {
   position: relative;
   background: #000000;
-  padding: 96px 80px 0;
+  padding: 136px 80px 0;
   overflow: hidden;
 }
 
@@ -912,11 +986,667 @@ button:focus-visible {
   font-weight: 700;
 }
 
+/* ---------- Solution page: Web Development section ---------- */
+.web-dev {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.web-dev-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.web-dev-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.web-dev-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.web-dev-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.web-dev-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.web-dev-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.web-dev-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.web-dev-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.web-dev-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Solution page: Mobile App Development section ---------- */
+.mobile-app {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.mobile-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.mobile-app-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.mobile-app-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.mobile-app-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.mobile-app-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.mobile-app-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.mobile-app-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.mobile-app-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.mobile-app-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Solution page: AI Solutions section ---------- */
+.ai-services {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.ai-services-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.ai-services-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.ai-services-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.ai-services-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.ai-services-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.ai-services-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.ai-services-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.ai-services-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.ai-services-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Solution page: UX UI Design section ---------- */
+.ux-ui {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.ux-ui-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.ux-ui-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.ux-ui-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ux-ui-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.ux-ui-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.ux-ui-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.ux-ui-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.ux-ui-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.ux-ui-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Solution page: eCommerce Development section ---------- */
+.ecommerce {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.ecommerce-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.ecommerce-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.ecommerce-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.ecommerce-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.ecommerce-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.ecommerce-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.ecommerce-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.ecommerce-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.ecommerce-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Solution page: Digital Marketing section ---------- */
+.digital-marketing {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.digital-marketing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.digital-marketing-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.digital-marketing-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.digital-marketing-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.digital-marketing-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.digital-marketing-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.digital-marketing-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.digital-marketing-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.digital-marketing-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Solution page: Custom ERP Solutions section ---------- */
+.erp {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.erp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.erp-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.erp-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.erp-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.erp-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.erp-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.erp-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.erp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.erp-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Solution page: Blockchain Development section ---------- */
+.blockchain {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.blockchain-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.blockchain-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.blockchain-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.blockchain-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.blockchain-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.blockchain-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.blockchain-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.blockchain-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.blockchain-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
 /* ---------- About section ---------- */
 .about {
   position: relative;
   background: #000000;
-  padding: 96px 80px 120px;
+  padding: 136px 80px 120px;
 }
 
 .about-header {
@@ -960,6 +1690,42 @@ button:focus-visible {
   color: #0a0a0a;
   font-size: 15px;
   font-weight: 700;
+}
+
+/* ---------- Solution page: closing CTA banner ----------
+   Reuses .final-cta-bg / .final-cta-content / .final-cta-eyebrow /
+   .final-cta-button as-is (same background image, typography and button
+   as the Home page's final CTA) inside a new rounded, bordered card -
+   this section's banner is an inset card rather than a full-bleed
+   section like Home's. The heading uses its own .cta-banner-heading
+   class (instead of reusing .final-cta-heading) so its typography can
+   diverge from Home's "Let's make it real." heading without affecting it. */
+.cta-banner {
+  position: relative;
+  background: #000000;
+  padding: 96px 80px 120px;
+}
+
+.cta-banner-card {
+  position: relative;
+  min-height: 340px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 90, 31, 0.4);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #000000;
+}
+
+.cta-banner-heading {
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 56px;
+  line-height: 65px;
+  letter-spacing: 0.5%;
+  vertical-align: middle;
+  color: #ffffff;
 }
 
 /* ---------- Final CTA section ---------- */
@@ -1468,8 +2234,15 @@ button:focus-visible {
   position: absolute;
   top: 207px;
   left: 850px;
-  width: 730px;
-  height: 487px;
+  /* Width was a fixed 730px, which combined with left:850px pushes the
+     right edge to 1580px - wider than common 1280/1366/1440 desktop
+     viewports, so it was overflowing (and getting clipped by the hero's
+     overflow:hidden) instead of staying inside the hero frame. Capping
+     it against the actual available space keeps the same left/top anchor
+     and aspect ratio while guaranteeing it never exceeds the viewport. */
+  width: min(730px, calc(100vw - 850px - 40px));
+  height: auto;
+  aspect-ratio: 730 / 487;
   opacity: 1;
   object-fit: contain;
   z-index: 1;
@@ -1509,10 +2282,52 @@ button:focus-visible {
     margin: 16px;
     left: 0;
     top: 16px;
+    /* The desktop width (1280px, capped by calc(100% - 160px)) was tuned
+       for the full nav-links row; once that row collapses into the
+       hamburger menu, that formula leaves too little room for the logo
+       + button and the button visually spills outside the pill. Let the
+       pill hug its own (now much smaller) content instead. */
+    width: auto;
+    max-width: calc(100% - 32px);
+  }
+
+  .nav-toggle {
+    display: flex;
   }
 
   .nav-links {
-    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    white-space: normal;
+    padding: 8px 24px;
+    border-radius: 24px;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+  }
+
+  .nav-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    text-align: left;
   }
 
   .scroll-indicator {
@@ -1555,7 +2370,7 @@ button:focus-visible {
 
   /* Big Idea */
   .big-idea {
-    padding: 72px 40px 64px;
+    padding: 130px 40px 64px;
   }
 
   .big-idea-heading {
@@ -1576,7 +2391,7 @@ button:focus-visible {
 
   /* Solutions */
   .solutions {
-    padding: 72px 40px 90px;
+    padding: 130px 40px 90px;
   }
 
   .solutions-header {
@@ -1589,7 +2404,7 @@ button:focus-visible {
 
   /* Tech stack */
   .tech-stack {
-    padding: 72px 40px 90px;
+    padding: 130px 40px 90px;
   }
 
   .tech-heading {
@@ -1598,7 +2413,7 @@ button:focus-visible {
 
   /* AI Solutions */
   .ai-solutions {
-    padding: 72px 40px 0;
+    padding: 130px 40px 0;
   }
 
   .ai-body {
@@ -1623,9 +2438,221 @@ button:focus-visible {
     font-size: 34px;
   }
 
+  /* Web Development (Solution page) */
+  .web-dev {
+    padding: 130px 40px 90px;
+  }
+
+  .web-dev-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .web-dev-content {
+    max-width: 100%;
+  }
+
+  .web-dev-heading {
+    font-size: 28px;
+  }
+
+  .web-dev-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Mobile App Development (Solution page) */
+  .mobile-app {
+    padding: 130px 40px 90px;
+  }
+
+  .mobile-app-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .mobile-app-content {
+    max-width: 100%;
+  }
+
+  .mobile-app-heading {
+    font-size: 28px;
+  }
+
+  .mobile-app-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* AI Solutions (Solution page) */
+  .ai-services {
+    padding: 130px 40px 90px;
+  }
+
+  .ai-services-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .ai-services-content {
+    max-width: 100%;
+  }
+
+  .ai-services-heading {
+    font-size: 28px;
+  }
+
+  .ai-services-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* UX UI Design (Solution page) */
+  .ux-ui {
+    padding: 130px 40px 90px;
+  }
+
+  .ux-ui-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .ux-ui-content {
+    max-width: 100%;
+  }
+
+  .ux-ui-heading {
+    font-size: 28px;
+  }
+
+  .ux-ui-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* eCommerce Development (Solution page) */
+  .ecommerce {
+    padding: 130px 40px 90px;
+  }
+
+  .ecommerce-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .ecommerce-content {
+    max-width: 100%;
+  }
+
+  .ecommerce-heading {
+    font-size: 28px;
+  }
+
+  .ecommerce-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Digital Marketing (Solution page) */
+  .digital-marketing {
+    padding: 130px 40px 90px;
+  }
+
+  .digital-marketing-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .digital-marketing-content {
+    max-width: 100%;
+  }
+
+  .digital-marketing-heading {
+    font-size: 28px;
+  }
+
+  .digital-marketing-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Custom ERP Solutions (Solution page) */
+  .erp {
+    padding: 130px 40px 90px;
+  }
+
+  .erp-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .erp-content {
+    max-width: 100%;
+  }
+
+  .erp-heading {
+    font-size: 28px;
+  }
+
+  .erp-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Blockchain Development (Solution page) */
+  .blockchain {
+    padding: 130px 40px 90px;
+  }
+
+  .blockchain-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .blockchain-content {
+    max-width: 100%;
+  }
+
+  .blockchain-heading {
+    font-size: 28px;
+  }
+
+  .blockchain-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
   /* About */
   .about {
-    padding: 72px 40px 90px;
+    padding: 130px 40px 90px;
   }
 
   .about-header {
@@ -1635,6 +2662,20 @@ button:focus-visible {
   .about-lead,
   .about-text {
     font-size: 20px;
+  }
+
+  /* Solution page CTA banner */
+  .cta-banner {
+    padding: 90px 40px;
+  }
+
+  .cta-banner-card {
+    min-height: 300px;
+  }
+
+  .cta-banner-heading {
+    font-size: 44px;
+    line-height: 1.2;
   }
 
   /* Final CTA */
@@ -1688,11 +2729,27 @@ button:focus-visible {
   .ai-eyebrow,
   .about-eyebrow,
   .final-cta-eyebrow,
+  .web-dev-eyebrow,
+  .mobile-app-eyebrow,
+  .ai-services-eyebrow,
+  .ux-ui-eyebrow,
+  .ecommerce-eyebrow,
+  .digital-marketing-eyebrow,
+  .erp-eyebrow,
+  .blockchain-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,
   .ai-counter,
-  .about-counter {
+  .about-counter,
+  .web-dev-counter,
+  .mobile-app-counter,
+  .ai-services-counter,
+  .ux-ui-counter,
+  .ecommerce-counter,
+  .digital-marketing-counter,
+  .erp-counter,
+  .blockchain-counter {
     font-size: 18px;
     letter-spacing: 5px;
     line-height: 1.4;
@@ -1703,8 +2760,27 @@ button:focus-visible {
   .solutions-header,
   .tech-header,
   .ai-header,
-  .about-header {
+  .about-header,
+  .web-dev-header,
+  .mobile-app-header,
+  .ai-services-header,
+  .ux-ui-header,
+  .ecommerce-header,
+  .digital-marketing-header,
+  .erp-header,
+  .blockchain-header {
     margin-bottom: 56px;
+  }
+
+  .web-dev-heading,
+  .mobile-app-heading,
+  .ai-services-heading,
+  .ux-ui-heading,
+  .ecommerce-heading,
+  .digital-marketing-heading,
+  .erp-heading,
+  .blockchain-heading {
+    font-size: 26px;
   }
 
   .big-idea-heading {
@@ -1899,26 +2975,26 @@ button:focus-visible {
   }
 
   .big-idea {
-    padding-top: 56px;
+    padding-top: 130px;
     padding-bottom: 48px;
   }
 
   .solutions {
-    padding-top: 56px;
+    padding-top: 130px;
     padding-bottom: 64px;
   }
 
   .tech-stack {
-    padding-top: 56px;
+    padding-top: 130px;
     padding-bottom: 64px;
   }
 
   .ai-solutions {
-    padding-top: 56px;
+    padding-top: 130px;
   }
 
   .about {
-    padding-top: 56px;
+    padding-top: 130px;
     padding-bottom: 64px;
   }
 
@@ -1959,6 +3035,19 @@ button:focus-visible {
     min-height: 380px;
   }
 
+  .cta-banner {
+    padding: 64px 24px;
+  }
+
+  .cta-banner-card {
+    min-height: 260px;
+    border-radius: 20px;
+  }
+
+  .cta-banner-heading {
+    font-size: 32px;
+  }
+
   .site-footer {
     padding: 48px 24px 0;
   }
@@ -1993,6 +3082,7 @@ button:focus-visible {
   .navbar {
     margin: 12px;
     padding: 0 8px;
+    max-width: calc(100% - 24px);
   }
 
   .logo-mark {
@@ -2027,7 +3117,15 @@ button:focus-visible {
   .solutions-header,
   .tech-header,
   .ai-header,
-  .about-header {
+  .about-header,
+  .web-dev-header,
+  .mobile-app-header,
+  .ai-services-header,
+  .ux-ui-header,
+  .ecommerce-header,
+  .digital-marketing-header,
+  .erp-header,
+  .blockchain-header {
     flex-wrap: wrap;
     row-gap: 8px;
   }
@@ -2038,11 +3136,27 @@ button:focus-visible {
   .ai-eyebrow,
   .about-eyebrow,
   .final-cta-eyebrow,
+  .web-dev-eyebrow,
+  .mobile-app-eyebrow,
+  .ai-services-eyebrow,
+  .ux-ui-eyebrow,
+  .ecommerce-eyebrow,
+  .digital-marketing-eyebrow,
+  .erp-eyebrow,
+  .blockchain-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,
   .ai-counter,
-  .about-counter {
+  .about-counter,
+  .web-dev-counter,
+  .mobile-app-counter,
+  .ai-services-counter,
+  .ux-ui-counter,
+  .ecommerce-counter,
+  .digital-marketing-counter,
+  .erp-counter,
+  .blockchain-counter {
     font-size: 14px;
     letter-spacing: 3px;
   }
@@ -2051,6 +3165,39 @@ button:focus-visible {
   .tech-heading,
   .ai-heading {
     font-size: 24px;
+  }
+
+  .web-dev-heading,
+  .mobile-app-heading,
+  .ai-services-heading,
+  .ux-ui-heading,
+  .ecommerce-heading,
+  .digital-marketing-heading,
+  .erp-heading,
+  .blockchain-heading {
+    font-size: 22px;
+  }
+
+  .web-dev-intro,
+  .mobile-app-intro,
+  .ai-services-intro,
+  .ux-ui-intro,
+  .ecommerce-intro,
+  .digital-marketing-intro,
+  .erp-intro,
+  .blockchain-intro {
+    font-size: 15px;
+  }
+
+  .web-dev-list li,
+  .mobile-app-list li,
+  .ai-services-list li,
+  .ux-ui-list li,
+  .ecommerce-list li,
+  .digital-marketing-list li,
+  .erp-list li,
+  .blockchain-list li {
+    font-size: 15px;
   }
 
   .item-title {
@@ -2111,6 +3258,10 @@ button:focus-visible {
 
   .final-cta-heading {
     font-size: 24px;
+  }
+
+  .cta-banner-heading {
+    font-size: 28px;
   }
 
   .final-cta-desc {

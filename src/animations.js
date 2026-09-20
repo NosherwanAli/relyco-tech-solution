@@ -64,7 +64,7 @@ function splitIntoCharSpans(container, text) {
 
 function initScrollTextReveals() {
   const headings = document.querySelectorAll(
-    '.big-idea-heading, .tech-heading, .ai-heading, .final-cta-heading'
+    '.big-idea-heading, .tech-heading, .ai-heading, .final-cta-heading, .web-dev-heading, .mobile-app-heading, .ai-services-heading, .ux-ui-heading, .ecommerce-heading, .digital-marketing-heading, .erp-heading, .blockchain-heading'
   );
 
   headings.forEach((heading) => {
@@ -202,7 +202,56 @@ function initButtonHoverSplit() {
 }
 
 /* ----------------------------------------------------------------
-   4. Navbar active-page indicator - determined from the current URL,
+   4. Scroll reveal for `.reveal` elements (fade/slide up into view),
+      shared by every page's entry file.
+   ---------------------------------------------------------------- */
+
+function initRevealObserver() {
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length === 0) return;
+
+  if (!('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+
+  // Elements pinned near the very bottom of a short page can end up
+  // permanently just outside the -60px bottom margin, since scrolling
+  // can't push them any further up once the page is fully scrolled.
+  // Once the page reaches (or is already at) its end, reveal anything
+  // still waiting so it never stays hidden.
+  function revealRemainingAtBottom() {
+    const doc = document.documentElement;
+    const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
+    if (!atBottom) return;
+
+    document.querySelectorAll('.reveal:not(.in-view)').forEach((el) => {
+      el.classList.add('in-view');
+      observer.unobserve(el);
+    });
+  }
+
+  window.addEventListener('scroll', revealRemainingAtBottom, { passive: true });
+  window.addEventListener('resize', revealRemainingAtBottom);
+  window.addEventListener('load', revealRemainingAtBottom);
+}
+
+/* ----------------------------------------------------------------
+   5. Navbar active-page indicator - determined from the current URL,
       not hardcoded in any page's HTML, so it works the same way on
       every page (including ones not built yet).
    ---------------------------------------------------------------- */
@@ -220,6 +269,41 @@ function initActiveNav() {
 }
 
 /* ----------------------------------------------------------------
+   6. Mobile navbar menu - toggles the collapsed .nav-links panel
+      open/closed via the hamburger button shown at ≤1024px.
+   ---------------------------------------------------------------- */
+
+function initNavToggle() {
+  document.querySelectorAll('.navbar').forEach((navbar) => {
+    const toggle = navbar.querySelector('.nav-toggle');
+    const links = navbar.querySelector('.nav-links');
+    if (!toggle || !links) return;
+
+    const closeMenu = () => {
+      links.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      toggle.classList.toggle('is-active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    links.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!links.classList.contains('is-open')) return;
+      if (navbar.contains(event.target)) return;
+      closeMenu();
+    });
+  });
+}
+
+/* ----------------------------------------------------------------
    Init
    ---------------------------------------------------------------- */
 
@@ -227,7 +311,9 @@ export function initAnimations() {
   initScrollTextReveals();
   initAboutReveal();
   initButtonHoverSplit();
+  initRevealObserver();
   initActiveNav();
+  initNavToggle();
 
   // Recalculate trigger positions once every asset (images, fonts) has
   // finished loading, since late-loading images can shift section heights.
