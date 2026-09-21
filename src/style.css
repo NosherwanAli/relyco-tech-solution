@@ -1985,63 +1985,22 @@ button:focus-visible {
    anchor's existing hover effect - color/transform/shadow etc. are
    untouched, this only adds a new pseudo-element on hover).
 
-   `border-image` cannot be used directly: browsers ignore
-   `border-style: dashed` whenever `border-image-source` is set (it
-   always renders solid), and `border-image` ignores `border-radius`
-   entirely, which would break every pill-shaped button here. So two
-   techniques are used instead, chosen per anchor's actual shape:
+   `border-image` ignores `border-radius` entirely, so a mask-composite
+   "gradient ring" ::after is used instead for these pill/rounded
+   buttons, which correctly follows `border-radius` (via
+   `border-radius: inherit`).
 
-   1) Plain/no-radius links (nav, footer, logo): a ::after using
-      `border-image-source: repeating-linear-gradient(...)`, which
-      *does* produce real dashes since there's no radius to clip.
-   2) Pill/rounded buttons: a ::after using the standard
-      mask-composite "gradient ring" technique, which correctly
-      follows `border-radius` (via `border-radius: inherit`) but
-      renders as a solid ring rather than literal dashes - dashes +
-      gradient + arbitrary border-radius together aren't achievable
-      with plain CSS on a rounded shape.
+   It's opacity-faded in on hover only, is `pointer-events: none` so it
+   never intercepts clicks, and is absolutely positioned so it adds no
+   layout width/height and causes no movement.
 
-   Both are opacity-faded in on hover only, are `pointer-events: none`
-   so they never intercept clicks, and are absolutely positioned so
-   they add no layout width/height and cause no movement.
+   Nav links, the logo, and footer links intentionally do NOT get this
+   treatment - nav links have their own dedicated gradient underline
+   (see "Navbar: gradient underline" below), and the logo/footer links
+   just keep their plain existing color-change hover effect.
    ---------------------------------------------------------------- */
 
-/* Technique 1: dashed gradient border for plain (no-radius) links.
-   Nav links are excluded here - they get their own dedicated gradient
-   underline treatment further down instead (see "Navbar: gradient
-   underline" below), so they don't end up with two competing gradient
-   hover effects stacked on the same element. */
-.logo,
-.footer-col a,
-.footer-legal a {
-  position: relative;
-}
-
-.logo::after,
-.footer-col a::after,
-.footer-legal a::after {
-  content: '';
-  position: absolute;
-  inset: -6px -8px;
-  border: 1px dashed transparent;
-  border-image-source: repeating-linear-gradient(
-    90deg,
-    #FF5A1F 0px, #FF3D6E 6px,
-    transparent 6px, transparent 10px
-  );
-  border-image-slice: 1;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.logo:hover::after,
-.footer-col a:hover::after,
-.footer-legal a:hover::after {
-  opacity: 1;
-}
-
-/* Technique 2: gradient ring for pill/rounded buttons (respects radius) */
+/* Gradient ring for pill/rounded buttons (respects radius) */
 .btn-start,
 .btn-primary,
 .btn-secondary,

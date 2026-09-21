@@ -17,16 +17,18 @@
     <div class="glow-ellipse"></div>
 
     <header class="navbar">
-      <a class="logo" href="#">
+      <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
         <a href="/solution">Solutions</a>
-        <a href="/industries">Industries</a>
-        <a href="/tech-stack">Tech Stack</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <!-- TODO: replace href="#" once the Industries page exists -->
+        <a href="#">Industries</a>
+        <a href="#tech-stack">Tech Stack</a>
+        <a href="/#about">About</a>
+        <!-- TODO: replace href="#" once the Contact page exists -->
+        <a href="#">Contact</a>
       </nav>
 
       <a class="btn-start" href="#">Start a Project</a>
@@ -63,7 +65,7 @@
             <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#F8FAFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a class="btn-secondary" href="#">
+        <a class="btn-secondary" href="/solution">
           Explore Services
           <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#F8FAFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -249,7 +251,7 @@
       </div>
     </div>
 
-    <a class="solutions-cta reveal" href="#">
+    <a class="solutions-cta reveal" href="/solution">
       Explore Capabilities
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -257,7 +259,7 @@
     </a>
   </section>
 
-  <section class="tech-stack">
+  <section class="tech-stack" id="tech-stack">
     <div class="tech-header reveal">
       <span class="tech-eyebrow">
         <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
@@ -342,7 +344,7 @@
       <div class="ai-content">
         <h2 class="ai-heading">What if your software could think with you?</h2>
         <p class="ai-desc reveal">We build intelligent systems that can understand information, automate repetitive work, assist customers, and help teams make better decisions.</p>
-        <a class="ai-cta reveal" href="#">
+        <a class="ai-cta reveal" href="/solution#ai-services">
           Explore AI Solutions
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -352,7 +354,7 @@
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-header reveal">
       <span class="about-eyebrow">
         <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
@@ -400,14 +402,14 @@
 
       <div class="footer-col">
         <h4 class="footer-heading">Solutions</h4>
-        <a href="#">Web Development</a>
-        <a href="#">Mobile App Development</a>
-        <a href="#">Artificial Intelligence Solutions</a>
-        <a href="#">UI UX Design</a>
-        <a href="#">eCommerce Development</a>
-        <a href="#">Digital Marketing</a>
-        <a href="#">Custom ERP Solutions</a>
-        <a href="#">Blockchain Development</a>
+        <a href="/solution#web-dev">Web Development</a>
+        <a href="/solution#mobile-app">Mobile App Development</a>
+        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+        <a href="/solution#ux-ui">UI UX Design</a>
+        <a href="/solution#ecommerce">eCommerce Development</a>
+        <a href="/solution#digital-marketing">Digital Marketing</a>
+        <a href="/solution#erp">Custom ERP Solutions</a>
+        <a href="/solution#blockchain">Blockchain Development</a>
       </div>
 
       <div class="footer-col">
@@ -424,7 +426,7 @@
 
       <div class="footer-col">
         <h4 class="footer-heading">Company</h4>
-        <a href="#">About us</a>
+        <a href="/#about">About us</a>
         <a href="#">Contact us</a>
       </div>
     </div>
