@@ -33,13 +33,14 @@ export default defineConfig({
   root: '.',
   publicDir: 'public',
   appType: 'mpa',
-  plugins: [cleanUrlRedirect(['/solution'])],
+  plugins: [cleanUrlRedirect(['/solution', '/industries'])],
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
         solution: resolve(__dirname, 'solution/index.html'),
+        industries: resolve(__dirname, 'industries/index.html'),
       },
     },
   },

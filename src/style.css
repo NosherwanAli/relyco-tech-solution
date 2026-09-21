@@ -60,7 +60,15 @@ button:focus-visible {
 .ecommerce,
 .digital-marketing,
 .erp,
-.blockchain {
+.blockchain,
+.retail,
+.manufacturing,
+.real-estate,
+.bfsi,
+.hospitality,
+.healthcare,
+.logistics,
+.automotive {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -122,7 +130,11 @@ button:focus-visible {
 .solution-hero-title,
 .solution-hero-desc,
 .solution-scroll,
-.solution-hero-visual {
+.solution-hero-visual,
+.industries-hero-title,
+.industries-hero-desc,
+.industries-scroll,
+.industries-hero-visual {
   opacity: 0;
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -138,6 +150,11 @@ button:focus-visible {
 .solution-hero-desc { animation-delay: 0.5s; }
 .solution-scroll { animation-delay: 0.62s; }
 .solution-hero-visual { animation-delay: 0.3s; }
+
+.industries-hero-title { animation-delay: 0.32s; }
+.industries-hero-desc { animation-delay: 0.5s; }
+.industries-scroll { animation-delay: 0.62s; }
+.industries-hero-visual { animation-delay: 0.3s; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -289,11 +306,12 @@ button:focus-visible {
   display: inline-block;
 }
 
-/* Solution page's accent dash uses a gradient line instead of the solid
-   orange used elsewhere - border-image is the only way to render a
-   gradient-colored line, so height collapses to 0 and the visible 1px
-   line comes from border-bottom instead of background. */
-.solution-hero .label-line {
+/* Solution/Industries pages' accent dash uses a gradient line instead of
+   the solid orange used elsewhere - border-image is the only way to
+   render a gradient-colored line, so height collapses to 0 and the
+   visible 1px line comes from border-bottom instead of background. */
+.solution-hero .label-line,
+.industries-hero .label-line {
   height: 0;
   background: none;
   border: none;
@@ -447,7 +465,15 @@ button:focus-visible {
 .ecommerce-eyebrow,
 .digital-marketing-eyebrow,
 .erp-eyebrow,
-.blockchain-eyebrow {
+.blockchain-eyebrow,
+.retail-eyebrow,
+.manufacturing-eyebrow,
+.real-estate-eyebrow,
+.bfsi-eyebrow,
+.hospitality-eyebrow,
+.healthcare-eyebrow,
+.logistics-eyebrow,
+.automotive-eyebrow {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -472,7 +498,15 @@ button:focus-visible {
 .ecommerce-eyebrow,
 .digital-marketing-eyebrow,
 .erp-eyebrow,
-.blockchain-eyebrow {
+.blockchain-eyebrow,
+.retail-eyebrow,
+.manufacturing-eyebrow,
+.real-estate-eyebrow,
+.bfsi-eyebrow,
+.hospitality-eyebrow,
+.healthcare-eyebrow,
+.logistics-eyebrow,
+.automotive-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -490,7 +524,15 @@ button:focus-visible {
 .ecommerce-counter,
 .digital-marketing-counter,
 .erp-counter,
-.blockchain-counter {
+.blockchain-counter,
+.retail-counter,
+.manufacturing-counter,
+.real-estate-counter,
+.bfsi-counter,
+.hospitality-counter,
+.healthcare-counter,
+.logistics-counter,
+.automotive-counter {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -1642,6 +1684,662 @@ button:focus-visible {
   background: #ff5a2c;
 }
 
+/* ---------- Industries page: Retail section ---------- */
+.retail {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.retail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.retail-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.retail-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.retail-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.retail-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.retail-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.retail-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.retail-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.retail-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Industries page: Manufacturing section ---------- */
+.manufacturing {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.manufacturing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.manufacturing-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.manufacturing-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.manufacturing-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.manufacturing-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.manufacturing-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.manufacturing-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.manufacturing-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.manufacturing-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Industries page: Real Estate section ---------- */
+.real-estate {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.real-estate-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.real-estate-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.real-estate-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.real-estate-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.real-estate-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.real-estate-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.real-estate-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.real-estate-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.real-estate-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Industries page: BFSI section ---------- */
+.bfsi {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.bfsi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.bfsi-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.bfsi-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.bfsi-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.bfsi-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.bfsi-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.bfsi-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.bfsi-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.bfsi-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Industries page: Hospitality section ---------- */
+.hospitality {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.hospitality-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.hospitality-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.hospitality-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.hospitality-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.hospitality-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.hospitality-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.hospitality-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.hospitality-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.hospitality-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Industries page: Healthcare section ---------- */
+.healthcare {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.healthcare-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.healthcare-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.healthcare-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.healthcare-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.healthcare-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.healthcare-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.healthcare-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.healthcare-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.healthcare-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+/* ---------- Industries page: Logistics section ---------- */
+.logistics {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.logistics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.logistics-intro {
+  max-width: 640px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.logistics-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+.logistics-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.logistics-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.logistics-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.logistics-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.logistics-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
+.logistics-image {
+  width: 51%;
+  max-width: 695px;
+  min-width: 358px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ---------- Industries page: Automotive section ---------- */
+.automotive {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 120px;
+}
+
+.automotive-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.automotive-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.automotive-image {
+  width: 46%;
+  max-width: 620px;
+  min-width: 320px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.automotive-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.automotive-intro {
+  margin-bottom: 28px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #a9a9a9;
+}
+
+.automotive-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.automotive-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.automotive-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.automotive-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5a2c;
+}
+
 /* ---------- About section ---------- */
 .about {
   position: relative;
@@ -2209,6 +2907,122 @@ button:focus-visible {
   user-select: none;
 }
 
+/* ---------- Industries page: hero ---------- */
+.industries-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.industries-glow-ellipse {
+  position: absolute;
+  right: -126px;
+  bottom: -79px;
+  width: 385px;
+  height: 358px;
+  border-radius: 50%;
+  background: #FF3D6E;
+  filter: blur(150px);
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.industries-hero-content {
+  position: relative;
+  z-index: 5;
+  margin-top: 205px;
+  padding: 0 80px 40px;
+  max-width: 980px;
+}
+
+.industries-hero-title {
+  margin-top: 75px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  letter-spacing: 0.5%;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.industries-hero-title-line {
+  display: inline-block;
+  width: 760px;
+  max-width: 100%;
+  height: 144px;
+  line-height: 72px;
+}
+
+.industries-hero-title .gradient-text {
+  line-height: 65px;
+  background-image: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+}
+
+.industries-hero-desc {
+  margin-top: 26px;
+  max-width: 760px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #A9A9A9;
+}
+
+.industries-scroll {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.industries-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.industries-scroll-label {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+/* ---------- Industries page: hero visual ---------- */
+.industries-hero-visual {
+  position: absolute;
+  top: 305px;
+  left: 814px;
+  /* Capped with min() against the viewport (same fix applied to
+     .solution-hero-visual) so it can never push past the right edge on
+     narrower desktop widths instead of overflowing/getting clipped. */
+  width: min(640.4882202148438px, calc(100vw - 814px - 40px));
+  height: auto;
+  aspect-ratio: 640.4882202148438 / 308.1995544433594;
+  opacity: 1;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ==========================================================
    Responsive
    Breakpoints only alter layout below 1024px; everything at
@@ -2324,6 +3138,36 @@ button:focus-visible {
     right: 2%;
     width: 420px;
     height: 280px;
+    opacity: 0.7;
+  }
+
+  /* Industries hero */
+  .industries-hero-content {
+    padding: 0 40px 40px;
+    max-width: 100%;
+  }
+
+  .industries-hero-title {
+    font-size: 42px;
+  }
+
+  .industries-hero-title-line {
+    width: 100%;
+    height: auto;
+    line-height: 1.15;
+  }
+
+  .industries-hero-title .gradient-text {
+    line-height: 1.15;
+  }
+
+  .industries-hero-visual {
+    top: 40px;
+    left: auto;
+    right: 2%;
+    width: 360px;
+    height: auto;
+    aspect-ratio: 626 / 309;
     opacity: 0.7;
   }
 
@@ -2609,6 +3453,218 @@ button:focus-visible {
     margin: 0 auto;
   }
 
+  /* Retail (Industries page) */
+  .retail {
+    padding: 130px 40px 90px;
+  }
+
+  .retail-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .retail-content {
+    max-width: 100%;
+  }
+
+  .retail-heading {
+    font-size: 28px;
+  }
+
+  .retail-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Manufacturing (Industries page) */
+  .manufacturing {
+    padding: 130px 40px 90px;
+  }
+
+  .manufacturing-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .manufacturing-content {
+    max-width: 100%;
+  }
+
+  .manufacturing-heading {
+    font-size: 28px;
+  }
+
+  .manufacturing-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Real Estate (Industries page) */
+  .real-estate {
+    padding: 130px 40px 90px;
+  }
+
+  .real-estate-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .real-estate-content {
+    max-width: 100%;
+  }
+
+  .real-estate-heading {
+    font-size: 28px;
+  }
+
+  .real-estate-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* BFSI (Industries page) */
+  .bfsi {
+    padding: 130px 40px 90px;
+  }
+
+  .bfsi-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .bfsi-content {
+    max-width: 100%;
+  }
+
+  .bfsi-heading {
+    font-size: 28px;
+  }
+
+  .bfsi-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Hospitality (Industries page) */
+  .hospitality {
+    padding: 130px 40px 90px;
+  }
+
+  .hospitality-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .hospitality-content {
+    max-width: 100%;
+  }
+
+  .hospitality-heading {
+    font-size: 28px;
+  }
+
+  .hospitality-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Healthcare (Industries page) */
+  .healthcare {
+    padding: 130px 40px 90px;
+  }
+
+  .healthcare-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .healthcare-content {
+    max-width: 100%;
+  }
+
+  .healthcare-heading {
+    font-size: 28px;
+  }
+
+  .healthcare-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Logistics (Industries page) */
+  .logistics {
+    padding: 130px 40px 90px;
+  }
+
+  .logistics-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .logistics-content {
+    max-width: 100%;
+  }
+
+  .logistics-heading {
+    font-size: 28px;
+  }
+
+  .logistics-image {
+    width: 100%;
+    max-width: 538px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  /* Automotive (Industries page) */
+  .automotive {
+    padding: 130px 40px 90px;
+  }
+
+  .automotive-body {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .automotive-content {
+    max-width: 100%;
+  }
+
+  .automotive-heading {
+    font-size: 28px;
+  }
+
+  .automotive-image {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
   /* About */
   .about {
     padding: 130px 40px 90px;
@@ -2682,6 +3738,13 @@ button:focus-visible {
     opacity: 0.5;
   }
 
+  .industries-hero-visual {
+    width: 260px;
+    height: auto;
+    aspect-ratio: 626 / 309;
+    opacity: 0.5;
+  }
+
   .big-idea-eyebrow,
   .solutions-eyebrow,
   .tech-eyebrow,
@@ -2696,6 +3759,14 @@ button:focus-visible {
   .digital-marketing-eyebrow,
   .erp-eyebrow,
   .blockchain-eyebrow,
+  .retail-eyebrow,
+  .manufacturing-eyebrow,
+  .real-estate-eyebrow,
+  .bfsi-eyebrow,
+  .hospitality-eyebrow,
+  .healthcare-eyebrow,
+  .logistics-eyebrow,
+  .automotive-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,
@@ -2708,7 +3779,15 @@ button:focus-visible {
   .ecommerce-counter,
   .digital-marketing-counter,
   .erp-counter,
-  .blockchain-counter {
+  .blockchain-counter,
+  .retail-counter,
+  .manufacturing-counter,
+  .real-estate-counter,
+  .bfsi-counter,
+  .hospitality-counter,
+  .healthcare-counter,
+  .logistics-counter,
+  .automotive-counter {
     font-size: 18px;
     letter-spacing: 5px;
     line-height: 1.4;
@@ -2727,7 +3806,15 @@ button:focus-visible {
   .ecommerce-header,
   .digital-marketing-header,
   .erp-header,
-  .blockchain-header {
+  .blockchain-header,
+  .retail-header,
+  .manufacturing-header,
+  .real-estate-header,
+  .bfsi-header,
+  .hospitality-header,
+  .healthcare-header,
+  .logistics-header,
+  .automotive-header {
     margin-bottom: 56px;
   }
 
@@ -2738,7 +3825,15 @@ button:focus-visible {
   .ecommerce-heading,
   .digital-marketing-heading,
   .erp-heading,
-  .blockchain-heading {
+  .blockchain-heading,
+  .retail-heading,
+  .manufacturing-heading,
+  .real-estate-heading,
+  .bfsi-heading,
+  .hospitality-heading,
+  .healthcare-heading,
+  .logistics-heading,
+  .automotive-heading {
     font-size: 26px;
   }
 
@@ -2852,6 +3947,29 @@ button:focus-visible {
   }
 
   .solution-hero-visual {
+    display: none;
+  }
+
+  .industries-hero-content {
+    margin-top: 150px;
+    padding: 0 24px 24px;
+  }
+
+  .industries-hero-title {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .industries-scroll {
+    margin-top: 36px;
+  }
+
+  .industries-scroll-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .industries-hero-visual {
     display: none;
   }
 
@@ -3061,6 +4179,14 @@ button:focus-visible {
     font-size: 26px;
   }
 
+  .industries-hero-content {
+    margin-top: 130px;
+  }
+
+  .industries-hero-title {
+    font-size: 26px;
+  }
+
   .hero-title {
     font-size: 28px;
   }
@@ -3084,7 +4210,15 @@ button:focus-visible {
   .ecommerce-header,
   .digital-marketing-header,
   .erp-header,
-  .blockchain-header {
+  .blockchain-header,
+  .retail-header,
+  .manufacturing-header,
+  .real-estate-header,
+  .bfsi-header,
+  .hospitality-header,
+  .healthcare-header,
+  .logistics-header,
+  .automotive-header {
     flex-wrap: wrap;
     row-gap: 8px;
   }
@@ -3103,6 +4237,14 @@ button:focus-visible {
   .digital-marketing-eyebrow,
   .erp-eyebrow,
   .blockchain-eyebrow,
+  .retail-eyebrow,
+  .manufacturing-eyebrow,
+  .real-estate-eyebrow,
+  .bfsi-eyebrow,
+  .hospitality-eyebrow,
+  .healthcare-eyebrow,
+  .logistics-eyebrow,
+  .automotive-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,
@@ -3115,7 +4257,15 @@ button:focus-visible {
   .ecommerce-counter,
   .digital-marketing-counter,
   .erp-counter,
-  .blockchain-counter {
+  .blockchain-counter,
+  .retail-counter,
+  .manufacturing-counter,
+  .real-estate-counter,
+  .bfsi-counter,
+  .hospitality-counter,
+  .healthcare-counter,
+  .logistics-counter,
+  .automotive-counter {
     font-size: 14px;
     letter-spacing: 3px;
   }
@@ -3133,7 +4283,15 @@ button:focus-visible {
   .ecommerce-heading,
   .digital-marketing-heading,
   .erp-heading,
-  .blockchain-heading {
+  .blockchain-heading,
+  .retail-heading,
+  .manufacturing-heading,
+  .real-estate-heading,
+  .bfsi-heading,
+  .hospitality-heading,
+  .healthcare-heading,
+  .logistics-heading,
+  .automotive-heading {
     font-size: 22px;
   }
 
@@ -3144,7 +4302,15 @@ button:focus-visible {
   .ecommerce-intro,
   .digital-marketing-intro,
   .erp-intro,
-  .blockchain-intro {
+  .blockchain-intro,
+  .retail-intro,
+  .manufacturing-intro,
+  .real-estate-intro,
+  .bfsi-intro,
+  .hospitality-intro,
+  .healthcare-intro,
+  .logistics-intro,
+  .automotive-intro {
     font-size: 15px;
   }
 
@@ -3155,7 +4321,15 @@ button:focus-visible {
   .ecommerce-list li,
   .digital-marketing-list li,
   .erp-list li,
-  .blockchain-list li {
+  .blockchain-list li,
+  .retail-list li,
+  .manufacturing-list li,
+  .real-estate-list li,
+  .bfsi-list li,
+  .hospitality-list li,
+  .healthcare-list li,
+  .logistics-list li,
+  .automotive-list li {
     font-size: 15px;
   }
 
