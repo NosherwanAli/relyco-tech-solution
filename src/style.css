@@ -2359,31 +2359,36 @@ button:focus-visible {
 .techstack-hero-eyebrow {
   display: block;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 65px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #9a9a9a;
+  color: #ffffff;
 }
 
 .techstack-hero-title {
   margin: 20px auto 0;
-  max-width: 700px;
-  font-family: 'Poppins', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
+  max-width: 945px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: 0.5px;
   color: #ffffff;
 }
 
 .techstack-hero-desc {
   margin: 24px auto 0;
-  max-width: 720px;
+  max-width: 945px;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #9a9a9a;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #a9a9a9;
 }
 
 .techstack-hero-desc + .techstack-hero-desc {
@@ -2402,9 +2407,12 @@ button:focus-visible {
 }
 
 .tech-category-heading {
-  font-family: 'Poppins', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 22px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 49px;
+  letter-spacing: 0.35px;
   color: #ffffff;
   margin-bottom: 24px;
 }
@@ -2440,6 +2448,30 @@ button:focus-visible {
   border-radius: 0;
   padding: 14px 0;
   gap: 30px;
+  min-width: 0;
+}
+
+.tech-category-grid .tech-badge img {
+  width: 37px;
+  height: 37px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.tech-category-grid .tech-badge span {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #a9a9a9;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .tech-category-grid .tech-badge::before {
@@ -2474,22 +2506,26 @@ button:focus-visible {
 }
 
 .techstack-closing-heading {
-  font-family: 'Poppins', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 1.3;
-  letter-spacing: -0.3px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 55px;
+  line-height: 70px;
+  letter-spacing: 0.5px;
   color: #ffffff;
-  max-width: 620px;
+  max-width: 972px;
 }
 
 .techstack-closing-desc {
   margin-top: 16px;
-  max-width: 640px;
+  max-width: 1050px;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #9a9a9a;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #a9a9a9;
 }
 
 /* ---------- About section ---------- */
@@ -3830,6 +3866,11 @@ button:focus-visible {
     padding: 8px 40px 32px;
   }
 
+  .tech-category-heading {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
   .tech-category-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -4165,6 +4206,11 @@ button:focus-visible {
 
   .techstack-categories {
     padding: 8px 24px 24px;
+  }
+
+  .tech-category-heading {
+    font-size: 22px;
+    line-height: 1.3;
   }
 
   .tech-category-grid {
