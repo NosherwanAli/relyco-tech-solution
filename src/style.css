@@ -137,7 +137,9 @@ button:focus-visible {
 .industries-hero-visual,
 .techstack-hero-eyebrow,
 .techstack-hero-title,
-.techstack-hero-desc {
+.techstack-hero-desc,
+.about-hero-title,
+.about-hero-desc {
   opacity: 0;
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -162,6 +164,9 @@ button:focus-visible {
 .techstack-hero-eyebrow { animation-delay: 0.2s; }
 .techstack-hero-title { animation-delay: 0.32s; }
 .techstack-hero-desc { animation-delay: 0.5s; }
+
+.about-hero-title { animation-delay: 0.32s; }
+.about-hero-desc { animation-delay: 0.5s; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -480,7 +485,11 @@ button:focus-visible {
 .hospitality-eyebrow,
 .healthcare-eyebrow,
 .logistics-eyebrow,
-.automotive-eyebrow {
+.automotive-eyebrow,
+.about-relyco-eyebrow,
+.about-approach-eyebrow,
+.about-believe-eyebrow,
+.about-difference-eyebrow {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 25px;
   font-weight: 500;
@@ -513,7 +522,11 @@ button:focus-visible {
 .hospitality-eyebrow,
 .healthcare-eyebrow,
 .logistics-eyebrow,
-.automotive-eyebrow {
+.automotive-eyebrow,
+.about-relyco-eyebrow,
+.about-approach-eyebrow,
+.about-believe-eyebrow,
+.about-difference-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2528,7 +2541,253 @@ button:focus-visible {
   color: #a9a9a9;
 }
 
-/* ---------- About section ---------- */
+/* ---------- About page: hero ---------- */
+.about-hero {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  padding: 220px 80px 160px;
+}
+
+.about-hero-content {
+  max-width: 1063px;
+}
+
+.about-hero-title {
+  width: 1063px;
+  max-width: 100%;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.about-hero-desc {
+  margin-top: 28px;
+  max-width: 1063px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #e5e7eb;
+}
+
+/* ---------- About page: "About Relyco" section ---------- */
+.about-relyco {
+  position: relative;
+  background: #000000;
+  padding: 136px 80px 140px;
+}
+
+.about-relyco-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  margin-top: 90px;
+}
+
+.about-relyco-heading {
+  flex: 0 0 592px;
+  max-width: 100%;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 55px;
+  line-height: 65px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.about-relyco-desc {
+  flex: 0 0 624px;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #a9a9a9;
+}
+
+/* ---------- About page: "Our Approach" section ---------- */
+.about-approach {
+  position: relative;
+  background: #000000;
+  padding: 0 80px 140px;
+}
+
+.about-approach-list {
+  margin-top: 90px;
+}
+
+.about-approach-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-approach-number {
+  flex-shrink: 0;
+  width: 79px;
+  margin-right: 40px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 70px;
+  line-height: 65px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  background: linear-gradient(180deg, #FF5A1F 0%, #FF3D6E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-approach-name {
+  flex: 1;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 70px;
+  line-height: 65px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.about-approach-desc {
+  flex-shrink: 0;
+  width: 388px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+/* ---------- About page: "What We Believe" section ---------- */
+.about-believe {
+  position: relative;
+  background: #000000;
+  padding: 0 80px 140px;
+}
+
+.about-believe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 90px;
+}
+
+.about-believe-item {
+  padding: 56px 0;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 65px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.about-believe-item:nth-child(-n+2) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-believe-item:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding-right: 64px;
+}
+
+.about-believe-item:nth-child(even) {
+  padding-left: 64px;
+}
+
+/* ---------- About page: "The Relyco Difference" section ---------- */
+.about-difference {
+  position: relative;
+  background: #000000;
+  padding: 0 80px 140px;
+  text-align: center;
+}
+
+.about-difference-heading {
+  margin: 90px auto 0;
+  max-width: 900px;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.about-difference-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 90px;
+}
+
+.about-difference-item {
+  width: 158px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 39px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-difference-item .accent {
+  color: #ff5a2c;
+}
+
+.about-difference-connector {
+  display: inline-flex;
+  align-items: center;
+  width: 90px;
+  height: 0;
+  border-top: 1px solid #ffffff;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.about-difference-connector i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.about-difference-connector--accent {
+  border-top: 1px solid;
+  border-image-source: linear-gradient(90deg, #FF5A1F 0%, #FF3D6E 100%);
+  border-image-slice: 1;
+}
+
+.about-difference-connector--accent i {
+  background: #ff3d6e;
+}
+
+/* ---------- About Reylco section (Home page) ---------- */
 .about {
   position: relative;
   background: #000000;
@@ -3441,6 +3700,117 @@ button:focus-visible {
     margin-top: 40px;
   }
 
+  /* About Relyco (About page) */
+  .about-relyco {
+    padding: 100px 40px 100px;
+  }
+
+  .about-relyco-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .about-relyco-heading,
+  .about-relyco-desc {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-relyco-heading {
+    font-size: 34px;
+  }
+
+  /* Our Approach (About page) */
+  .about-approach {
+    padding: 0 40px 100px;
+  }
+
+  .about-approach-list {
+    margin-top: 40px;
+  }
+
+  .about-approach-item {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    padding: 24px 0;
+  }
+
+  .about-approach-number {
+    width: auto;
+    font-size: 34px;
+  }
+
+  .about-approach-name {
+    font-size: 34px;
+  }
+
+  .about-approach-desc {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* What We Believe (About page) */
+  .about-believe {
+    padding: 0 40px 100px;
+  }
+
+  .about-believe-grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .about-believe-item {
+    font-size: 26px;
+    line-height: 1.35;
+    padding: 32px 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* The Relyco Difference (About page) */
+  .about-difference {
+    padding: 0 40px 100px;
+  }
+
+  .about-difference-heading {
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  .about-difference-row {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .about-difference-connector {
+    width: 0;
+    height: 32px;
+    border-top: none;
+    border-left: 1px solid #ffffff;
+  }
+
+  .about-difference-connector--accent {
+    border-top: none;
+    border-left: 1px solid;
+    border-image-source: linear-gradient(180deg, #FF5A1F 0%, #FF3D6E 100%);
+    border-image-slice: 1;
+  }
+
+  .about-difference-connector i {
+    right: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translateX(50%);
+  }
+
+  .about-believe-item:last-child {
+    border-bottom: none;
+  }
+
   .web-dev-content {
     max-width: 100%;
   }
@@ -3862,6 +4232,16 @@ button:focus-visible {
     font-size: 38px;
   }
 
+  /* About page */
+  .about-hero {
+    padding: 150px 40px 90px;
+  }
+
+  .about-hero-title {
+    font-size: 38px;
+    line-height: 1.25;
+  }
+
   .techstack-categories {
     padding: 8px 40px 32px;
   }
@@ -3985,6 +4365,10 @@ button:focus-visible {
   .healthcare-eyebrow,
   .logistics-eyebrow,
   .automotive-eyebrow,
+  .about-relyco-eyebrow,
+  .about-approach-eyebrow,
+  .about-believe-eyebrow,
+  .about-difference-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,
@@ -4201,6 +4585,20 @@ button:focus-visible {
   }
 
   .techstack-hero-desc {
+    font-size: 15px;
+  }
+
+  .about-hero {
+    padding: 150px 24px 64px;
+  }
+
+  .about-hero-title {
+    font-size: 30px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .about-hero-desc {
     font-size: 15px;
   }
 
@@ -4497,6 +4895,10 @@ button:focus-visible {
   .healthcare-eyebrow,
   .logistics-eyebrow,
   .automotive-eyebrow,
+  .about-relyco-eyebrow,
+  .about-approach-eyebrow,
+  .about-believe-eyebrow,
+  .about-difference-eyebrow,
   .big-idea-counter,
   .solutions-counter,
   .tech-counter,

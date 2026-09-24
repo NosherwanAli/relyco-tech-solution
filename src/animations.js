@@ -64,7 +64,7 @@ function splitIntoCharSpans(container, text) {
 
 function initScrollTextReveals() {
   const headings = document.querySelectorAll(
-    '.big-idea-heading, .tech-heading, .ai-heading, .final-cta-heading, .web-dev-heading, .mobile-app-heading, .ai-services-heading, .ux-ui-heading, .ecommerce-heading, .digital-marketing-heading, .erp-heading, .blockchain-heading, .retail-heading, .manufacturing-heading, .real-estate-heading, .bfsi-heading, .hospitality-heading, .healthcare-heading, .logistics-heading, .automotive-heading, .techstack-closing-heading'
+    '.big-idea-heading, .tech-heading, .ai-heading, .final-cta-heading, .web-dev-heading, .mobile-app-heading, .ai-services-heading, .ux-ui-heading, .ecommerce-heading, .digital-marketing-heading, .erp-heading, .blockchain-heading, .retail-heading, .manufacturing-heading, .real-estate-heading, .bfsi-heading, .hospitality-heading, .healthcare-heading, .logistics-heading, .automotive-heading, .techstack-closing-heading, .about-relyco-heading'
   );
 
   headings.forEach((heading) => {
