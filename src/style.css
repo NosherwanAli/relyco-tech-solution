@@ -15,6 +15,15 @@ body {
   background: #000000;
 }
 
+/* ---------- Global page-loading transition ----------
+   The .page-loader/.page-loader-spinner rules live in an inline
+   <style> block in each page's <head> instead of here, on purpose:
+   this bundled stylesheet only becomes active once the JS module at
+   the bottom of <body> runs, which is too late to prevent an
+   unstyled flash on first paint. The inline copy is active the
+   instant the browser starts parsing <head>, before any content
+   renders. See initPageLoader() in animations.js for the show/hide
+   logic, and keep both copies in sync if this ever needs to change. */
 .eyebrow-icon {
   width: 17px;
   height: 17px;
@@ -4895,7 +4904,7 @@ button:focus-visible {
   }
 
   .contact-hero-title {
-    font-size: 30px;
+    font-size: 48px;
   }
 
   .contact-hero-desc {

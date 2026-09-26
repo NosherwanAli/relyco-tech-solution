@@ -256,15 +256,20 @@ function initRevealObserver() {
       every page (including ones not built yet).
    ---------------------------------------------------------------- */
 
+// Shared with initPageLoader() below, so both compare paths the same way
+// (e.g. "/contact" and "/contact/" and "/contact/index.html" all match).
+function normalizePath(path) {
+  return path.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+}
+
 function initActiveNav() {
-  const normalize = (path) => path.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
-  const currentPath = normalize(window.location.pathname);
+  const currentPath = normalizePath(window.location.pathname);
 
   document.querySelectorAll('.nav-links a[href]').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href === '#') return;
 
-    link.classList.toggle('active', normalize(href) === currentPath);
+    link.classList.toggle('active', normalizePath(href) === currentPath);
   });
 }
 
@@ -304,6 +309,59 @@ function initNavToggle() {
 }
 
 /* ----------------------------------------------------------------
+   7. Global page-loading transition - a full-screen overlay shown by
+      default (in the HTML/CSS, so it's already visible the instant a
+      page starts rendering, before any JS runs) and hidden once this
+      page has finished loading. Clicking a qualifying internal link
+      re-shows it immediately, right before the browser's normal,
+      unmodified navigation takes over - no preventDefault/manual
+      routing involved, so it can never break a link.
+   ---------------------------------------------------------------- */
+
+function initPageLoader() {
+  const loader = document.querySelector('.page-loader');
+  if (!loader) return;
+
+  const hide = () => loader.classList.add('is-hidden');
+
+  if (document.readyState === 'complete') {
+    hide();
+  } else {
+    window.addEventListener('load', hide);
+  }
+
+  document.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#')) return;
+    if (/^(mailto:|tel:|javascript:)/i.test(href)) return;
+    if (link.target && link.target !== '_self') return;
+    if (link.hasAttribute('download')) return;
+
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (e) {
+      return;
+    }
+    if (url.origin !== window.location.origin) return;
+
+    // Same page, just jumping to a different section on it - no real
+    // navigation/reload happens, so the loader shouldn't show.
+    if (normalizePath(url.pathname) === normalizePath(window.location.pathname) && url.hash) {
+      return;
+    }
+
+    loader.classList.remove('is-hidden');
+  });
+}
+
+/* ----------------------------------------------------------------
    Init
    ---------------------------------------------------------------- */
 
@@ -314,6 +372,7 @@ export function initAnimations() {
   initRevealObserver();
   initActiveNav();
   initNavToggle();
+  initPageLoader();
 
   // Recalculate trigger positions once every asset (images, fonts) has
   // finished loading, since late-loading images can shift section heights.
