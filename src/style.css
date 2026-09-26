@@ -139,7 +139,10 @@ button:focus-visible {
 .techstack-hero-title,
 .techstack-hero-desc,
 .about-hero-title,
-.about-hero-desc {
+.about-hero-desc,
+.contact-hero-title,
+.contact-hero-desc,
+.contact-hero-visual {
   opacity: 0;
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -167,6 +170,10 @@ button:focus-visible {
 
 .about-hero-title { animation-delay: 0.32s; }
 .about-hero-desc { animation-delay: 0.5s; }
+
+.contact-hero-title { animation-delay: 0.32s; }
+.contact-hero-desc { animation-delay: 0.5s; }
+.contact-hero-visual { animation-delay: 0.3s; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -2577,6 +2584,245 @@ button:focus-visible {
   color: #e5e7eb;
 }
 
+/* ---------- Contact page: hero ---------- */
+.contact-hero {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  padding: 190px 80px 100px;
+}
+
+.contact-hero-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  max-width: 730px;
+  margin-top: 32px;
+}
+
+.contact-hero-title {
+  width: 730px;
+  max-width: 100%;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.contact-hero-desc {
+  margin-top: 56px;
+  width: 730px;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #e5e7eb;
+}
+
+.contact-hero-visual {
+  /* In normal flow (not absolutely positioned) so the section's own
+     top/bottom padding always gives it clearance from the fixed navbar
+     and a gap at the bottom - and so the section grows to fit the whole
+     image instead of clipping it. Width is capped against whatever space
+     is actually left beside the text column, so it can never overlap it
+     or overflow the viewport at narrower desktop widths. */
+  width: min(480px, calc(100% - 730px - 48px));
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 513 / 452;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ---------- Contact page: form section ---------- */
+.contact-form-section {
+  position: relative;
+  display: flex;
+  gap: 96px;
+  background: #000000;
+  padding: 100px 80px 140px;
+}
+
+.contact-form-info {
+  flex: 0 0 380px;
+  padding-right: 96px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-form-heading {
+  width: 502px;
+  max-width: 100%;
+  font-family: 'Helvetica Now Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.contact-form-desc {
+  margin-top: 32px;
+  width: 502px;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #e5e7eb;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-info-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contact-info-icon--email {
+  width: 25px;
+  height: 19px;
+}
+
+.contact-info-icon--location {
+  width: 20px;
+  height: 25px;
+}
+
+.contact-info-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-info-label {
+  width: 101px;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 23px;
+  letter-spacing: 1px;
+  color: #7a7a7a;
+}
+
+.contact-info-value {
+  width: 101px;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #e5e7eb;
+}
+
+.contact-info-item--location .contact-info-label,
+.contact-info-item--location .contact-info-value {
+  width: 72px;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.contact-form-row input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #131313;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6b6b6b;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 90, 31, 0.5);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 130px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.contact-form-submit {
+  margin-top: 6px;
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff7a1a, #ff2d6b);
+  color: #ffffff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.contact-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px 0 rgba(255, 45, 107, 0.28);
+  filter: brightness(1.06);
+}
+
+.contact-form-submit:active {
+  transform: translateY(0);
+}
+
 /* ---------- About page: "About Relyco" section ---------- */
 .about-relyco {
   position: relative;
@@ -3723,6 +3969,28 @@ button:focus-visible {
     font-size: 34px;
   }
 
+  /* Contact form section (Contact page) */
+  .contact-form-section {
+    flex-direction: column;
+    gap: 48px;
+    padding: 80px 40px 100px;
+  }
+
+  .contact-form-info {
+    flex: 1 1 auto;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 48px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .contact-form-heading {
+    width: 100%;
+    font-size: 40px;
+    line-height: 1.25;
+  }
+
   /* Our Approach (About page) */
   .about-approach {
     padding: 0 40px 100px;
@@ -4242,6 +4510,30 @@ button:focus-visible {
     line-height: 1.25;
   }
 
+  .contact-hero {
+    padding: 150px 40px 80px;
+  }
+
+  .contact-hero-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .contact-hero-content {
+    flex-shrink: 1;
+    max-width: 100%;
+  }
+
+  .contact-hero-title {
+    width: 100%;
+    font-size: 36px;
+  }
+
+  .contact-hero-visual {
+    width: min(480px, 100%);
+  }
+
   .techstack-categories {
     padding: 8px 40px 32px;
   }
@@ -4596,6 +4888,22 @@ button:focus-visible {
     font-size: 30px;
     line-height: 1.25;
     letter-spacing: -0.5px;
+  }
+
+  .contact-hero {
+    padding: 140px 24px 56px;
+  }
+
+  .contact-hero-title {
+    font-size: 30px;
+  }
+
+  .contact-hero-desc {
+    font-size: 15px;
+  }
+
+  .contact-hero-visual {
+    width: min(320px, 100%);
   }
 
   .about-hero-desc {
