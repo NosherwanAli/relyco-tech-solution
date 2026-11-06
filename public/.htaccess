@@ -1,0 +1,52 @@
+# Apache / LiteSpeed config for Namecheap shared hosting (public_html).
+# Serves the Vite multi-page build with clean URLs: /about, /solution, ...
+
+Options -Indexes
+DirectoryIndex index.html
+# Serve /about directly instead of 301-redirecting it to /about/
+DirectorySlash Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Leave /.well-known alone so SSL renewal domain validation still works
+  RewriteRule ^\.well-known/ - [L]
+
+  # Drop "www." (straight to https)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # /services is an alias for the Solutions page
+  RewriteRule ^services/?$ https://%{HTTP_HOST}/solution [L,R=301]
+
+  # Trailing slash -> clean URL (/about/ -> /about)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+  # Clean URL -> folder's index.html (/about -> /about/index.html)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+)$ /$1/index.html [L]
+</IfModule>
+
+ErrorDocument 404 /index.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
