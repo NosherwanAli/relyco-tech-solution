@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -54,17 +55,14 @@
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="solution-hero">
-
-    <div class="glow-ellipse"></div>
-    <div class="solution-glow-ellipse"></div>
-
+  <section class="ix-hero fh-hero" aria-labelledby="sol-hero-title">
     <header class="navbar">
       <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -72,7 +70,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -81,434 +84,609 @@
       </button>
     </header>
 
-    <div class="solution-hero-content">
-      <div class="hero-label">
-        <span class="label-line"></span>
-        <span class="label-text">SOLUTIONS</span>
-      </div>
-
-      <h1 class="solution-hero-title">
-        <span class="solution-hero-title-line">Technology Built Around Your <span class="gradient-text">Ambitions.</span></span>
-      </h1>
-
-      <p class="solution-hero-desc">
-        From AI-powered systems to scalable digital platforms, we build technology
-        solutions that help businesses move faster, operate smarter, and grow with confidence.
-      </p>
-
-      <div class="solution-scroll">
-        <span class="solution-scroll-btn">
-          <svg width="19" height="19" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 2.5v11M8 13.5 3 8.5M8 13.5l5-5" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="solution-scroll-label">SCROLL TO EXPLORE OUR SOLUTIONS</span>
-      </div>
-    </div>
-
-    <img class="solution-hero-visual" src="/imgs/ChatGPT Image Sep 14, 2026, 02_09_23 AM 1.png" alt="">
-
-  </section>
-
-  <section class="web-dev" id="web-dev">
-    <div class="web-dev-header reveal">
-      <span class="web-dev-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        WEB DEVELOPMENT
-      </span>
-      <span class="web-dev-counter">01</span>
-    </div>
-
-    <p class="web-dev-intro reveal">
-      We create fast, responsive, and scalable web experiences
-      that turn ideas into powerful digital products.
-    </p>
-
-    <div class="web-dev-body">
-      <div class="web-dev-content">
-        <h2 class="web-dev-heading">What We Offer Under Web Development Solutions:</h2>
-
-        <ul class="web-dev-list reveal">
-          <li>Custom Web Application Development</li>
-          <li>Corporate &amp; Enterprise Website Development</li>
-          <li>Landing Page Development</li>
-          <li>CMS Development (WordPress, Headless CMS, etc.)</li>
-          <li>Progressive Web Apps (PWAs)</li>
-          <li>Web Portal Development</li>
-          <li>eLearning and Educational Platforms</li>
-          <li>API Development and Integration</li>
-          <li>Website Optimization &amp; Redesign</li>
-        </ul>
-      </div>
-
-      <img class="web-dev-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_00_49 AM 1.png" alt="Web Development">
-    </div>
-  </section>
-
-  <section class="mobile-app" id="mobile-app">
-    <div class="mobile-app-header reveal">
-      <span class="mobile-app-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        MOBILE APP DEVELOPMENT
-      </span>
-      <span class="mobile-app-counter">02</span>
-    </div>
-
-    <div class="mobile-app-body">
-      <img class="mobile-app-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_06_26 AM 1.png" alt="Mobile App Development">
-
-      <div class="mobile-app-content">
-        <p class="mobile-app-intro reveal">
-          We build intuitive mobile applications that connect
-          businesses with their customers, teams, and services.
-        </p>
-
-        <h2 class="mobile-app-heading">What We Offer Under Mobile App Development Solutions:</h2>
-
-        <ul class="mobile-app-list reveal">
-          <li>Native Android App Development</li>
-          <li>Native iOS App Development</li>
-          <li>Cross-Platform App Development</li>
-          <li>Mobile App UI/UX Design</li>
-          <li>App Maintenance and Support</li>
-          <li>Enterprise Mobile Solutions</li>
-          <li>Ecommerce Mobile App Development</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="ai-services" id="ai-services">
-    <div class="ai-services-header reveal">
-      <span class="ai-services-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        AI SOLUTIONS
-      </span>
-      <span class="ai-services-counter">03</span>
-    </div>
-
-    <p class="ai-services-intro reveal">
-      We integrate AI into products and business workflows to
-      automate processes, unlock insights, and create smarter experiences.
-    </p>
-
-    <div class="ai-services-body">
-      <div class="ai-services-content">
-        <h2 class="ai-services-heading">What We Offer Under AI Solutions:</h2>
-
-        <ul class="ai-services-list reveal">
-          <li>AI-Powered Chatbots</li>
-          <li>Predictive Analytics Solutions</li>
-          <li>Natural Language Processing (NLP)</li>
-          <li>Computer Vision Solutions</li>
-          <li>AI Automation for Business</li>
-          <li>Machine Learning Integration</li>
-          <li>AI Consulting Services</li>
-        </ul>
-      </div>
-
-      <img class="ai-services-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_08_31 AM 1.png" alt="AI Solutions">
-    </div>
-  </section>
-
-  <section class="ux-ui" id="ux-ui">
-    <div class="ux-ui-header reveal">
-      <span class="ux-ui-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        UX UI DESIGN
-      </span>
-      <span class="ux-ui-counter">04</span>
-    </div>
-
-    <div class="ux-ui-body">
-      <img class="ux-ui-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_10_28 AM 1.png" alt="UX UI Design">
-
-      <div class="ux-ui-content">
-        <p class="ux-ui-intro reveal">
-          We design intuitive digital experiences that combine
-          thoughtful user experience with a strong, modern visual language.
-        </p>
-
-        <h2 class="ux-ui-heading">What We Offer Under UX UI Design Solutions:</h2>
-
-        <ul class="ux-ui-list reveal">
-          <li>User Interface (UI) Design</li>
-          <li>User Experience (UX) Design</li>
-          <li>Wireframing and Prototyping</li>
-          <li>Interaction Design</li>
-          <li>Mobile App UI/UX Design</li>
-          <li>Web UI/UX Design</li>
-          <li>Usability Testing</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="ecommerce" id="ecommerce">
-    <div class="ecommerce-header reveal">
-      <span class="ecommerce-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        ECOMMERCE DEVELOPMENT
-      </span>
-      <span class="ecommerce-counter">05</span>
-    </div>
-
-    <p class="ecommerce-intro reveal">
-      We create seamless eCommerce experiences that help businesses
-      sell smarter and create better customer journeys.
-    </p>
-
-    <div class="ecommerce-body">
-      <div class="ecommerce-content">
-        <h2 class="ecommerce-heading">What We Offer Under eCommerce Development Solutions:</h2>
-
-        <ul class="ecommerce-list reveal">
-          <li>Custom Ecommerce Website Development</li>
-          <li>Ecommerce Platform Integration</li>
-          <li>Payment Gateway Integration</li>
-          <li>Multi-Vendor Marketplace Development</li>
-          <li>Ecommerce App Development</li>
-          <li>Ecommerce SEO Services</li>
-          <li>Ecommerce Analytics and Reporting</li>
-        </ul>
-      </div>
-
-      <img class="ecommerce-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_11_10 AM 1.png" alt="eCommerce Development">
-    </div>
-  </section>
-
-  <section class="digital-marketing" id="digital-marketing">
-    <div class="digital-marketing-header reveal">
-      <span class="digital-marketing-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        DIGITAL MARKETING
-      </span>
-      <span class="digital-marketing-counter">06</span>
-    </div>
-
-    <div class="digital-marketing-body">
-      <img class="digital-marketing-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 07_29_37 PM 1.png" alt="Digital Marketing">
-
-      <div class="digital-marketing-content">
-        <p class="digital-marketing-intro reveal">
-          We build custom software when existing tools aren't enough&mdash;giving
-          your business technology that fits its unique needs.
-        </p>
-
-        <h2 class="digital-marketing-heading">What We Offer Under Digital Marketing Solutions:</h2>
-
-        <ul class="digital-marketing-list reveal">
-          <li>Search Engine Optimization (SEO)</li>
-          <li>Pay-Per-Click Advertising (PPC)</li>
-          <li>Social Media Marketing (SMM)</li>
-          <li>Content Marketing</li>
-          <li>Email Marketing</li>
-          <li>Conversion Rate Optimization (CRO)</li>
-          <li>Online Reputation Management (ORM)</li>
-          <li>Influencer Marketing</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="erp" id="erp">
-    <div class="erp-header reveal">
-      <span class="erp-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        CUSTOM ERP SOLUTIONS
-      </span>
-      <span class="erp-counter">07</span>
-    </div>
-
-    <p class="erp-intro reveal">
-      We build connected business systems that bring operations, teams,
-      and data together for greater efficiency and visibility.
-    </p>
-
-    <div class="erp-body">
-      <div class="erp-content">
-        <h2 class="erp-heading">What We Offer Under Custom ERP Solutions:</h2>
-
-        <ul class="erp-list reveal">
-          <li>Financial Management Systems</li>
-          <li>Inventory and Supply Chain Management</li>
-          <li>Customer Relationship Management (CRM)</li>
-          <li>Human Resource Management (HRM)</li>
-          <li>Business Intelligence and Analytics</li>
-          <li>Custom ERP Development</li>
-          <li>Cloud-Based ERP Solutions</li>
-        </ul>
-      </div>
-
-      <img class="erp-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 03_11_10 AM 1 (1).png" alt="Custom ERP Solutions">
-    </div>
-  </section>
-
-  <section class="blockchain" id="blockchain">
-    <div class="blockchain-header reveal">
-      <span class="blockchain-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        BLOCKCHAIN DEVELOPMENT
-      </span>
-      <span class="blockchain-counter">08</span>
-    </div>
-
-    <div class="blockchain-body">
-      <img class="blockchain-image reveal" src="/imgs/ChatGPT Image Sep 14, 2026, 07_29_37 PM 1 (1).png" alt="Blockchain Development">
-
-      <div class="blockchain-content">
-        <p class="blockchain-intro reveal">
-          We build scalable blockchain solutions that bring
-          transparency, security, and trust to modern businesses.
-        </p>
-
-        <h2 class="blockchain-heading">What We Offer Under Blockchain Development Solutions:</h2>
-
-        <ul class="blockchain-list reveal">
-          <li>Custom Blockchain Development</li>
-          <li>Smart Contract Development</li>
-          <li>Decentralized Applications (dApps)</li>
-          <li>Tokenization and Cryptocurrency Development</li>
-          <li>Blockchain Consulting Services</li>
-          <li>Conversion Rate Optimization (CRO)</li>
-          <li>Blockchain Wallet Development</li>
-          <li>NFT Development and Marketplace Solutions</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="tech-stack" id="tech-stack">
-    <div class="tech-header reveal">
-      <span class="tech-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        TECHNOLOGY STACK
-      </span>
-    </div>
-
-    <h2 class="tech-heading">
-      The tools change.<br>
-      The thinking doesn't.
-    </h2>
-
-    <p class="tech-intro reveal">
-      We use modern technologies to build products that are fast, reliable, secure, and ready to scale.
-    </p>
-
-    <div class="tech-marquee-wrap reveal">
-      <div class="tech-marquee">
-        <div class="tech-track tech-track-1">
-          <div class="tech-badge"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></div>
-          <div class="tech-badge"><img src="/imgs/image 91.png" alt=""><span>Next.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 95.png" alt=""><span>Kubernetes</span></div>
-          <div class="tech-badge"><img src="/imgs/image 100.png" alt=""><span>Tensorflow</span></div>
-          <div class="tech-badge"><img src="/imgs/image 101.png" alt=""><span>Node.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 99.png" alt=""><span>Vercel</span></div>
-          <div class="tech-badge"><img src="/imgs/image 102.png" alt=""><span>MongoDB</span></div>
-          <div class="tech-badge"><img src="/imgs/image 97.png" alt=""><span>AWS</span></div>
-          <!-- duplicate set for seamless loop -->
-          <div class="tech-badge"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></div>
-          <div class="tech-badge"><img src="/imgs/image 91.png" alt=""><span>Next.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 95.png" alt=""><span>Kubernetes</span></div>
-          <div class="tech-badge"><img src="/imgs/image 100.png" alt=""><span>Tensorflow</span></div>
-          <div class="tech-badge"><img src="/imgs/image 101.png" alt=""><span>Node.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 99.png" alt=""><span>Vercel</span></div>
-          <div class="tech-badge"><img src="/imgs/image 102.png" alt=""><span>MongoDB</span></div>
-          <div class="tech-badge"><img src="/imgs/image 97.png" alt=""><span>AWS</span></div>
+    <div class="fh">
+      <div class="fh-copy">
+        <span class="fh-kicker">Relyco &middot; Solutions</span>
+        <h1 class="fh-title" id="sol-hero-title">Technology built<br>around your ambitions</h1>
+        <p class="fh-desc">From AI-powered systems to scalable digital platforms &mdash; solutions that help businesses move faster, operate smarter, and grow with confidence.</p>
+        <div class="fh-actions">
+          <a class="fh-btn fh-btn--solid" href="/contact">Start a Project</a>
+          <a class="fh-btn fh-btn--soft" href="#web-dev"><span><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M12 19l-6-6M12 19l6-6"/></svg></span>Explore Solutions</a>
         </div>
+      </div>
 
-        <div class="tech-track tech-track-2">
-          <div class="tech-badge"><img src="/imgs/image 104.png" alt=""><span>Shopify</span></div>
-          <div class="tech-badge"><img src="/imgs/image 92.png" alt=""><span>TypeScript</span></div>
-          <div class="tech-badge"><img src="/imgs/image 93.png" alt=""><span>TailwindCSS</span></div>
-          <div class="tech-badge"><img src="/imgs/image 98.png" alt=""><span>PostgreSQL</span></div>
-          <div class="tech-badge"><img src="/imgs/image 94.png" alt=""><span>Python</span></div>
-          <div class="tech-badge"><img src="/imgs/image 89.png" alt=""><span>Dockers</span></div>
-          <div class="tech-badge"><img src="/imgs/image 90.png" alt=""><span>React</span></div>
-          <div class="tech-badge"><img src="/imgs/image 103.png" alt=""><span>WordPress</span></div>
-          <!-- duplicate set for seamless loop -->
-          <div class="tech-badge"><img src="/imgs/image 104.png" alt=""><span>Shopify</span></div>
-          <div class="tech-badge"><img src="/imgs/image 92.png" alt=""><span>TypeScript</span></div>
-          <div class="tech-badge"><img src="/imgs/image 93.png" alt=""><span>TailwindCSS</span></div>
-          <div class="tech-badge"><img src="/imgs/image 98.png" alt=""><span>PostgreSQL</span></div>
-          <div class="tech-badge"><img src="/imgs/image 94.png" alt=""><span>Python</span></div>
-          <div class="tech-badge"><img src="/imgs/image 89.png" alt=""><span>Dockers</span></div>
-          <div class="tech-badge"><img src="/imgs/image 90.png" alt=""><span>React</span></div>
-          <div class="tech-badge"><img src="/imgs/image 103.png" alt=""><span>WordPress</span></div>
+      <!-- 3D coil of glossy slabs on a white wave (same as the home hero, heroCoil.js) -->
+      <div class="nx-stage fh-stage" aria-hidden="true">
+        <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+        </svg>
+        <div class="nx-coil"></div>
+      </div>
+
+      <div class="fh-grid">
+        <div class="fh-col fh-col--1">
+        <article class="fh-card fh-card--stat fh-tab-l">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <strong class="fh-stat">8</strong>
+          <p class="fh-stat-text">Solutions &mdash; web, mobile, AI, UX/UI, eCommerce, digital marketing, ERP and blockchain.</p>
+          <a class="fh-bar" href="#web-dev"><span>Explore solutions</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--ink" href="#web-dev">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/></svg></span>
+          <b>Built around<br>your ambitions</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--2">
+        <a class="fh-card fh-card--img fh-tab-r" href="#web-dev">
+          <img src="/imgs/photos/solution-web.jpg" alt="Web development by Relyco" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Web Development</span>
+          <b class="fh-img-title">Websites built<br>to perform</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--3">
+        <article class="fh-card fh-card--join">
+          <b class="fh-join-title">Move faster, operate smarter, grow with confidence.</b>
+          <a class="fh-bar fh-bar--dark" href="/contact"><span>Start a Project</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        </div>
+        <div class="fh-col fh-col--4">
+        <a class="fh-card fh-card--img fh-tab-l" href="#ai-services">
+          <img src="/imgs/photos/solution-ai.jpg" alt="AI solutions by Relyco" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">AI Solutions</span>
+          <b class="fh-img-title">Intelligent systems<br>that scale</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--5">
+        <article class="fh-card fh-card--accent fh-tab-r">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <img src="/imgs/photos/solution-uxui.jpg" alt="" loading="eager">
+          <a class="fh-bar fh-bar--dark" href="#ux-ui"><span>Explore more</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--deep" href="/tech-stack">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+          <b>The tools change.<br>The thinking doesn&rsquo;t.</b>
+        </a>
         </div>
       </div>
     </div>
-
-    <a class="tech-cta reveal" href="#">
-      Explore Technology
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
   </section>
 
-  <section class="cta-banner">
-    <div class="cta-banner-card">
-      <img class="final-cta-bg" src="/imgs/16b61f85c62accd0a378bbfe1aecbbfaa83d0df6.png" alt="">
+  <section class="ix-statement" aria-label="Overview">
+    <div>
+      <h2 class="ix-statement-lead ix-scrub">From AI-powered systems to scalable digital platforms.</h2>
+    </div>
+    <blockquote class="ix-statement-quote">
+      <p>We build technology solutions that help businesses move faster, operate smarter, and grow with confidence.</p>
+      <cite>Relyco Tech Solutions</cite>
+    </blockquote>
+  </section>
 
-      <div class="final-cta-content">
-        <span class="final-cta-eyebrow reveal">READY TO BUILD?</span>
-        <h2 class="cta-banner-heading">Let&rsquo;s build what&rsquo;s next.</h2>
-        <a class="final-cta-button reveal" href="#">
-          Start a Conversation
+  <section class="ix-explain sg sg--rows" aria-labelledby="sol-explain-title">
+    <span class="sg-eyebrow">Our solutions</span>
+    <div class="sg-head">
+      <h2 class="sg-display-title" id="sol-explain-title">Technology built<br>to move you forward.</h2>
+      <p class="sg-lead">Eight solutions, one team. Most projects combine two or three of these. Start with the one that matches where you are; on the first call we&rsquo;ll tell you which ones you can skip.</p>
+    </div>
+    <div class="sg-grid">
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">01</span><span class="sg-tag">Web apps</span><span class="sg-tag">CMS</span><span class="sg-tag">PWA</span></div>
+        <a class="sg-media" href="#web-dev" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-web.jpg" alt="A laptop showing code on a bright, tidy desk" loading="lazy"></a>
+        <h3 class="sg-title">Web Development</h3>
+        <p class="sg-desc">Fast, responsive and scalable web experiences that turn ideas into powerful digital products.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#web-dev" aria-label="View Web Development"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">02</span><span class="sg-tag">iOS</span><span class="sg-tag">Android</span><span class="sg-tag">Cross-platform</span></div>
+        <a class="sg-media" href="#mobile-app" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-mobile.jpg" alt="A hand holding a smartphone with app icons" loading="lazy"></a>
+        <h3 class="sg-title">Mobile Apps</h3>
+        <p class="sg-desc">Intuitive mobile apps that connect businesses with their customers, teams and services.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#mobile-app" aria-label="View Mobile Apps"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">03</span><span class="sg-tag">Chatbots</span><span class="sg-tag">NLP</span><span class="sg-tag">Machine learning</span></div>
+        <a class="sg-media" href="#ai-services" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-ai.jpg" alt="A woman presenting ideas on a large screen" loading="lazy"></a>
+        <h3 class="sg-title">AI Solutions</h3>
+        <p class="sg-desc">AI built into your products and workflows to automate processes and unlock insights.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#ai-services" aria-label="View AI Solutions"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">04</span><span class="sg-tag">Research</span><span class="sg-tag">UX</span><span class="sg-tag">UI</span></div>
+        <a class="sg-media" href="#ux-ui" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-uxui.jpg" alt="Colour swatches and design samples on a desk" loading="lazy"></a>
+        <h3 class="sg-title">UX UI Design</h3>
+        <p class="sg-desc">Intuitive digital experiences that pair thoughtful UX with a strong, modern visual language.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#ux-ui" aria-label="View UX UI Design"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">05</span><span class="sg-tag">Storefronts</span><span class="sg-tag">Payments</span><span class="sg-tag">Marketplaces</span></div>
+        <a class="sg-media" href="#ecommerce" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-ecommerce.jpg" alt="Shopping bags on a dark background" loading="lazy"></a>
+        <h3 class="sg-title">eCommerce</h3>
+        <p class="sg-desc">Seamless online stores that help businesses sell smarter and build better customer journeys.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#ecommerce" aria-label="View eCommerce"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">06</span><span class="sg-tag">SEO</span><span class="sg-tag">PPC</span><span class="sg-tag">Social</span></div>
+        <a class="sg-media" href="#digital-marketing" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-marketing.jpg" alt="A screen showing marketing analytics charts" loading="lazy"></a>
+        <h3 class="sg-title">Digital Marketing</h3>
+        <p class="sg-desc">Search, paid, social and content marketing that brings the right visitors and turns them into customers.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#digital-marketing" aria-label="View Digital Marketing"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">07</span><span class="sg-tag">Finance</span><span class="sg-tag">CRM</span><span class="sg-tag">Inventory</span></div>
+        <a class="sg-media" href="#erp" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-erp.jpg" alt="A laptop showing a dashboard with charts" loading="lazy"></a>
+        <h3 class="sg-title">Custom ERP</h3>
+        <p class="sg-desc">Connected business systems that bring operations, teams and data together in one place.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#erp" aria-label="View Custom ERP"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+      <article class="sg-card">
+        <div class="sg-meta"><span class="sg-num">08</span><span class="sg-tag">Smart contracts</span><span class="sg-tag">dApps</span><span class="sg-tag">Wallets</span></div>
+        <a class="sg-media" href="#blockchain" tabindex="-1" aria-hidden="true"><img src="/imgs/photos/solution-blockchain.jpg" alt="A laptop screen full of code in a dark room" loading="lazy"></a>
+        <h3 class="sg-title">Blockchain</h3>
+        <p class="sg-desc">Scalable blockchain solutions that bring transparency, security and trust to modern businesses.</p>
+        <div class="sg-foot">
+          <a class="sg-go" href="#blockchain" aria-label="View Blockchain"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="tool-orbit" aria-labelledby="tool-orbit-title">
+    <div class="tool-orbit-copy">
+      <span class="tool-orbit-eyebrow">Connected by possibility</span>
+      <h2 id="tool-orbit-title">The right tools.<br>Working together.</h2>
+      <p class="tool-orbit-intro">Modern technology, brought together around your business. Explore the tools behind the experiences we build.</p>
+      <div class="tool-orbit-selection" aria-live="polite">
+        <h3 id="tool-orbit-name">React</h3>
+        <p id="tool-orbit-description">Responsive interfaces and reusable components for fast, intuitive digital products.</p>
+      </div>
+      <a class="tool-orbit-cta" href="/contact">Build with us <span aria-hidden="true">&rarr;</span></a>
+      <p class="tool-orbit-hint">Select a tool, or tap the sphere to change its color.</p>
+    </div>
+    <div class="tool-orbit-stage">
+      <div class="tool-orbit-ring" aria-hidden="true"></div>
+      <button class="tool-orbit-sphere" type="button" aria-label="Change animated sphere color">
+        <span class="tool-orbit-flow" aria-hidden="true"></span>
+        <span class="tool-orbit-shine" aria-hidden="true"></span>
+      </button>
+      <div class="tool-orbit-tools" role="group" aria-label="Explore our technology tools">
+        <button type="button" class="tool-orbit-tool" style="--x:50%;--y:6%" data-tool="react" aria-pressed="true"><img src="/imgs/image 109 (1).png" alt=""><span>React</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:81%;--y:19%" data-tool="python" aria-pressed="false"><img src="/imgs/image 108 (1).png" alt=""><span>Python</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:94%;--y:50%" data-tool="openai" aria-pressed="false"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:81%;--y:81%" data-tool="aws" aria-pressed="false"><img src="/imgs/image 97.png" alt=""><span>AWS</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:50%;--y:94%" data-tool="fastapi" aria-pressed="false"><img src="/imgs/image 93.png" alt=""><span>FastAPI</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:19%;--y:81%" data-tool="javascript" aria-pressed="false"><img src="/imgs/image 107.png" alt=""><span>JavaScript</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:6%;--y:50%" data-tool="html" aria-pressed="false"><img src="/imgs/image 105.png" alt=""><span>HTML5</span></button>
+        <button type="button" class="tool-orbit-tool" style="--x:19%;--y:19%" data-tool="bootstrap" aria-pressed="false"><img src="/imgs/image 110.png" alt=""><span>Bootstrap</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--orange" id="web-dev" aria-labelledby="web-dev-title">
+    <div class="ix-band ix-ind-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-web.jpg" alt="Web Development by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">01 / 08 &middot; Web Development</span>
+        <h2 class="ix-ind-title" id="web-dev-title">Web Development.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We create fast, responsive, and scalable web experiences that turn ideas into powerful digital products.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under Web Development Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Custom Web Application Development</li>
+            <li>Corporate &amp; Enterprise Website Development</li>
+            <li>Landing Page Development</li>
+            <li>CMS Development (WordPress, Headless CMS, etc.)</li>
+            <li>Progressive Web Apps (PWAs)</li>
+            <li>Web Portal Development</li>
+            <li>eLearning and Educational Platforms</li>
+            <li>API Development and Integration</li>
+            <li>Website Optimization &amp; Redesign</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Web Development project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--cream" id="mobile-app" aria-labelledby="mobile-app-title">
+    <div class="ix-ind-panel">
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-mobile.jpg" alt="Mobile App Development by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">02 / 08 &middot; Mobile Apps</span>
+        <h2 class="ix-ind-title" id="mobile-app-title">Mobile App Development.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We build intuitive mobile applications that connect businesses with their customers, teams, and services.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under Mobile App Development Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Native Android App Development</li>
+            <li>Native iOS App Development</li>
+            <li>Cross-Platform App Development</li>
+            <li>Mobile App UI/UX Design</li>
+            <li>App Maintenance and Support</li>
+            <li>Enterprise Mobile Solutions</li>
+            <li>Ecommerce Mobile App Development</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Mobile Apps project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--orange" id="ai-services" aria-labelledby="ai-services-title">
+    <div class="ix-band ix-ind-panel ix-ind-panel--flip">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-ai.jpg" alt="AI Solutions by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">03 / 08 &middot; AI Solutions</span>
+        <h2 class="ix-ind-title" id="ai-services-title">AI Solutions.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We integrate AI into products and business workflows to automate processes, unlock insights, and create smarter experiences.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under AI Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>AI-Powered Chatbots</li>
+            <li>Predictive Analytics Solutions</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>Computer Vision Solutions</li>
+            <li>AI Automation for Business</li>
+            <li>Machine Learning Integration</li>
+            <li>AI Consulting Services</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss an AI Solutions project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--cream" id="ux-ui" aria-labelledby="ux-ui-title">
+    <div class="ix-ind-panel ix-ind-panel--flip">
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-uxui.jpg" alt="UX UI Design by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">04 / 08 &middot; UX UI Design</span>
+        <h2 class="ix-ind-title" id="ux-ui-title">UX UI Design.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We design intuitive digital experiences that combine thoughtful user experience with a strong, modern visual language.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under UX UI Design Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>User Interface (UI) Design</li>
+            <li>User Experience (UX) Design</li>
+            <li>Wireframing and Prototyping</li>
+            <li>Interaction Design</li>
+            <li>Mobile App UI/UX Design</li>
+            <li>Web UI/UX Design</li>
+            <li>Usability Testing</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss an UX UI Design project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--orange" id="ecommerce" aria-labelledby="ecommerce-title">
+    <div class="ix-band ix-ind-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-ecommerce.jpg" alt="eCommerce Development by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">05 / 08 &middot; eCommerce</span>
+        <h2 class="ix-ind-title" id="ecommerce-title">eCommerce Development.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We create seamless eCommerce experiences that help businesses sell smarter and create better customer journeys.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under eCommerce Development Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Custom Ecommerce Website Development</li>
+            <li>Ecommerce Platform Integration</li>
+            <li>Payment Gateway Integration</li>
+            <li>Multi-Vendor Marketplace Development</li>
+            <li>Ecommerce App Development</li>
+            <li>Ecommerce SEO Services</li>
+            <li>Ecommerce Analytics and Reporting</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss an eCommerce project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--cream" id="digital-marketing" aria-labelledby="digital-marketing-title">
+    <div class="ix-ind-panel">
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-marketing.jpg" alt="Digital Marketing by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">06 / 08 &middot; Digital Marketing</span>
+        <h2 class="ix-ind-title" id="digital-marketing-title">Digital Marketing.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We build custom software when existing tools aren't enough&mdash;giving your business technology that fits its unique needs.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under Digital Marketing Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Pay-Per-Click Advertising (PPC)</li>
+            <li>Social Media Marketing (SMM)</li>
+            <li>Content Marketing</li>
+            <li>Email Marketing</li>
+            <li>Conversion Rate Optimization (CRO)</li>
+            <li>Online Reputation Management (ORM)</li>
+            <li>Influencer Marketing</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Digital Marketing project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--orange" id="erp" aria-labelledby="erp-title">
+    <div class="ix-band ix-ind-panel ix-ind-panel--flip">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-erp.jpg" alt="Custom ERP Solutions by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">07 / 08 &middot; Custom ERP</span>
+        <h2 class="ix-ind-title" id="erp-title">Custom ERP Solutions.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We build connected business systems that bring operations, teams, and data together for greater efficiency and visibility.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under Custom ERP Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Financial Management Systems</li>
+            <li>Inventory and Supply Chain Management</li>
+            <li>Customer Relationship Management (CRM)</li>
+            <li>Human Resource Management (HRM)</li>
+            <li>Business Intelligence and Analytics</li>
+            <li>Custom ERP Development</li>
+            <li>Cloud-Based ERP Solutions</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Custom ERP project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-ind--cream" id="blockchain" aria-labelledby="blockchain-title">
+    <div class="ix-ind-panel ix-ind-panel--flip">
+      <figure class="ix-ind-media">
+        <img src="/imgs/photos/solution-blockchain.jpg" alt="Blockchain Development by Relyco" loading="lazy">
+      </figure>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">08 / 08 &middot; Blockchain</span>
+        <h2 class="ix-ind-title" id="blockchain-title">Blockchain Development.<br><span>Why Relyco?</span></h2>
+        <p class="ix-ind-intro">We build scalable blockchain solutions that bring transparency, security, and trust to modern businesses.</p>
+        <h3 class="ix-ind-list-title">What We Offer Under Blockchain Development Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Custom Blockchain Development</li>
+            <li>Smart Contract Development</li>
+            <li>Decentralized Applications (dApps)</li>
+            <li>Tokenization and Cryptocurrency Development</li>
+            <li>Blockchain Consulting Services</li>
+            <li>Conversion Rate Optimization (CRO)</li>
+            <li>Blockchain Wallet Development</li>
+            <li>NFT Development and Marketplace Solutions</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Blockchain project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-stack tech-stack--wave" id="tech-stack">
+    <div class="ts-frame">
+        <div class="ts-row ts-row--top" data-dir="1">
+          <ul class="ts-track" aria-label="Technologies, part 1">
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Html5"><img src="/imgs/image 105.png" alt="Html5" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Javascript"><img src="/imgs/image 107.png" alt="Javascript" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="React"><img src="/imgs/image 109 (1).png" alt="React" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Bootstrap"><img src="/imgs/image 110.png" alt="Bootstrap" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Next.js"><img src="/imgs/image 91.png" alt="Next.js" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Express.js"><img src="/imgs/express-js 1.png" alt="Express.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Python"><img src="/imgs/image 108 (1).png" alt="Python" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="FastAPI"><img src="/imgs/image 93.png" alt="FastAPI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Java"><img src="/imgs/image 113.png" alt="Java" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Laravel"><img src="/imgs/image 115.png" alt="Laravel" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Flutter"><img src="/imgs/image 117.png" alt="Flutter" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Swift"><img src="/imgs/image 118.png" alt="Swift" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="SwiftUI"><img src="/imgs/image 120.png" alt="SwiftUI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Android"><img src="/imgs/image 122.png" alt="Android" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="PostgreSQL"><img src="/imgs/image 98.png" alt="PostgreSQL" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="MongoDB"><img src="/imgs/image 102.png" alt="MongoDB" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Firebase"><img src="/imgs/image 104.png" alt="Firebase" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Sqlite"><img src="/imgs/image 127 (2).png" alt="Sqlite" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Elasticsearch"><img src="/imgs/image 129.png" alt="Elasticsearch" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Gemini"><img src="/imgs/image 130.png" alt="Gemini" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="TensorFlow"><img src="/imgs/image 132.png" alt="TensorFlow" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="LangChain"><img src="/imgs/image 134.png" alt="LangChain" class="is-wide" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="LlamaIndex"><img src="/imgs/image 136.png" alt="LlamaIndex" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="AWS"><img src="/imgs/image 97.png" alt="AWS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Google Cloud"><img src="/imgs/image 139.png" alt="Google Cloud" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Vercel"><img src="/imgs/image 99.png" alt="Vercel" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Dockers"><img src="/imgs/image 89.png" alt="Dockers" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="GitHub Actions"><img src="/imgs/image 142.png" alt="GitHub Actions" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Jenkins"><img src="/imgs/image 144.png" alt="Jenkins" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="Ansible"><img src="/imgs/image 146.png" alt="Ansible" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="RestAPI"><img src="/imgs/image 148.png" alt="RestAPI" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="WebSockets"><img src="/imgs/image 150.png" alt="WebSockets" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="JWT"><img src="/imgs/image 152.png" alt="JWT" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Google Maps API"><img src="/imgs/image 154.png" alt="Google Maps API" loading="lazy"></li>
+          </ul>
+        </div>
+
+      <div class="ts-center">
+        <span class="ts-eyebrow reveal"><span class="ts-eyebrow-dot" aria-hidden="true"></span>TECHNOLOGY STACK <i>04</i></span>
+
+        <h2 class="tech-heading">
+          The tools change.<br>
+          The thinking doesn't.
+        </h2>
+
+        <p class="tech-intro reveal">
+          We use modern technologies to build products that are fast, reliable, secure, and ready to scale.
+        </p>
+
+        <a class="tech-cta reveal" href="/tech-stack">
+          Explore Technology
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
+
+        <div class="ts-row ts-row--bottom" data-dir="-1">
+          <ul class="ts-track" aria-label="Technologies, part 2">
+            <li class="ts-tile" style="--tile: #FFF3E6" title="CSS3"><img src="/imgs/image 106.png" alt="CSS3" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Typescript"><img src="/imgs/image 108.png" alt="Typescript" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="TailwindCSS"><img src="/imgs/image 93 (2).png" alt="TailwindCSS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Angular"><img src="/imgs/image 111.png" alt="Angular" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Node.js"><img src="/imgs/image 105 (1).png" alt="Node.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Nest.js"><img src="/imgs/image 107 (1).png" alt="Nest.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Django"><img src="/imgs/image 109.png" alt="Django" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Flask"><img src="/imgs/image 112.png" alt="Flask" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Springboot"><img src="/imgs/image 114.png" alt="Springboot" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title=".Net"><img src="/imgs/image 116.png" alt=".Net" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="React Native"><img src="/imgs/image 109 (2).png" alt="React Native" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Kotlin"><img src="/imgs/image 119.png" alt="Kotlin" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Jetpack Compose"><img src="/imgs/image 121.png" alt="Jetpack Compose" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="iOS"><img src="/imgs/image 123.png" alt="iOS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="MySQL"><img src="/imgs/image 124.png" alt="MySQL" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Redis"><img src="/imgs/image 125.png" alt="Redis" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Supabase"><img src="/imgs/image 126.png" alt="Supabase" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="DynamoDB"><img src="/imgs/image 128.png" alt="DynamoDB" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="OpenAI"><img src="/imgs/openai-com-logo-dark 1.png" alt="OpenAI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Anthropic"><img src="/imgs/image 131.png" alt="Anthropic" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Huggingface"><img src="/imgs/image 133.png" alt="Huggingface" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="LangGraph"><img src="/imgs/image 135.png" alt="LangGraph" class="is-wide" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="OpenCV"><img src="/imgs/opencv.png" alt="OpenCV" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Microsoft Azure"><img src="/imgs/image 138.png" alt="Microsoft Azure" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Cloudflare"><img src="/imgs/image 140.png" alt="Cloudflare" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="DigitalOcean"><img src="/imgs/image 141.png" alt="DigitalOcean" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Kubernetes"><img src="/imgs/image 95.png" alt="Kubernetes" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Terraform"><img src="/imgs/image 143.png" alt="Terraform" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="GitLab CI/CD"><img src="/imgs/image 145.png" alt="GitLab CI/CD" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Nginx"><img src="/imgs/image 147.png" alt="Nginx" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="GraphQL"><img src="/imgs/image 149.png" alt="GraphQL" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="OAuth"><img src="/imgs/image 151.png" alt="OAuth" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Stripe"><img src="/imgs/image 153.png" alt="Stripe" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Twilio"><img src="/imgs/image 155.png" alt="Twilio" loading="lazy"></li>
+          </ul>
+        </div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      </span>
+
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
+
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
+        </p>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
+
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
+        </a>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/solution.js"></script>

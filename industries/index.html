@@ -10,7 +10,7 @@
        never get stuck behind that (render-blocking, external, and
        potentially slow) request. Active the instant <head> parses,
        well before the bundled stylesheet (loaded via a JS module at
-       the bottom of <body>) would otherwise apply, so there's no
+       the bottom of <body class="industries-page">) would otherwise apply, so there's no
        unstyled flash. */
     .page-loader {
       position: fixed;
@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -48,23 +49,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="industries-page">
 
   <div class="page-loader" aria-hidden="true">
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="industries-hero">
-
-    <div class="glow-ellipse"></div>
-    <div class="industries-glow-ellipse"></div>
-
+  <section class="ix-hero fh-hero" aria-labelledby="ix-hero-title">
     <header class="navbar">
       <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -72,7 +70,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -81,367 +84,366 @@
       </button>
     </header>
 
-    <div class="industries-hero-content">
-      <div class="hero-label">
-        <span class="label-line"></span>
-        <span class="label-text">INDUSTRIES</span>
+    <div class="fh">
+      <div class="fh-copy">
+        <span class="fh-kicker">Relyco &middot; Industries</span>
+        <h1 class="fh-title" id="ix-hero-title">Technology shaped<br>around your industry</h1>
+        <p class="fh-desc">Every industry has different challenges. We combine technology, design, and AI to create digital solutions that fit the way businesses operate.</p>
+        <div class="fh-actions">
+          <a class="fh-btn fh-btn--solid" href="/contact">Start a Project</a>
+          <a class="fh-btn fh-btn--soft" href="#retail"><span><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M12 19l-6-6M12 19l6-6"/></svg></span>Explore Industries</a>
+        </div>
       </div>
 
-      <h1 class="industries-hero-title">
-        <span class="industries-hero-title-line">Technology Shaped Around Your <span class="gradient-text">Industry.</span></span>
-      </h1>
+      <!-- 3D coil of glossy slabs on a white wave (same as the home hero, heroCoil.js) -->
+      <div class="nx-stage fh-stage" aria-hidden="true">
+        <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+        </svg>
+        <div class="nx-coil"></div>
+      </div>
 
-      <p class="industries-hero-desc">
-        Every industry has different challenges. We combine technology, design, and
-        AI to create digital solutions that fit the way businesses operate, serve their customers, and grow.
-      </p>
-
-      <div class="industries-scroll">
-        <span class="industries-scroll-btn">
-          <svg width="19" height="19" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 2.5v11M8 13.5 3 8.5M8 13.5l5-5" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="industries-scroll-label">SCROLL TO EXPLORE OUR INDUSTRIES</span>
+      <div class="fh-grid">
+        <div class="fh-col fh-col--1">
+        <article class="fh-card fh-card--stat fh-tab-l">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <strong class="fh-stat">8</strong>
+          <p class="fh-stat-text">Industries served &mdash; Retail, Manufacturing, Real Estate, BFSI, Hospitality, Healthcare, Logistics and Automotive.</p>
+          <a class="fh-bar" href="#retail"><span>Explore industries</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--ink" href="#retail">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/></svg></span>
+          <b>Built around<br>your sector</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--2">
+        <a class="fh-card fh-card--img fh-tab-r" href="#retail">
+          <img src="/imgs/photos/industry-retail.jpg" alt="Retail solutions by Relyco" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Retail</span>
+          <b class="fh-img-title">8 solutions for<br>smarter retail</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--3">
+        <article class="fh-card fh-card--join">
+          <b class="fh-join-title">Different industries. One technology partner.</b>
+          <a class="fh-bar fh-bar--dark" href="/contact"><span>Start a Project</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        </div>
+        <div class="fh-col fh-col--4">
+        <a class="fh-card fh-card--img fh-tab-l" href="#healthcare">
+          <img src="/imgs/photos/industry-healthcare.jpg" alt="Healthcare solutions by Relyco" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Healthcare</span>
+          <b class="fh-img-title">8 solutions for<br>modern healthcare</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--5">
+        <article class="fh-card fh-card--accent fh-tab-r">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <img src="/imgs/photos/industry-logistics.jpg" alt="" loading="eager">
+          <a class="fh-bar fh-bar--dark" href="#logistics"><span>Explore more</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--deep" href="/tech-stack">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+          <b>The tools change.<br>The thinking doesn&rsquo;t.</b>
+        </a>
+        </div>
       </div>
     </div>
-
-    <img class="industries-hero-visual" src="/imgs/Group 1707480385.png" alt="Industries Relyco Tech Solutions serves">
-
   </section>
 
-  <section class="retail" id="retail">
-    <div class="retail-header reveal">
-      <span class="retail-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        RETAIL
-      </span>
-      <span class="retail-counter">01</span>
-    </div>
+  <section class="ix-statement" aria-label="Our approach">
+    <h2 class="ix-statement-lead ix-scrub">Every industry has different challenges.</h2>
+    <blockquote class="ix-statement-quote">
+      <p>We combine technology, design, and AI to create digital solutions that fit the way businesses operate, serve their customers, and grow.</p>
+      <cite>Relyco Tech Solutions</cite>
+    </blockquote>
+  </section>
 
-    <p class="retail-intro reveal">
-      We build digital retail solutions that improve customer experiences,
-      streamline operations, and enable businesses to grow across channels.
-    </p>
+  <section class="industry-directory" id="industry-directory" aria-labelledby="industry-directory-title">
+    <div class="industry-directory-heading"><div><span class="industry-eyebrow">Find your industry</span><h2 id="industry-directory-title">Built around your sector.</h2></div><p>Every industry has different challenges. We combine technology, design, and AI so each solution fits how your business operates and serves its customers.</p></div>
+    <nav class="industry-directory-grid" aria-label="Industry solutions"><a class="industry-directory-card" href="#retail"><span class="industry-directory-top"><small>01</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-retail.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Retail</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#manufacturing"><span class="industry-directory-top"><small>02</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-manufacturing.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Manufacturing</span><span class="industry-directory-count">7 solutions</span></a>
+<a class="industry-directory-card" href="#real-estate"><span class="industry-directory-top"><small>03</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-real-estate.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Real Estate</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#bfsi"><span class="industry-directory-top"><small>04</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-bfsi.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">BFSI</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#hospitality"><span class="industry-directory-top"><small>05</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-hospitality.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Hospitality</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#healthcare"><span class="industry-directory-top"><small>06</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-healthcare.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Healthcare</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#logistics"><span class="industry-directory-top"><small>07</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-logistics.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Logistics</span><span class="industry-directory-count">8 solutions</span></a>
+<a class="industry-directory-card" href="#automotive"><span class="industry-directory-top"><small>08</small><span aria-hidden="true">&#8599;</span></span><img src="/imgs/photos/industry-automotive.jpg" alt="" loading="lazy" width="480" height="320"><span class="industry-directory-name">Automotive</span><span class="industry-directory-count">7 solutions</span></a>
+    </nav>
+    <div class="industry-process"><div><span>01</span><h3>Understand</h3><p>How your industry operates, serves customers and grows.</p></div><div><span>02</span><h3>Design</h3><p>Technology, design and AI shaped around it.</p></div><div><span>03</span><h3>Grow</h3><p>Solutions that scale with your business.</p></div></div>
+  </section>
 
-    <div class="retail-body">
-      <div class="retail-content">
-        <h2 class="retail-heading">What We Offer Under Retail Solutions:</h2>
-
-        <ul class="retail-list reveal">
-          <li>Point of Sale (POS) Systems</li>
-          <li>Inventory Management Software</li>
-          <li>Ecommerce Platform Development</li>
-          <li>Customer Relationship Management (CRM)</li>
-          <li>Retail Analytics Solutions</li>
-          <li>Omnichannel Integration</li>
-          <li>Mobile Retail Apps</li>
-          <li>Loyalty and Rewards Programs</li>
+  <section class="industry-expertise" aria-label="Industry solutions">
+  <details class="industry-accordion" name="industry-sectors" id="retail" open>
+    <summary><span class="industry-accordion-number">01 / 08</span><h2 id="retail-title">Retail</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-retail.jpg" alt="Retail solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We build digital retail solutions that improve customer experiences, streamline operations, and enable businesses to grow across channels.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Retail Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Point of Sale (POS) Systems</li>
+            <li>Inventory Management Software</li>
+            <li>Ecommerce Platform Development</li>
+            <li>Customer Relationship Management (CRM)</li>
+            <li>Retail Analytics Solutions</li>
+            <li>Omnichannel Integration</li>
+            <li>Mobile Retail Apps</li>
+            <li>Loyalty and Rewards Programs</li>
         </ul>
-      </div>
+        <a class="ix-ind-cta" href="/contact">Discuss a Retail project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
 
-      <img class="retail-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_18_12 AM 1.png" alt="Retail">
-    </div>
+  <details class="industry-accordion" name="industry-sectors" id="manufacturing">
+    <summary><span class="industry-accordion-number">02 / 08</span><h2 id="manufacturing-title">Manufacturing</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-manufacturing.jpg" alt="Manufacturing solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We develop connected solutions that help manufacturers improve processes, manage operations, and make better use of their data.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Manufacturing Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Production Planning and Scheduling Software</li>
+            <li>Inventory and Supply Chain Management Solutions</li>
+            <li>Quality Management Systems (QMS)</li>
+            <li>IoT-Powered Smart Manufacturing Solutions</li>
+            <li>Manufacturing Execution Systems (MES)</li>
+            <li>Industrial Automation Software</li>
+            <li>Energy Management Solutions</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Manufacturing project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="real-estate">
+    <summary><span class="industry-accordion-number">03 / 08</span><h2 id="real-estate-title">Real Estate</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-real-estate.jpg" alt="Real Estate solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We build digital platforms that simplify property management, connect stakeholders, and create better experiences for buyers, tenants, and teams.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Real Estate Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Real Estate Website Development</li>
+            <li>CRM Solutions for Real Estate</li>
+            <li>Real Estate Analytics Tools</li>
+            <li>Virtual Property Tours</li>
+            <li>Blockchain-Based Transaction Systems</li>
+            <li>Lease and Rent Management Solutions</li>
+            <li>Mobile Apps for Real Estate Agents</li>
+            <li>Automated Marketing Tools</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Real Estate project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="bfsi">
+    <summary><span class="industry-accordion-number">04 / 08</span><h2 id="bfsi-title">Banking, Financial Services &amp; Insurance</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-bfsi.jpg" alt="Banking, Financial Services &amp; Insurance solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We create reliable digital solutions that help financial organizations improve customer experiences, streamline operations, and manage information securely.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under BFSI Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Core Banking Solutions</li>
+            <li>Risk and Compliance Management Systems</li>
+            <li>Insurance Management Software</li>
+            <li>Blockchain-Based Financial Systems</li>
+            <li>Customer Relationship Management (CRM) for BFSI</li>
+            <li>Digital Payment Systems</li>
+            <li>Loan and Mortgage Management Software</li>
+            <li>Financial Analytics and Reporting Tools</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a BFSI project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="hospitality">
+    <summary><span class="industry-accordion-number">05 / 08</span><h2 id="hospitality-title">Hospitality</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-hospitality.jpg" alt="Hospitality solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We create digital solutions that help hospitality businesses deliver seamless guest experiences while making operations more efficient.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Hospitality Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Property Management Systems (PMS)</li>
+            <li>Online Booking Engines</li>
+            <li>Revenue Management Systems</li>
+            <li>Guest Feedback and Review Management</li>
+            <li>Housekeeping and Maintenance Solutions</li>
+            <li>Event and Banquet Management Software</li>
+            <li>Loyalty and Rewards Program Software</li>
+            <li>Mobile Applications for Guests</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Hospitality project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="healthcare">
+    <summary><span class="industry-accordion-number">06 / 08</span><h2 id="healthcare-title">Healthcare</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-healthcare.jpg" alt="Healthcare solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We develop secure and intuitive solutions that help healthcare organizations improve access, operations, communication, and patient experiences.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Healthcare Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Electronic Health Records (EHR) Systems</li>
+            <li>Telemedicine Platforms</li>
+            <li>Hospital Management Systems (HMS)</li>
+            <li>Patient Engagement Applications</li>
+            <li>Healthcare Analytics and Reporting</li>
+            <li>Medical Device Integration</li>
+            <li>Pharmacy Management Systems</li>
+            <li>AI-Powered Diagnosis and Predictive Tools</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Healthcare project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="logistics">
+    <summary><span class="industry-accordion-number">07 / 08</span><h2 id="logistics-title">Logistics</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-logistics.jpg" alt="Logistics solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We build technology that helps logistics businesses manage operations, track movement, connect systems, and improve efficiency.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Logistics Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Fleet Management Systems</li>
+            <li>Warehouse Management Software</li>
+            <li>Transportation Management Systems (TMS)</li>
+            <li>Supply Chain Visibility Solutions</li>
+            <li>Last-Mile Delivery Optimization Tools</li>
+            <li>AI-Powered Demand Forecasting</li>
+            <li>Logistics Mobile Applications</li>
+            <li>Blockchain for Secure Transactions</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss a Logistics project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
+
+  <details class="industry-accordion" name="industry-sectors" id="automotive">
+    <summary><span class="industry-accordion-number">08 / 08</span><h2 id="automotive-title">Automotive</h2><span class="industry-accordion-toggle" aria-hidden="true"></span></summary>
+    <div class="industry-accordion-content"><div class="industry-accordion-visual"><figure class="ix-ind-media">
+        <img src="/imgs/photos/industry-automotive.jpg" alt="Automotive solutions by Relyco" loading="lazy">
+      </figure></div><div class="industry-accordion-overview"><p class="ix-ind-intro">We create connected digital solutions that improve automotive operations, customer experiences, and the way businesses interact with their customers.</p></div><div class="industry-accordion-copy">
+        <h3 class="ix-ind-list-title">What We Offer Under Automotive Solutions</h3>
+        <ul class="ix-ind-list">
+            <li>Manufacturing Execution Systems (MES)</li>
+            <li>Automotive CRM Solutions</li>
+            <li>Connected Vehicle Platforms</li>
+            <li>Fleet Management Systems</li>
+            <li>AI-Powered Predictive Maintenance Tools</li>
+            <li>Dealer Management Systems (DMS)</li>
+            <li>Supply Chain Management Solutions</li>
+        </ul>
+        <a class="ix-ind-cta" href="/contact">Discuss an Automotive project<span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div></div>
+  </details>
   </section>
 
-  <section class="manufacturing" id="manufacturing">
-    <div class="manufacturing-header reveal">
-      <span class="manufacturing-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        MANUFACTURING
+
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
       </span>
-      <span class="manufacturing-counter">02</span>
-    </div>
 
-    <div class="manufacturing-body">
-      <img class="manufacturing-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_32_44 AM 1.png" alt="Manufacturing">
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
 
-      <div class="manufacturing-content">
-        <p class="manufacturing-intro reveal">
-          We develop connected solutions that help manufacturers improve
-          processes, manage operations, and make better use of their data.
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
         </p>
-
-        <h2 class="manufacturing-heading">What We Offer Under Manufacturing Solutions:</h2>
-
-        <ul class="manufacturing-list reveal">
-          <li>Production Planning and Scheduling Software</li>
-          <li>Inventory and Supply Chain Management Solutions</li>
-          <li>Quality Management Systems (QMS)</li>
-          <li>IoT-Powered Smart Manufacturing Solutions</li>
-          <li>Manufacturing Execution Systems (MES)</li>
-          <li>Industrial Automation Software</li>
-          <li>Energy Management Solutions</li>
-        </ul>
       </div>
+
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
     </div>
   </section>
 
-  <section class="real-estate" id="real-estate">
-    <div class="real-estate-header reveal">
-      <span class="real-estate-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        REAL ESTATE
-      </span>
-      <span class="real-estate-counter">03</span>
-    </div>
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
 
-    <p class="real-estate-intro reveal">
-      We build digital platforms that simplify property management, connect
-      stakeholders, and create better experiences for buyers, tenants, and teams.
-    </p>
-
-    <div class="real-estate-body">
-      <div class="real-estate-content">
-        <h2 class="real-estate-heading">What We Offer Under Real Estate Solutions:</h2>
-
-        <ul class="real-estate-list reveal">
-          <li>Real Estate Website Development</li>
-          <li>CRM Solutions for Real Estate</li>
-          <li>Real Estate Analytics Tools</li>
-          <li>Virtual Property Tours</li>
-          <li>Blockchain-Based Transaction Systems</li>
-          <li>Lease and Rent Management Solutions</li>
-          <li>Mobile Apps for Real Estate Agents</li>
-          <li>Automated Marketing Tools</li>
-        </ul>
-      </div>
-
-      <img class="real-estate-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_25_04 AM 1.png" alt="Real Estate">
-    </div>
-  </section>
-
-  <section class="bfsi" id="bfsi">
-    <div class="bfsi-header reveal">
-      <span class="bfsi-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        BANKING, FINANCIAL SERVICES &amp; INSURANCE
-      </span>
-      <span class="bfsi-counter">04</span>
-    </div>
-
-    <div class="bfsi-body">
-      <img class="bfsi-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_37_07 AM 1.png" alt="BFSI">
-
-      <div class="bfsi-content">
-        <p class="bfsi-intro reveal">
-          We create reliable digital solutions that help financial
-          organizations improve customer experiences, streamline operations, and manage information securely.
-        </p>
-
-        <h2 class="bfsi-heading">What We Offer Under BFSI Solutions:</h2>
-
-        <ul class="bfsi-list reveal">
-          <li>Core Banking Solutions</li>
-          <li>Risk and Compliance Management Systems</li>
-          <li>Insurance Management Software</li>
-          <li>Blockchain-Based Financial Systems</li>
-          <li>Customer Relationship Management (CRM) for BFSI</li>
-          <li>Digital Payment Systems</li>
-          <li>Loan and Mortgage Management Software</li>
-          <li>Financial Analytics and Reporting Tools</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="hospitality" id="hospitality">
-    <div class="hospitality-header reveal">
-      <span class="hospitality-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        HOSPITALITY
-      </span>
-      <span class="hospitality-counter">05</span>
-    </div>
-
-    <p class="hospitality-intro reveal">
-      We create digital solutions that help hospitality businesses deliver
-      seamless guest experiences while making operations more efficient.
-    </p>
-
-    <div class="hospitality-body">
-      <div class="hospitality-content">
-        <h2 class="hospitality-heading">What We Offer Under Hospitality Solutions:</h2>
-
-        <ul class="hospitality-list reveal">
-          <li>Property Management Systems (PMS)</li>
-          <li>Online Booking Engines</li>
-          <li>Revenue Management Systems</li>
-          <li>Guest Feedback and Review Management</li>
-          <li>Housekeeping and Maintenance Solutions</li>
-          <li>Event and Banquet Management Software</li>
-          <li>Loyalty and Rewards Program Software</li>
-          <li>Mobile Applications for Guests</li>
-        </ul>
-      </div>
-
-      <img class="hospitality-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_40_46 AM 1.png" alt="Hospitality">
-    </div>
-  </section>
-
-  <section class="healthcare" id="healthcare">
-    <div class="healthcare-header reveal">
-      <span class="healthcare-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        HEALTHCARE
-      </span>
-      <span class="healthcare-counter">06</span>
-    </div>
-
-    <div class="healthcare-body">
-      <img class="healthcare-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_26_58 AM 1.png" alt="Healthcare">
-
-      <div class="healthcare-content">
-        <p class="healthcare-intro reveal">
-          We develop secure and intuitive solutions that help healthcare
-          organizations improve access, operations, communication, and patient experiences.
-        </p>
-
-        <h2 class="healthcare-heading">What We Offer Under Healthcare Solutions:</h2>
-
-        <ul class="healthcare-list reveal">
-          <li>Electronic Health Records (EHR) Systems</li>
-          <li>Telemedicine Platforms</li>
-          <li>Hospital Management Systems (HMS)</li>
-          <li>Patient Engagement Applications</li>
-          <li>Healthcare Analytics and Reporting</li>
-          <li>Medical Device Integration</li>
-          <li>Pharmacy Management Systems</li>
-          <li>AI-Powered Diagnosis and Predictive Tools</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="logistics" id="logistics">
-    <div class="logistics-header reveal">
-      <span class="logistics-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        LOGISTICS
-      </span>
-      <span class="logistics-counter">07</span>
-    </div>
-
-    <p class="logistics-intro reveal">
-      We build technology that helps logistics businesses manage operations,
-      track movement, connect systems, and improve efficiency.
-    </p>
-
-    <div class="logistics-body">
-      <div class="logistics-content">
-        <h2 class="logistics-heading">What We Offer Under Logistics Solutions:</h2>
-
-        <ul class="logistics-list reveal">
-          <li>Fleet Management Systems</li>
-          <li>Warehouse Management Software</li>
-          <li>Transportation Management Systems (TMS)</li>
-          <li>Supply Chain Visibility Solutions</li>
-          <li>Last-Mile Delivery Optimization Tools</li>
-          <li>AI-Powered Demand Forecasting</li>
-          <li>Logistics Mobile Applications</li>
-          <li>Blockchain for Secure Transactions</li>
-        </ul>
-      </div>
-
-      <img class="logistics-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_27_12 AM 1.png" alt="Logistics">
-    </div>
-  </section>
-
-  <section class="automotive" id="automotive">
-    <div class="automotive-header reveal">
-      <span class="automotive-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        AUTOMOTIVE
-      </span>
-      <span class="automotive-counter">08</span>
-    </div>
-
-    <div class="automotive-body">
-      <img class="automotive-image reveal" src="/imgs/ChatGPT Image Sep 16, 2026, 01_29_56 AM 1.png" alt="Automotive">
-
-      <div class="automotive-content">
-        <p class="automotive-intro reveal">
-          We create connected digital solutions that improve automotive
-          operations, customer experiences, and the way businesses interact with their customers.
-        </p>
-
-        <h2 class="automotive-heading">What We Offer Under Automotive Solutions:</h2>
-
-        <ul class="automotive-list reveal">
-          <li>Manufacturing Execution Systems (MES)</li>
-          <li>Automotive CRM Solutions</li>
-          <li>Connected Vehicle Platforms</li>
-          <li>Fleet Management Systems</li>
-          <li>AI-Powered Predictive Maintenance Tools</li>
-          <li>Dealer Management Systems (DMS)</li>
-          <li>Supply Chain Management Solutions</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-banner">
-    <div class="cta-banner-card">
-      <img class="final-cta-bg" src="/imgs/16b61f85c62accd0a378bbfe1aecbbfaa83d0df6.png" alt="">
-
-      <div class="final-cta-content">
-        <span class="final-cta-eyebrow reveal">DIFFERENT INDUSTRIES.</span>
-        <h2 class="cta-banner-heading">One Technology Partner.</h2>
-        <a class="final-cta-button reveal" href="#">
-          Start a Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
         </a>
       </div>
+
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
+
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/industries.js"></script>

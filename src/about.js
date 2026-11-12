@@ -1,6 +1,4 @@
-import './style.css';
-import { initAnimations } from './animations.js';
+import { initInnerPage } from './innerPage.js';
+import './aboutEditorial.css';
 
-document.addEventListener('DOMContentLoaded', function () {
-  initAnimations();
-});
+initInnerPage();

@@ -33,12 +33,13 @@ export default defineConfig({
   root: '.',
   publicDir: 'public',
   appType: 'mpa',
-  plugins: [cleanUrlRedirect(['/solution', '/industries', '/tech-stack', '/about', '/contact'])],
+  plugins: [cleanUrlRedirect(['/services', '/solution', '/industries', '/tech-stack', '/about', '/contact'])],
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        services: resolve(__dirname, 'services/index.html'),
         solution: resolve(__dirname, 'solution/index.html'),
         industries: resolve(__dirname, 'industries/index.html'),
         techStack: resolve(__dirname, 'tech-stack/index.html'),

@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -48,20 +49,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="contact-page">
 
   <div class="page-loader" aria-hidden="true">
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="contact-hero">
-
+  <section class="ix-hero fh-hero" aria-labelledby="ct-hero-title">
     <header class="navbar">
       <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -69,7 +70,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -78,127 +84,301 @@
       </button>
     </header>
 
-    <div class="contact-hero-body">
-      <div class="contact-hero-content">
-        <h1 class="contact-hero-title">Let&rsquo;s start something<br>meaningful.</h1>
+    <div class="fh">
+      <div class="fh-copy">
+        <span class="fh-kicker">Contact Relyco</span>
+        <h1 class="fh-title" id="ct-hero-title">Let&rsquo;s start<br>something meaningful</h1>
+        <p class="fh-desc">Have an idea, a business challenge, or a product you want to build? Tell us what you&rsquo;re working on and let&rsquo;s explore what&rsquo;s possible.</p>
+        <div class="fh-actions">
+          <a class="fh-btn fh-btn--solid" href="#contact-form">Tell Us About Your Project</a>
+          <a class="fh-btn fh-btn--soft" href="mailto:info@relycoltd.com"><span><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></span>Email Us</a>
+        </div>
+      </div>
 
-        <p class="contact-hero-desc">
-          Have an idea, a business challenge, or a product you want to build? Tell us what you're working on and
-          let's explore what's possible.
+      <!-- 3D coil of glossy slabs on a white wave (same as the home hero, heroCoil.js) -->
+      <div class="nx-stage fh-stage" aria-hidden="true">
+        <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+        </svg>
+        <div class="nx-coil"></div>
+      </div>
+
+      <div class="fh-grid">
+        <div class="fh-col fh-col--1">
+        <article class="fh-card fh-card--stat fh-tab-l">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <strong class="fh-stat">@</strong>
+          <p class="fh-stat-text">info@relycoltd.com &mdash; whether you&rsquo;re starting from an idea or evolving an existing product.</p>
+          <a class="fh-bar" href="mailto:info@relycoltd.com"><span>Email us</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--ink" href="#contact-form">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <b>Based in<br>Saudi Arabia</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--2">
+        <a class="fh-card fh-card--img fh-tab-r" href="#contact-form">
+          <img src="/imgs/photos/contact-project.jpg" alt="" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Your project</span>
+          <b class="fh-img-title">Tell us what<br>you need</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--3">
+        <article class="fh-card fh-card--join">
+          <b class="fh-join-title">Have an idea? Let&rsquo;s talk.</b>
+          <a class="fh-bar fh-bar--dark" href="#contact-form"><span>Fill in the form</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        </div>
+        <div class="fh-col fh-col--4">
+        <a class="fh-card fh-card--img fh-tab-l" href="#contact-form">
+          <img src="/imgs/photos/team-developer.jpg" alt="The Relyco team" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Our team</span>
+          <b class="fh-img-title">Let&rsquo;s explore<br>what&rsquo;s possible</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--5">
+        <article class="fh-card fh-card--accent fh-tab-r">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <img src="/imgs/photos/team-workshop.jpg" alt="" loading="eager">
+          <a class="fh-bar fh-bar--dark" href="/solution"><span>Our services</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--deep" href="#contact-form">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg></span>
+          <b>Start a<br>conversation</b>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="contact-editorial">
+    <section class="contact-brief" id="contact-form" aria-labelledby="ct-form-title">
+      <div class="contact-brief-head">
+        <p class="contact-index">01 &mdash; Project brief</p>
+        <h2 id="ct-form-title">Share us<br>your brief.</h2>
+        <p class="contact-lede">Tell us what you&rsquo;re building, what needs to improve, and what a successful result should look like. We&rsquo;ll review the details and come back with the right next step.</p>
+      </div>
+
+      <div class="ix-form-card">
+        <form class="contact-form reveal" action="/send-enquiry.php" method="post">
+          <input class="contact-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label><span>Full name *</span><input type="text" name="name" autocomplete="name" required></label>
+          <label><span>Company name</span><input type="text" name="company" autocomplete="organization"></label>
+          <label><span>Email address *</span><input type="email" name="email" autocomplete="email" required></label>
+          <label><span>Phone number</span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label><span>Project type *</span>
+            <select name="service" required>
+              <option value="" selected disabled>Select a service</option>
+              <option>Web development</option>
+              <option>Mobile app development</option>
+              <option>AI solutions</option>
+              <option>UI/UX design</option>
+              <option>eCommerce development</option>
+              <option>Digital marketing</option>
+              <option>Custom ERP solutions</option>
+              <option>Blockchain development</option>
+            </select>
+          </label>
+          <label><span>Expected timeline</span>
+            <select name="timeline">
+              <option value="" selected disabled>Select a timeline</option>
+              <option>As soon as possible</option>
+              <option>1&ndash;3 months</option>
+              <option>3&ndash;6 months</option>
+              <option>6+ months</option>
+            </select>
+          </label>
+          <label class="contact-message"><span>Tell us about the project *</span><textarea name="message" rows="5" required></textarea></label>
+          <div class="contact-form-footer">
+            <p>By submitting this form, you agree that Relyco may contact you about your enquiry.</p>
+            <button type="submit" class="contact-form-submit">Send your brief <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-touch" aria-labelledby="contact-touch-title">
+      <div class="contact-touch-copy">
+        <p class="contact-index">02 &mdash; Direct contact</p>
+        <h2 id="contact-touch-title">Get<br>in touch.</h2>
+        <p>Prefer to start with a conversation? Reach our team directly and we&rsquo;ll connect you with the right specialist.</p>
+      </div>
+      <div class="contact-touch-details">
+        <article>
+          <span>Email</span>
+          <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+        </article>
+        <article>
+          <span>Office</span>
+          <strong>Saudi Arabia</strong>
+        </article>
+        <article>
+          <span>Availability</span>
+          <strong>Sunday &mdash; Thursday</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-office" aria-labelledby="contact-office-title">
+      <div class="contact-office-title">
+        <p class="contact-index">03 &mdash; Our office</p>
+        <h2 id="contact-office-title">Local insight.<br>Global capability.</h2>
+      </div>
+      <div class="contact-office-note">
+        <p>Based in Saudi Arabia, collaborating with ambitious organisations across industries and markets.</p>
+        <a href="mailto:info@relycoltd.com">Start a conversation <span aria-hidden="true">&nearr;</span></a>
+      </div>
+      <div class="contact-office-art" aria-hidden="true">
+        <span class="contact-office-orbit"></span>
+        <span class="contact-office-dot"></span>
+        <strong>R</strong>
+      </div>
+    </section>
+
+    <section class="contact-social" aria-labelledby="contact-social-title">
+      <div class="contact-social-copy">
+        <p class="contact-index">04 &mdash; Stay connected</p>
+        <h2 id="contact-social-title"><span>Get</span><span>Social</span><span>With Us.</span></h2>
+        <p>Follow the ideas, launches, and technology conversations shaping what we build next.</p>
+        <a class="contact-social-cta" href="#contact-form">Start a project <span aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="contact-social-visual">
+        <img src="/imgs/contact-social-phone.png" alt="A hand holding a smartphone" loading="lazy">
+        <div class="contact-social-icons" aria-label="Social platforms">
+          <a class="social-bubble social-bubble--instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-bubble social-bubble--linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10M5 5.5v.1M10 19V9m0 4.4c.8-2.8 6-3.2 6 1.2V19M16 12.2V9"/></svg>
+          </a>
+          <a class="social-bubble social-bubble--facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 20v-7h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6H18V3.8c-.5-.1-1.5-.2-2.6-.2-2.6 0-4.4 1.6-4.4 4.5V10H8v3h3v7" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-bubble social-bubble--x" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Open X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l14 16M19 4L5 20"/></svg>
+          </a>
+          <a class="social-bubble social-bubble--youtube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-4-1-5c-1-1-8-1-8-1s-7 0-8 1-1 5-1 5 0 4 1 5 8 1 8 1 7 0 8-1 1-5 1-5z"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-bubble social-bubble--tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a4.2 4.2 0 1 1-3.4-4.1M14 4c.6 2.7 2.2 4.2 5 4.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      </span>
+
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
+
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
         </p>
       </div>
 
-      <img class="contact-hero-visual" src="/imgs/ChatGPT Image Sep 17, 2026, 09_59_35 PM 1.png" alt="">
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
     </div>
-
   </section>
 
-  <section class="contact-form-section" id="contact-form">
-    <div class="contact-form-info">
-      <h2 class="contact-form-heading reveal">Tell us about<br>your project.</h2>
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
 
-      <p class="contact-form-desc">
-        Whether you're starting from an idea or evolving an<br>existing product, tell us what you need.
-      </p>
-
-      <div class="contact-info-list">
-        <div class="contact-info-item">
-          <img class="contact-info-icon contact-info-icon--email" src="/imgs/email.png" alt="">
-          <div>
-            <span class="contact-info-label">EMAIL</span>
-            <a class="contact-info-value" href="mailto:info@relycoltd.com" style="color:inherit;text-decoration:none">info@relycoltd.com</a>
-          </div>
-        </div>
-
-        <div class="contact-info-item contact-info-item--location">
-          <img class="contact-info-icon contact-info-icon--location" src="/imgs/location.png" alt="">
-          <div>
-            <span class="contact-info-label">LOCATION</span>
-            <span class="contact-info-value">Saudi Arabia</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <form class="contact-form reveal" action="/send-enquiry.php" method="post">
-      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-      <div class="contact-form-row">
-        <input type="text" name="firstName" placeholder="First Name*" required>
-        <input type="text" name="lastName" placeholder="Last Name*" required>
-      </div>
-
-      <input type="text" name="company" placeholder="Company">
-      <input type="text" name="service" placeholder="Service*" required>
-      <input type="email" name="email" placeholder="Email*" required>
-      <textarea name="message" placeholder="Message*" rows="5" required></textarea>
-
-      <button type="submit" class="contact-form-submit">Submit</button>
-      <p class="form-status" role="status" aria-live="polite" style="margin-top:12px;min-height:1.5em"></p>
-    </form>
-  </section>
-
-  <section class="cta-banner">
-    <div class="cta-banner-card">
-      <img class="final-cta-bg" src="/imgs/16b61f85c62accd0a378bbfe1aecbbfaa83d0df6.png" alt="">
-
-      <div class="final-cta-content">
-        <span class="final-cta-eyebrow reveal">HAVE AN IDEA?</span>
-        <h2 class="cta-banner-heading">Let&rsquo;s talk.</h2>
-        <a class="final-cta-button reveal" href="#">
-          Start a Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
         </a>
       </div>
+
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
+
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/contact.js"></script>

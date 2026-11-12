@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -54,14 +55,14 @@
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="techstack-hero">
-
+  <section class="ix-hero fh-hero" aria-labelledby="ts-hero-title">
     <header class="navbar">
       <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -69,7 +70,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -78,217 +84,370 @@
       </button>
     </header>
 
-    <span class="techstack-hero-eyebrow">Technology Stack</span>
+    <div class="fh">
+      <div class="fh-copy">
+        <span class="fh-kicker">Relyco &middot; Technology Stack</span>
+        <h1 class="fh-title" id="ts-hero-title">The technology<br>behind what we build</h1>
+        <p class="fh-desc">We use modern technologies and proven tools to build digital products that are scalable, secure, reliable, and ready to evolve.</p>
+        <div class="fh-actions">
+          <a class="fh-btn fh-btn--solid" href="/contact">Start a Conversation</a>
+          <a class="fh-btn fh-btn--soft" href="#frontend-development"><span><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M12 19l-6-6M12 19l6-6"/></svg></span>Explore the Stack</a>
+        </div>
+      </div>
 
-    <h1 class="techstack-hero-title">The technology behind what we&nbsp;build.</h1>
+      <!-- 3D coil of glossy slabs on a white wave (same as the home hero, heroCoil.js) -->
+      <div class="nx-stage fh-stage" aria-hidden="true">
+        <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+        </svg>
+        <div class="nx-coil"></div>
+      </div>
 
-    <p class="techstack-hero-desc">
-      We use modern technologies and proven tools to build digital products that are
-      scalable, secure, reliable, and ready to evolve.
-    </p>
-    <p class="techstack-hero-desc">
-      From web and mobile applications to AI-powered systems and connected business platforms,
-      we choose the right technology for every challenge.
-    </p>
-
+      <div class="fh-grid">
+        <div class="fh-col fh-col--1">
+        <article class="fh-card fh-card--stat fh-tab-l">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <strong class="fh-stat">68</strong>
+          <p class="fh-stat-text">Tools across 8 categories &mdash; from frontend and backend to AI, cloud, DevOps and integrations.</p>
+          <a class="fh-bar" href="#frontend-development"><span>Explore the stack</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--ink" href="#backend-development">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <b>Scalable, secure<br>&amp; reliable</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--2">
+        <a class="fh-card fh-card--logos fh-tab-r" href="#frontend-development">
+          <span class="fh-img-label">Frontend</span>
+          <span class="fh-logo-cloud"><i style="--i:0"><img src="/imgs/image 105.png" alt=""></i><i style="--i:1"><img src="/imgs/image 106.png" alt=""></i><i style="--i:2"><img src="/imgs/image 107.png" alt=""></i><i style="--i:3"><img src="/imgs/image 108.png" alt=""></i><i style="--i:4"><img src="/imgs/image 109 (1).png" alt=""></i><i style="--i:5"><img src="/imgs/image 93 (2).png" alt=""></i></span>
+          <b class="fh-img-title">9 tools for<br>modern interfaces</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--3">
+        <article class="fh-card fh-card--join">
+          <b class="fh-join-title">The right technology for the right challenge.</b>
+          <a class="fh-bar fh-bar--dark" href="/solution"><span>Explore Our Services</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        </div>
+        <div class="fh-col fh-col--4">
+        <a class="fh-card fh-card--logos fh-tab-l" href="#ai">
+          <span class="fh-img-label">AI</span>
+          <span class="fh-logo-cloud"><i style="--i:0" class="is-dark"><img src="/imgs/openai-com-logo-dark 1.png" alt=""></i><i style="--i:1"><img src="/imgs/image 130.png" alt=""></i><i style="--i:2"><img src="/imgs/image 131.png" alt=""></i><i style="--i:3"><img src="/imgs/image 132.png" alt=""></i><i style="--i:4"><img src="/imgs/image 133.png" alt=""></i><i style="--i:5"><img src="/imgs/image 134.png" alt=""></i></span>
+          <b class="fh-img-title">9 tools for<br>intelligent products</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--5">
+        <article class="fh-card fh-card--accent fh-tab-r">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <img src="/imgs/photos/tech-cloud.jpg" alt="" loading="eager">
+          <a class="fh-bar fh-bar--dark" href="#cloud"><span>Explore cloud</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--deep" href="#devops">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/></svg></span>
+          <b>Ready to<br>evolve</b>
+        </a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="techstack-categories">
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">Frontend Development</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 105.png" alt=""><span>Html5</span></div>
-        <div class="tech-badge"><img src="/imgs/image 106.png" alt=""><span>CSS3</span></div>
-        <div class="tech-badge"><img src="/imgs/image 107.png" alt=""><span>Javascript</span></div>
-        <div class="tech-badge"><img src="/imgs/image 108.png" alt=""><span>Typescript</span></div>
-        <div class="tech-badge"><img src="/imgs/image 109 (1).png" alt=""><span>React</span></div>
-        <div class="tech-badge"><img src="/imgs/image 93 (2).png" alt=""><span>TailwindCSS</span></div>
-        <div class="tech-badge"><img src="/imgs/image 110.png" alt=""><span>Bootstrap</span></div>
-        <div class="tech-badge"><img src="/imgs/image 111.png" alt=""><span>Angular</span></div>
-        <div class="tech-badge"><img src="/imgs/image 91.png" alt=""><span>Next.js</span></div>
-      </div>
+  <section class="ix-statement" aria-label="Overview">
+    <div>
+      <h2 class="ix-statement-lead ix-scrub">Modern technologies and proven tools.</h2>
     </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">Backend Development</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 105 (1).png" alt=""><span>Node.js</span></div>
-        <div class="tech-badge"><img src="/imgs/express-js 1.png" alt=""><span>Express.js</span></div>
-        <div class="tech-badge"><img src="/imgs/image 107 (1).png" alt=""><span>Nest.js</span></div>
-        <div class="tech-badge"><img src="/imgs/image 108 (1).png" alt=""><span>Python</span></div>
-        <div class="tech-badge"><img src="/imgs/image 109.png" alt=""><span>Django</span></div>
-        <div class="tech-badge"><img src="/imgs/image 93.png" alt=""><span>FastAPI</span></div>
-        <div class="tech-badge"><img src="/imgs/image 112.png" alt=""><span>Flask</span></div>
-        <div class="tech-badge"><img src="/imgs/image 113.png" alt=""><span>Java</span></div>
-        <div class="tech-badge"><img src="/imgs/image 114.png" alt=""><span>Springboot</span></div>
-        <div class="tech-badge"><img src="/imgs/image 115.png" alt=""><span>Laravel</span></div>
-        <div class="tech-badge"><img src="/imgs/image 116.png" alt=""><span>.Net</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">Mobile Development</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 117.png" alt=""><span>Flutter</span></div>
-        <div class="tech-badge"><img src="/imgs/image 109 (2).png" alt=""><span>React Native</span></div>
-        <div class="tech-badge"><img src="/imgs/image 118.png" alt=""><span>Swift</span></div>
-        <div class="tech-badge"><img src="/imgs/image 119.png" alt=""><span>Kotlin</span></div>
-        <div class="tech-badge"><img src="/imgs/image 120.png" alt=""><span>SwiftUI</span></div>
-        <div class="tech-badge"><img src="/imgs/image 121.png" alt=""><span>Jetpack Compose</span></div>
-        <div class="tech-badge"><img src="/imgs/image 122.png" alt=""><span>Android</span></div>
-        <div class="tech-badge"><img src="/imgs/image 123.png" alt=""><span>iOS</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">Database</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 98.png" alt=""><span>PostgreSQL</span></div>
-        <div class="tech-badge"><img src="/imgs/image 124.png" alt=""><span>MySQL</span></div>
-        <div class="tech-badge"><img src="/imgs/image 102.png" alt=""><span>MongoDB</span></div>
-        <div class="tech-badge"><img src="/imgs/image 125.png" alt=""><span>Redis</span></div>
-        <div class="tech-badge"><img src="/imgs/image 104.png" alt=""><span>Firebase</span></div>
-        <div class="tech-badge"><img src="/imgs/image 126.png" alt=""><span>Supabase</span></div>
-        <div class="tech-badge"><img src="/imgs/image 127 (2).png" alt=""><span>Sqlite</span></div>
-        <div class="tech-badge"><img src="/imgs/image 128.png" alt=""><span>DynamoDB</span></div>
-        <div class="tech-badge"><img src="/imgs/image 129.png" alt=""><span>Elasticsearch</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">AI</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></div>
-        <div class="tech-badge"><img src="/imgs/image 130.png" alt=""><span>Gemini</span></div>
-        <div class="tech-badge"><img src="/imgs/image 131.png" alt=""><span>Anthropic</span></div>
-        <div class="tech-badge"><img src="/imgs/image 132.png" alt=""><span>TensorFlow</span></div>
-        <div class="tech-badge"><img src="/imgs/image 133.png" alt=""><span>Huggingface</span></div>
-        <div class="tech-badge"><img src="/imgs/image 134.png" alt="" style="width: 68px; height: 39px;"><span>LangChain</span></div>
-        <div class="tech-badge"><img src="/imgs/image 135.png" alt="" style="width: 63px; height: 38px;"><span>LangGraph</span></div>
-        <div class="tech-badge"><img src="/imgs/image 136.png" alt=""><span>LlamaIndex</span></div>
-        <div class="tech-badge"><img src="/imgs/opencv.png" alt=""><span>OpenCV</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">Cloud</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 97.png" alt=""><span>AWS</span></div>
-        <div class="tech-badge"><img src="/imgs/image 138.png" alt=""><span>Microsoft Azure</span></div>
-        <div class="tech-badge"><img src="/imgs/image 139.png" alt=""><span>Google Cloud</span></div>
-        <div class="tech-badge"><img src="/imgs/image 140.png" alt=""><span>Cloudflare</span></div>
-        <div class="tech-badge"><img src="/imgs/image 99.png" alt=""><span>Vercel</span></div>
-        <div class="tech-badge"><img src="/imgs/image 141.png" alt=""><span>DigitalOcean</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">DevOps</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 89.png" alt=""><span>Dockers</span></div>
-        <div class="tech-badge"><img src="/imgs/image 95.png" alt=""><span>Kubernetes</span></div>
-        <div class="tech-badge"><img src="/imgs/image 142.png" alt=""><span>GitHub Actions</span></div>
-        <div class="tech-badge"><img src="/imgs/image 143.png" alt=""><span>Terraform</span></div>
-        <div class="tech-badge"><img src="/imgs/image 144.png" alt=""><span>Jenkins</span></div>
-        <div class="tech-badge"><img src="/imgs/image 145.png" alt=""><span>GitLab CI/CD</span></div>
-        <div class="tech-badge"><img src="/imgs/image 146.png" alt=""><span>Ansible</span></div>
-        <div class="tech-badge"><img src="/imgs/image 147.png" alt=""><span>Nginx</span></div>
-      </div>
-    </div>
-
-    <div class="tech-category reveal">
-      <h2 class="tech-category-heading">Technology we use for <span class="accent">APIs &amp; Integrations</span></h2>
-      <div class="tech-category-grid">
-        <div class="tech-badge"><img src="/imgs/image 148.png" alt=""><span>RestAPI</span></div>
-        <div class="tech-badge"><img src="/imgs/image 149.png" alt=""><span>GraphQL</span></div>
-        <div class="tech-badge"><img src="/imgs/image 150.png" alt=""><span>WebSockets</span></div>
-        <div class="tech-badge"><img src="/imgs/image 151.png" alt=""><span>OAuth</span></div>
-        <div class="tech-badge"><img src="/imgs/image 152.png" alt=""><span>JWT</span></div>
-        <div class="tech-badge"><img src="/imgs/image 153.png" alt=""><span>Stripe</span></div>
-        <div class="tech-badge"><img src="/imgs/image 154.png" alt=""><span>Google Maps API</span></div>
-        <div class="tech-badge"><img src="/imgs/image 155.png" alt=""><span>Twilio</span></div>
-      </div>
-    </div>
-
+    <blockquote class="ix-statement-quote">
+      <p>We use modern technologies and proven tools to build digital products that are scalable, secure, reliable, and ready to evolve. From web and mobile applications to AI-powered systems and connected business platforms, we choose the right technology for every challenge.</p>
+      <cite>Relyco Tech Solutions</cite>
+    </blockquote>
   </section>
 
-  <section class="techstack-closing">
-    <h2 class="techstack-closing-heading reveal">THE RIGHT TECHNOLOGY FOR THE RIGHT CHALLENGE.</h2>
-    <p class="techstack-closing-desc reveal">
-      We don't believe in using technology simply because it's popular. We choose the tools,
-      frameworks, and infrastructure that best fit the product, users, requirements, and long-term goals.
-    </p>
-    <a class="tech-cta reveal" href="/solution">
-      Explore Our Services
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+
+
+  <section class="ix-ind ix-cat ix-ind--orange" id="frontend-development" aria-labelledby="frontend-development-title">
+    <div class="ix-band ix-ind-panel ix-cat-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">01 / 08 &middot; 9 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+        <h2 class="ix-ind-title" id="frontend-development-title">Frontend Development.</h2>
+        <p class="ix-ind-intro">Technology we use for Frontend Development.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo"><img src="/imgs/image 105.png" alt="" loading="lazy"></span>Html5</li>
+          <li><span class="ix-logo"><img src="/imgs/image 106.png" alt="" loading="lazy"></span>CSS3</li>
+          <li><span class="ix-logo"><img src="/imgs/image 107.png" alt="" loading="lazy"></span>Javascript</li>
+          <li><span class="ix-logo"><img src="/imgs/image 108.png" alt="" loading="lazy"></span>Typescript</li>
+          <li><span class="ix-logo"><img src="/imgs/image 109 (1).png" alt="" loading="lazy"></span>React</li>
+          <li><span class="ix-logo"><img src="/imgs/image 93 (2).png" alt="" loading="lazy"></span>TailwindCSS</li>
+          <li><span class="ix-logo"><img src="/imgs/image 110.png" alt="" loading="lazy"></span>Bootstrap</li>
+          <li><span class="ix-logo"><img src="/imgs/image 111.png" alt="" loading="lazy"></span>Angular</li>
+          <li><span class="ix-logo"><img src="/imgs/image 91.png" alt="" loading="lazy"></span>Next.js</li>
+      </ul>
+    </div>
   </section>
 
-  <section class="cta-banner">
-    <div class="cta-banner-card">
-      <img class="final-cta-bg" src="/imgs/16b61f85c62accd0a378bbfe1aecbbfaa83d0df6.png" alt="">
+  <section class="ix-ind ix-cat ix-ind--cream" id="backend-development" aria-labelledby="backend-development-title">
+    <div class="ix-ind-panel ix-cat-panel ix-ind-panel--flip">
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">02 / 08 &middot; 11 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+        <h2 class="ix-ind-title" id="backend-development-title">Backend Development.</h2>
+        <p class="ix-ind-intro">Technology we use for Backend Development.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo"><img src="/imgs/image 105 (1).png" alt="" loading="lazy"></span>Node.js</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/express-js 1.png" alt="" loading="lazy"></span>Express.js</li>
+          <li><span class="ix-logo"><img src="/imgs/image 107 (1).png" alt="" loading="lazy"></span>Nest.js</li>
+          <li><span class="ix-logo"><img src="/imgs/image 108 (1).png" alt="" loading="lazy"></span>Python</li>
+          <li><span class="ix-logo"><img src="/imgs/image 109.png" alt="" loading="lazy"></span>Django</li>
+          <li><span class="ix-logo"><img src="/imgs/image 93.png" alt="" loading="lazy"></span>FastAPI</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 112.png" alt="" loading="lazy"></span>Flask</li>
+          <li><span class="ix-logo"><img src="/imgs/image 113.png" alt="" loading="lazy"></span>Java</li>
+          <li><span class="ix-logo"><img src="/imgs/image 114.png" alt="" loading="lazy"></span>Springboot</li>
+          <li><span class="ix-logo"><img src="/imgs/image 115.png" alt="" loading="lazy"></span>Laravel</li>
+          <li><span class="ix-logo"><img src="/imgs/image 116.png" alt="" loading="lazy"></span>.Net</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="final-cta-content">
-        <span class="final-cta-eyebrow reveal">HAVE A PRODUCT IN MIND?</span>
-        <h2 class="cta-banner-heading">Let&rsquo;s find the technology that can bring it to life.</h2>
-        <a class="final-cta-button reveal" href="#">
-          Start a Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+  <section class="ix-ind ix-cat ix-ind--orange" id="mobile-development" aria-labelledby="mobile-development-title">
+    <div class="ix-band ix-ind-panel ix-cat-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">03 / 08 &middot; 8 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M11 18.5h2"/></svg></span>
+        <h2 class="ix-ind-title" id="mobile-development-title">Mobile Development.</h2>
+        <p class="ix-ind-intro">Technology we use for Mobile Development.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo"><img src="/imgs/image 117.png" alt="" loading="lazy"></span>Flutter</li>
+          <li><span class="ix-logo"><img src="/imgs/image 109 (2).png" alt="" loading="lazy"></span>React Native</li>
+          <li><span class="ix-logo"><img src="/imgs/image 118.png" alt="" loading="lazy"></span>Swift</li>
+          <li><span class="ix-logo"><img src="/imgs/image 119.png" alt="" loading="lazy"></span>Kotlin</li>
+          <li><span class="ix-logo"><img src="/imgs/image 120.png" alt="" loading="lazy"></span>SwiftUI</li>
+          <li><span class="ix-logo"><img src="/imgs/image 121.png" alt="" loading="lazy"></span>Jetpack Compose</li>
+          <li><span class="ix-logo"><img src="/imgs/image 122.png" alt="" loading="lazy"></span>Android</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 123.png" alt="" loading="lazy"></span>iOS</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-cat ix-ind--cream" id="database" aria-labelledby="database-title">
+    <div class="ix-ind-panel ix-cat-panel ix-ind-panel--flip">
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">04 / 08 &middot; 9 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span>
+        <h2 class="ix-ind-title" id="database-title">Database.</h2>
+        <p class="ix-ind-intro">Technology we use for Database.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo"><img src="/imgs/image 98.png" alt="" loading="lazy"></span>PostgreSQL</li>
+          <li><span class="ix-logo"><img src="/imgs/image 124.png" alt="" loading="lazy"></span>MySQL</li>
+          <li><span class="ix-logo"><img src="/imgs/image 102.png" alt="" loading="lazy"></span>MongoDB</li>
+          <li><span class="ix-logo"><img src="/imgs/image 125.png" alt="" loading="lazy"></span>Redis</li>
+          <li><span class="ix-logo"><img src="/imgs/image 104.png" alt="" loading="lazy"></span>Firebase</li>
+          <li><span class="ix-logo"><img src="/imgs/image 126.png" alt="" loading="lazy"></span>Supabase</li>
+          <li><span class="ix-logo"><img src="/imgs/image 127 (2).png" alt="" loading="lazy"></span>Sqlite</li>
+          <li><span class="ix-logo"><img src="/imgs/image 128.png" alt="" loading="lazy"></span>DynamoDB</li>
+          <li><span class="ix-logo"><img src="/imgs/image 129.png" alt="" loading="lazy"></span>Elasticsearch</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-cat ix-ind--orange" id="ai" aria-labelledby="ai-title">
+    <div class="ix-band ix-ind-panel ix-cat-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">05 / 08 &middot; 9 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/><path d="M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
+        <h2 class="ix-ind-title" id="ai-title">AI.</h2>
+        <p class="ix-ind-intro">Technology we use for AI.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/openai-com-logo-dark 1.png" alt="" loading="lazy"></span>OpenAI</li>
+          <li><span class="ix-logo"><img src="/imgs/image 130.png" alt="" loading="lazy"></span>Gemini</li>
+          <li><span class="ix-logo"><img src="/imgs/image 131.png" alt="" loading="lazy"></span>Anthropic</li>
+          <li><span class="ix-logo"><img src="/imgs/image 132.png" alt="" loading="lazy"></span>TensorFlow</li>
+          <li><span class="ix-logo"><img src="/imgs/image 133.png" alt="" loading="lazy"></span>Huggingface</li>
+          <li><span class="ix-logo"><img src="/imgs/image 134.png" alt="" loading="lazy"></span>LangChain</li>
+          <li><span class="ix-logo"><img src="/imgs/image 135.png" alt="" loading="lazy"></span>LangGraph</li>
+          <li><span class="ix-logo"><img src="/imgs/image 136.png" alt="" loading="lazy"></span>LlamaIndex</li>
+          <li><span class="ix-logo"><img src="/imgs/opencv.png" alt="" loading="lazy"></span>OpenCV</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-cat ix-ind--cream" id="cloud" aria-labelledby="cloud-title">
+    <div class="ix-ind-panel ix-cat-panel ix-ind-panel--flip">
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">06 / 08 &middot; 6 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8.5z"/></svg></span>
+        <h2 class="ix-ind-title" id="cloud-title">Cloud.</h2>
+        <p class="ix-ind-intro">Technology we use for Cloud.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 97.png" alt="" loading="lazy"></span>AWS</li>
+          <li><span class="ix-logo"><img src="/imgs/image 138.png" alt="" loading="lazy"></span>Microsoft Azure</li>
+          <li><span class="ix-logo"><img src="/imgs/image 139.png" alt="" loading="lazy"></span>Google Cloud</li>
+          <li><span class="ix-logo"><img src="/imgs/image 140.png" alt="" loading="lazy"></span>Cloudflare</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 99.png" alt="" loading="lazy"></span>Vercel</li>
+          <li><span class="ix-logo"><img src="/imgs/image 141.png" alt="" loading="lazy"></span>DigitalOcean</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-cat ix-ind--orange" id="devops" aria-labelledby="devops-title">
+    <div class="ix-band ix-ind-panel ix-cat-panel">
+      <span class="ix-mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">07 / 08 &middot; 8 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span>
+        <h2 class="ix-ind-title" id="devops-title">DevOps.</h2>
+        <p class="ix-ind-intro">Technology we use for DevOps.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo"><img src="/imgs/image 89.png" alt="" loading="lazy"></span>Dockers</li>
+          <li><span class="ix-logo"><img src="/imgs/image 95.png" alt="" loading="lazy"></span>Kubernetes</li>
+          <li><span class="ix-logo"><img src="/imgs/image 142.png" alt="" loading="lazy"></span>GitHub Actions</li>
+          <li><span class="ix-logo"><img src="/imgs/image 143.png" alt="" loading="lazy"></span>Terraform</li>
+          <li><span class="ix-logo"><img src="/imgs/image 144.png" alt="" loading="lazy"></span>Jenkins</li>
+          <li><span class="ix-logo"><img src="/imgs/image 145.png" alt="" loading="lazy"></span>GitLab CI/CD</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 146.png" alt="" loading="lazy"></span>Ansible</li>
+          <li><span class="ix-logo"><img src="/imgs/image 147.png" alt="" loading="lazy"></span>Nginx</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ix-ind ix-cat ix-ind--cream" id="apis-and-integrations" aria-labelledby="apis-and-integrations-title">
+    <div class="ix-ind-panel ix-cat-panel ix-ind-panel--flip">
+      <div class="ix-ind-copy">
+        <span class="ix-ind-num">08 / 08 &middot; 8 tools</span>
+        <span class="ix-cat-ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg></span>
+        <h2 class="ix-ind-title" id="apis-and-integrations-title">APIs &amp; Integrations.</h2>
+        <p class="ix-ind-intro">Technology we use for APIs &amp; Integrations.</p>
+      </div>
+      <ul class="ix-logo-grid">
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 148.png" alt="" loading="lazy"></span>RestAPI</li>
+          <li><span class="ix-logo"><img src="/imgs/image 149.png" alt="" loading="lazy"></span>GraphQL</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 150.png" alt="" loading="lazy"></span>WebSockets</li>
+          <li><span class="ix-logo ix-logo--dark"><img src="/imgs/image 151.png" alt="" loading="lazy"></span>OAuth</li>
+          <li><span class="ix-logo"><img src="/imgs/image 152.png" alt="" loading="lazy"></span>JWT</li>
+          <li><span class="ix-logo"><img src="/imgs/image 153.png" alt="" loading="lazy"></span>Stripe</li>
+          <li><span class="ix-logo"><img src="/imgs/image 154.png" alt="" loading="lazy"></span>Google Maps API</li>
+          <li><span class="ix-logo"><img src="/imgs/image 155.png" alt="" loading="lazy"></span>Twilio</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      </span>
+
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
+
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
+        </p>
+      </div>
+
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
+
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
         </a>
       </div>
+
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
+
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/techStack.js"></script>

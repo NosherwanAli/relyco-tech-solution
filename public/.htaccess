@@ -21,8 +21,6 @@ DirectorySlash Off
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # /services is an alias for the Solutions page
-  RewriteRule ^services/?$ https://%{HTTP_HOST}/solution [L,R=301]
 
   # Trailing slash -> clean URL (/about/ -> /about)
   RewriteCond %{REQUEST_FILENAME} -d

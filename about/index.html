@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -48,20 +49,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="about-page">
 
   <div class="page-loader" aria-hidden="true">
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="about-hero">
-
+  <section class="ix-hero fh-hero" aria-labelledby="ab-hero-title">
     <header class="navbar">
       <a class="logo" href="/">
         <img class="logo-mark" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -69,7 +70,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -78,162 +84,308 @@
       </button>
     </header>
 
-    <div class="about-hero-content">
-      <h1 class="about-hero-title">Building digital solutions for a smarter, more connected<br>tomorrow.</h1>
-
-      <p class="about-hero-desc">
-        We're a technology company focused on creating modern digital products, intelligent systems, and scalable
-        solutions that help businesses move forward.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="about-relyco">
-    <div class="about-relyco-eyebrow reveal">
-      <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-      ABOUT RELYCO
-    </div>
-
-    <div class="about-relyco-body">
-      <h2 class="about-relyco-heading reveal">A technology<br>company built around<br>what&rsquo;s possible.</h2>
-
-      <p class="about-relyco-desc reveal">
-        Relyco Tech Solutions is a Saudi Arabia&ndash;based technology<br>
-        company focused on building digital products, software solutions,<br>
-        and intelligent technologies for modern businesses.
-      </p>
-    </div>
-  </section>
-
-  <section class="about-approach">
-    <div class="about-approach-eyebrow reveal">
-      <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-      OUR APPROACH
-    </div>
-
-    <div class="about-approach-list">
-      <div class="about-approach-item reveal">
-        <span class="about-approach-number">01</span>
-        <h3 class="about-approach-name">UNDERSTAND</h3>
-        <p class="about-approach-desc">We identify the real challenge and the opportunity behind it.</p>
+    <div class="fh">
+      <div class="fh-copy">
+        <span class="fh-kicker">About Relyco</span>
+        <h1 class="fh-title" id="ab-hero-title">Building digital solutions<br>for a smarter tomorrow</h1>
+        <p class="fh-desc">We&rsquo;re a technology company focused on creating modern digital products, intelligent systems, and scalable solutions that help businesses move forward.</p>
+        <div class="fh-actions">
+          <a class="fh-btn fh-btn--solid" href="/contact">Start a Conversation</a>
+          <a class="fh-btn fh-btn--soft" href="#about-grid"><span><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M12 19l-6-6M12 19l6-6"/></svg></span>Our Story</a>
+        </div>
       </div>
 
-      <div class="about-approach-item reveal">
-        <span class="about-approach-number">02</span>
-        <h3 class="about-approach-name">DESIGN</h3>
-        <p class="about-approach-desc">We create experiences that make technology clear and intuitive.</p>
+      <!-- 3D coil of glossy slabs on a white wave (same as the home hero, heroCoil.js) -->
+      <div class="nx-stage fh-stage" aria-hidden="true">
+        <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+        </svg>
+        <div class="nx-coil"></div>
       </div>
 
-      <div class="about-approach-item reveal">
-        <span class="about-approach-number">03</span>
-        <h3 class="about-approach-name">BUILD</h3>
-        <p class="about-approach-desc">We use the right technologies to turn ideas into reliable products.</p>
-      </div>
-
-      <div class="about-approach-item reveal">
-        <span class="about-approach-number">04</span>
-        <h3 class="about-approach-name">EVOLVE</h3>
-        <p class="about-approach-desc">We continuously improve, so your business stays ahead.</p>
+      <div class="fh-grid">
+        <div class="fh-col fh-col--1">
+        <article class="fh-card fh-card--stat fh-tab-l">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <strong class="fh-stat">04</strong>
+          <p class="fh-stat-text">Steps to every product &mdash; Understand, Design, Build and Evolve.</p>
+          <a class="fh-bar" href="#about-grid"><span>Our approach</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--ink" href="#about-grid">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <b>Saudi Arabia&ndash;<br>based</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--2">
+        <a class="fh-card fh-card--img fh-tab-r" href="#about-grid">
+          <img src="/imgs/photos/team-workshop.jpg" alt="The Relyco team" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">Our team</span>
+          <b class="fh-img-title">Design, engineering<br>&amp; AI together</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--3">
+        <article class="fh-card fh-card--join">
+          <b class="fh-join-title">A technology company built around what&rsquo;s possible.</b>
+          <a class="fh-bar fh-bar--dark" href="/contact"><span>Turn ideas into possibilities</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        </div>
+        <div class="fh-col fh-col--4">
+        <a class="fh-card fh-card--img fh-tab-l" href="#the-relyco-difference">
+          <img src="/imgs/photos/leader-portrait.jpg" alt="" loading="eager"><span class="fh-shade" aria-hidden="true"></span>
+          <span class="fh-img-label">The Relyco Difference</span>
+          <b class="fh-img-title">We build<br>to last</b>
+        </a>
+        </div>
+        <div class="fh-col fh-col--5">
+        <article class="fh-card fh-card--accent fh-tab-r">
+          <svg class="fh-waves" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C60 30 120 90 180 60 S300 40 300 40"/><path d="M0 95 C70 65 130 125 200 92 S300 75 300 75"/><path d="M0 130 C60 105 140 160 210 128 S300 112 300 112"/></svg>
+          <img src="/imgs/photos/team-developer.jpg" alt="" loading="eager">
+          <a class="fh-bar fh-bar--dark" href="#the-relyco-difference"><span>What we believe</span><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+        </article>
+        <a class="fh-card fh-card--small fh-card--deep" href="#the-relyco-difference">
+          <span class="fh-small-ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>
+          <b>Technology should<br>simplify</b>
+        </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about-believe">
-    <div class="about-believe-eyebrow reveal">
-      <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-      WHAT WE BELIEVE
-    </div>
+  <section class="ab-contact" id="about-contact" aria-labelledby="ab-contact-title">
+    <div class="ab-contact-inner">
+      <header class="ab-contact-head">
+        <h2 id="ab-contact-title">Get<br>in touch.</h2>
+        <p>Tell us what you&rsquo;re building, what needs to improve, or where your business needs to go next.</p>
+      </header>
 
-    <div class="about-believe-grid">
-      <div class="about-believe-item reveal">Technology should simplify,<br>not complicate.</div>
-      <div class="about-believe-item reveal">Good design should make<br>technology feel effortless.</div>
-      <div class="about-believe-item reveal">Innovation should solve real<br>problems.</div>
-      <div class="about-believe-item reveal">Great products should be<br>built to evolve.</div>
-    </div>
-  </section>
-
-  <section class="about-difference">
-    <div class="about-difference-eyebrow reveal">
-      <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-      THE RELYCO DIFFERENCE
-    </div>
-
-    <h2 class="about-difference-heading reveal">We dont build technology for the technology&rsquo;s sake.</h2>
-
-    <div class="about-difference-row">
-      <div class="about-difference-item">We build<br>to <span class="accent">simply.</span></div>
-      <span class="about-difference-connector"><i></i></span>
-      <div class="about-difference-item">We build<br>to <span class="accent">solve.</span></div>
-      <span class="about-difference-connector"><i></i></span>
-      <div class="about-difference-item">We build<br>to <span class="accent">scale.</span></div>
-      <span class="about-difference-connector about-difference-connector--accent"><i></i></span>
-      <div class="about-difference-item">We build<br>to <span class="accent">last.</span></div>
+      <form class="ab-contact-form" action="/send-enquiry.php" method="post">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="ab-contact-hp">
+        <label><span>Full name</span><input type="text" name="name" autocomplete="name" required></label>
+        <label><span>Phone number</span><input type="tel" name="phone" autocomplete="tel"></label>
+        <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="ab-contact-message"><span>Message</span><textarea name="message" rows="3" required></textarea></label>
+        <div class="ab-contact-actions">
+          <span>Saudi Arabia &middot; <a href="mailto:info@relycoltd.com">info@relycoltd.com</a></span>
+          <button type="submit">Send enquiry <span aria-hidden="true">&rarr;</span></button>
+        </div>
+      </form>
     </div>
   </section>
 
-  <section class="cta-banner">
-    <div class="cta-banner-card">
-      <img class="final-cta-bg" src="/imgs/16b61f85c62accd0a378bbfe1aecbbfaa83d0df6.png" alt="">
+  <main class="ab-editorial" id="about-grid" aria-labelledby="ab-editorial-title">
+    <header class="ab-editorial-heading">
+      <span class="ab-grid-label">About us</span>
+      <h2 id="ab-editorial-title">About Relyco.</h2>
+      <p>A Saudi Arabia&ndash;based technology company bringing strategy, design, engineering, and AI together.</p>
+    </header>
 
-      <div class="final-cta-content" style="max-width: 940px;">
-        <span class="final-cta-eyebrow reveal">READY TO BUILD WHAT'S NEXT?</span>
-        <h2 class="cta-banner-heading">Turn ideas into possibilities.</h2>
-        <a class="final-cta-button reveal" href="#">
-          Start a Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <section class="ab-editorial-intro">
+      <div class="ab-intro-stats" aria-label="Relyco at a glance">
+        <div class="ab-intro-mark" aria-hidden="true"><span></span><span></span></div>
+        <div class="ab-stat"><strong>10y</strong><span>years of experience</span></div>
+        <div class="ab-stat"><strong>50+</strong><span>clients served</span></div>
+        <div class="ab-stat"><strong>KSA</strong><span>Saudi Arabia based</span></div>
+      </div>
+      <div class="ab-mission">
+        <span class="ab-grid-label">Our mission</span>
+        <h3>Relyco builds meaningful digital products and intelligent systems. <span>We bring strategy, design, engineering, and AI together to help modern businesses move forward.</span></h3>
+      </div>
+    </section>
+
+    <section class="ab-awards" aria-labelledby="ab-awards-title">
+      <header class="ab-awards-head">
+        <h2 id="ab-awards-title">Awards.</h2>
+        <div>
+          <h3>Recognition for our work.</h3>
+          <p>Our work is shaped by clarity, usability, reliable engineering, and meaningful business outcomes.</p>
+        </div>
+      </header>
+      <div class="ab-awards-list">
+        <article class="ab-award-row">
+          <div class="ab-award-meta"><span class="ab-award-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span><small>Recognition archive</small></div>
+          <div class="ab-award-name"><h3>Award details coming soon.</h3><p>Verified recognition will be published here.</p></div>
+          <span class="ab-award-arrow" aria-hidden="true">&#8599;</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="ab-visual-banner" aria-labelledby="ab-visual-title">
+      <img src="/imgs/hd-bg.png" alt="Flowing orange and black technology ribbons with cloud, code, server and software icons" loading="lazy" decoding="async">
+      <div class="ab-visual-copy">
+        <span>Built around possibility</span>
+        <h2 id="ab-visual-title">Ideas become products when people and technology move together.</h2>
+        <p>From discovery to launch, Relyco turns complex challenges into clear, scalable digital experiences built for long-term progress.</p>
+        <a href="/contact">Start a Project <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="ab-team-grid" aria-labelledby="ab-team-title">
+      <header class="ab-team-heading">
+        <span class="ab-grid-label">Our disciplines</span>
+        <h2 id="ab-team-title">One connected team.<br>Four ways of thinking.</h2>
+      </header>
+
+      <article class="ab-team-row">
+        <div class="ab-team-role"><h3>Strategy</h3><p>Discovery, product direction, and business alignment.</p></div>
+        <div class="ab-team-faces" aria-hidden="true">
+          <span><img src="/imgs/photos/leader-portrait.jpg" alt="" loading="lazy"></span>
+          <span><img src="/imgs/photos/team-workshop.jpg" alt="" loading="lazy"></span>
+        </div>
+        <ul class="ab-team-list"><li>Product discovery</li><li>Digital strategy</li><li>Growth planning</li></ul>
+      </article>
+
+      <article class="ab-team-row">
+        <div class="ab-team-role"><h3>Design</h3><p>Research, UX, UI, and scalable design systems.</p></div>
+        <div class="ab-team-faces" aria-hidden="true">
+          <span><img src="/imgs/big-idea-portrait.webp" alt="" loading="lazy"></span>
+          <span><img src="/imgs/photos/team-workshop.jpg" alt="" loading="lazy"></span>
+          <span><img src="/imgs/photos/leader-portrait.jpg" alt="" loading="lazy"></span>
+        </div>
+        <ul class="ab-team-list"><li>UX research</li><li>Interface design</li><li>Design systems</li></ul>
+      </article>
+
+      <article class="ab-team-row">
+        <div class="ab-team-role"><h3>Engineering &amp; AI</h3><p>Reliable software, connected systems, and intelligent automation.</p></div>
+        <div class="ab-team-faces" aria-hidden="true">
+          <span><img src="/imgs/photos/team-developer.jpg" alt="" loading="lazy"></span>
+          <span><img src="/imgs/photos/team-workshop.jpg" alt="" loading="lazy"></span>
+        </div>
+        <ul class="ab-team-list"><li>Web &amp; mobile</li><li>Custom software</li><li>AI solutions</li></ul>
+      </article>
+    </section>
+
+    <section class="ab-principles" aria-label="About Relyco">
+      <div class="ab-principle-label"><h2>About — Team</h2><p>Multidisciplinary by design.</p></div>
+      <div class="ab-principle-copy"><p>Relyco is built around specialists in strategy, design, engineering, and AI, <span>working as one team to create practical, scalable digital experiences.</span></p></div>
+
+      <div class="ab-principle-label"><h2>About — Partnership</h2><p>Built for long-term progress.</p></div>
+      <div class="ab-principle-copy"><p>We work with businesses across eight industries, <span>shaping technology around real operational needs and measurable outcomes.</span></p></div>
+
+      <div class="ab-principle-label"><h2>Our approach</h2><p>From possibility to a product that lasts.</p></div>
+      <ol class="ab-process-list">
+        <li><span>01</span>Understand</li>
+        <li><span>02</span>Design</li>
+        <li><span>03</span>Build</li>
+        <li><span>04</span>Evolve</li>
+      </ol>
+    </section>
+
+    <section class="ab-editorial-close">
+      <span class="ab-grid-label">Saudi Arabia · Technology partner</span>
+      <h2>Technology should simplify, solve, scale, and last.</h2>
+      <a href="/contact">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+    </section>
+  </main>
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      </span>
+
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
+
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
+        </p>
+      </div>
+
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
+
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
         </a>
       </div>
+
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
+
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/about.js"></script>

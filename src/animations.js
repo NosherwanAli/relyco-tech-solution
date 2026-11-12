@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initOutlineIcons } from './outlineIcons.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -284,16 +285,21 @@ function initNavToggle() {
     const links = navbar.querySelector('.nav-links');
     if (!toggle || !links) return;
 
-    const closeMenu = () => {
-      links.classList.remove('is-open');
-      toggle.classList.remove('is-active');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
+    // Stagger index for the mobile menu's link entrance animation
+    links.querySelectorAll('a').forEach((link, i) => {
+      link.style.setProperty('--i', i);
+    });
 
-    toggle.addEventListener('click', () => {
-      const isOpen = links.classList.toggle('is-open');
+    const setOpen = (isOpen) => {
+      links.classList.toggle('is-open', isOpen);
+      navbar.classList.toggle('menu-open', isOpen);
       toggle.classList.toggle('is-active', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+    const closeMenu = () => setOpen(false);
+
+    toggle.addEventListener('click', () => {
+      setOpen(!links.classList.contains('is-open'));
     });
 
     links.querySelectorAll('a').forEach((link) => {
@@ -305,6 +311,96 @@ function initNavToggle() {
       if (navbar.contains(event.target)) return;
       closeMenu();
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && links.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    // Close the mobile panel if the viewport grows back to desktop
+    window.matchMedia('(min-width: 1025px)').addEventListener('change', (e) => {
+      if (e.matches) closeMenu();
+    });
+  });
+}
+
+/* ----------------------------------------------------------------
+   6b. Navbar scroll state - adds .is-scrolled once the page moves,
+       so the pill can tuck up, shrink slightly and darken its glass.
+   ---------------------------------------------------------------- */
+
+function initNavScroll() {
+  const navbars = document.querySelectorAll('.navbar');
+  if (!navbars.length) return;
+
+  let ticking = false;
+  let lastY = window.scrollY;
+  const update = () => {
+    const y = Math.max(0, window.scrollY);
+    const scrolled = y > 24;
+    const delta = y - lastY;
+    navbars.forEach((nav) => {
+      nav.classList.toggle('is-scrolled', scrolled);
+      // hide while scrolling down, bring back as soon as the user scrolls up;
+      // never hide near the top, with the mobile menu open, or while focused
+      const keep = y < 120 || nav.classList.contains('menu-open') || nav.contains(document.activeElement);
+      if (keep || delta < -4) nav.classList.remove('nav-hidden');
+      else if (delta > 4) nav.classList.add('nav-hidden');
+    });
+    if (Math.abs(delta) > 4 || y < 120) lastY = y;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  update();
+}
+
+/* ----------------------------------------------------------------
+   6c. Navbar sliding highlight - a soft pill that glides behind the
+       hovered/focused link on desktop and rests on the active page.
+   ---------------------------------------------------------------- */
+
+function initNavIndicator() {
+  document.querySelectorAll('.navbar .nav-links').forEach((links) => {
+    const indicator = document.createElement('span');
+    indicator.className = 'nav-indicator';
+    indicator.setAttribute('aria-hidden', 'true');
+    links.prepend(indicator);
+
+    const moveTo = (link) => {
+      if (!link) {
+        indicator.classList.remove('is-visible');
+        return;
+      }
+      indicator.style.width = `${link.offsetWidth}px`;
+      indicator.style.transform = `translateX(${link.offsetLeft}px)`;
+      indicator.classList.add('is-visible');
+    };
+
+    const rest = () => moveTo(links.querySelector('a.active'));
+
+    links.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('mouseenter', () => moveTo(link));
+      link.addEventListener('focus', () => moveTo(link));
+    });
+    links.addEventListener('mouseleave', rest);
+    links.addEventListener('focusout', (e) => {
+      if (!links.contains(e.relatedTarget)) rest();
+    });
+
+    window.addEventListener('resize', rest);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(rest);
+    // Position without animating on first paint
+    indicator.style.transition = 'none';
+    rest();
+    requestAnimationFrame(() => { indicator.style.transition = ''; });
   });
 }
 
@@ -366,12 +462,15 @@ function initPageLoader() {
    ---------------------------------------------------------------- */
 
 export function initAnimations() {
+  initOutlineIcons();
   initScrollTextReveals();
   initAboutReveal();
   initButtonHoverSplit();
   initRevealObserver();
   initActiveNav();
   initNavToggle();
+  initNavScroll();
+  initNavIndicator();
   initPageLoader();
 
   // Recalculate trigger positions once every asset (images, fonts) has

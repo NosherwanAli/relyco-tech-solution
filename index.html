@@ -19,10 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000000;
+      background: rgba(255, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .page-loader.is-hidden {
       opacity: 0;
@@ -30,11 +31,11 @@
       pointer-events: none;
     }
     .page-loader-spinner {
-      width: 48px;
-      height: 48px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 90, 31, 0.2);
-      border-top-color: #ff5a1f;
+      border: 3px solid rgba(255, 90, 31, 0.14);
+      border-top-color: #ff6a2a;
       animation: page-loader-spin 0.8s linear infinite;
     }
     @keyframes page-loader-spin {
@@ -54,11 +55,8 @@
     <div class="page-loader-spinner"></div>
   </div>
 
-  <section class="hero">
-
-    <img class="hero-bg" src="/imgs/ChatGPT Image Sep 9, 2026, 10_01_58 PM 1.png" alt="">
-
-    <div class="glow-ellipse"></div>
+  <!-- Hero: centred copy, giant wordmark, 3D coil of glossy slabs on a white wave, four focus columns -->
+  <section class="nx-hero" aria-label="Introduction">
 
     <header class="navbar">
       <a class="logo" href="/">
@@ -66,6 +64,7 @@
       </a>
 
       <nav class="nav-links">
+        <a href="/services">Services</a>
         <a href="/solution">Solutions</a>
         <a href="/industries">Industries</a>
         <a href="/tech-stack">Tech Stack</a>
@@ -73,7 +72,12 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="btn-start" href="/contact">Start a Project</a>
+      <a class="btn-start" href="/contact">
+        <span class="btn-start-label">Start a Project</span>
+        <span class="btn-start-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
@@ -82,404 +86,1116 @@
       </button>
     </header>
 
-    <div class="hero-content">
-      <div class="hero-label">
-        <span class="label-line"></span>
-        <span class="label-text">DIGITAL PRODUCTS &middot; AI &middot; ENGINEERING</span>
-      </div>
-
-      <h1 class="hero-title">
-        We Build<br>
-        <span class="gradient-text">Digtal Solutions</span><br>
-        That Move Businesses<br>
-        Forward.
-      </h1>
-
-      <p class="hero-desc">
-        From ambitious ideas to production-ready products, we combine design,
-        engineering, and AI to create digital solutions that solve real business problems.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn-primary" href="/contact">
-          Get in Touch
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#F8FAFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <div class="nx-copy">
+      <p class="nx-kicker">DIGITAL PRODUCTS &middot; AI &middot; ENGINEERING</p>
+      <h1 class="nx-title">Engineering Digital Products<br> for a <span>Smarter Tomorrow</span>.</h1>
+      <p class="nx-desc">From ambitious ideas to production-ready products, we combine design, engineering, and AI to create digital solutions.</p>
+      <div class="nx-actions">
+        <a class="nx-btn nx-btn--dark" href="/contact">Get in Touch
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="btn-secondary" href="/solution">
-          Explore Services
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#F8FAFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <a class="nx-btn nx-btn--light" href="/solution">Explore Services
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 2.2v7.6l6-3.8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
         </a>
       </div>
-
-      <div class="scroll-indicator">
-        <img class="arrow-line" src="/imgs/Arrow 8.png" alt="">
-      </div>
     </div>
 
-  </section>
-
-  <section class="big-idea">
-    <div class="big-idea-header reveal">
-      <span class="big-idea-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        THE BIG IDEA
-      </span>
-      <span class="big-idea-counter">02</span>
-    </div>
-
-    <h2 class="big-idea-heading">
-      The best technology<br>
-      doesn't feel complicated.<br>
-      It simply works.
-    </h2>
-
-    <p class="big-idea-intro reveal">
-      We transform complex business challenges into digital experiences
-      that are intuitive for people, powerful for businesses, and ready to evolve.
-    </p>
-
-    <div class="big-idea-items">
-      <div class="big-idea-item align-left reveal">
-        <span class="item-number">01</span>
-        <h3 class="item-title">Strategy</h3>
-        <p class="item-subtitle">Turning challenges into clear opportunities.</p>
-        <p class="item-desc">We understand your goals, audience, and challenges to create a focused digital strategy that gives your product the right direction.</p>
-      </div>
-
-      <div class="big-idea-item align-right reveal">
-        <span class="item-number">02</span>
-        <h3 class="item-title">Design</h3>
-        <p class="item-subtitle">Making ideas simple, intuitive, and engaging.</p>
-        <p class="item-desc">We transform strategy into thoughtful digital experiences that connect your brand with the people who use it.</p>
-      </div>
-
-      <div class="big-idea-item align-left reveal">
-        <span class="item-number">03</span>
-        <h3 class="item-title">Technology</h3>
-        <p class="item-subtitle">Building solutions that are ready for what's next.</p>
-        <p class="item-desc">We combine modern engineering, AI, and scalable technologies to turn ideas into powerful digital products.</p>
-      </div>
-
-      <div class="big-idea-item align-right reveal">
-        <span class="item-number">04</span>
-        <h3 class="item-title">Growth</h3>
-        <p class="item-subtitle">Evolving products as your business grows.</p>
-        <p class="item-desc">We continuously improve, optimize, and scale your digital solutions to keep them performing as your needs change.</p>
-      </div>
-    </div>
-
-    <div class="big-idea-cta reveal">
-      <div class="cta-text-wrap">
-        <span class="cta-label">READY TO BUILD WHAT'S NEXT?</span>
-        <p class="cta-desc">Every great product starts with a conversation. Tell us what you're working on, and let's explore how we can bring it to life.</p>
-      </div>
-      <a class="cta-button" href="/contact#contact-form">
-        Start a Project
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+    <div class="nx-stage" aria-hidden="true">
+      <svg class="nx-wave" viewBox="0 0 1440 360" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="nxWaveFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFFFFF"/>
+            <stop offset=".55" stop-color="#FFF6F1" stop-opacity=".75"/>
+            <stop offset="1" stop-color="#FBF5F2" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="nxWaveEdge" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#FFB892" stop-opacity="0"/>
+            <stop offset=".35" stop-color="#FF8A55" stop-opacity=".55"/>
+            <stop offset=".7" stop-color="#FF7A3D" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#FFB892" stop-opacity=".1"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 C 220 150 380 250 640 262 C 900 274 1140 170 1440 130 L1440 360 L0 360 Z" fill="url(#nxWaveFill)"/>
+      </svg>
+      <div class="nx-coil"></div>
+      <span class="nx-floor"></span>
     </div>
   </section>
 
-  <section class="solutions">
-    <div class="solutions-header reveal">
-      <span class="solutions-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        SOLUTIONS
-      </span>
-      <span class="solutions-counter">03</span>
+  <!-- Technology ticker (all technologies from /tech-stack) -->
+  <section class="tech-ticker" aria-label="Technologies we work with">
+    <p class="tech-ticker-label">Technologies we build with</p>
+    <div class="tech-ticker-rows">
+      <div class="tech-ticker-row tech-ticker-row--left">
+        <ul class="tech-ticker-track">
+          <li class="tech-ticker-item"><img src="/imgs/image 105.png" alt="" loading="lazy"><span>Html5</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 106.png" alt="" loading="lazy"><span>CSS3</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 107.png" alt="" loading="lazy"><span>Javascript</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 108.png" alt="" loading="lazy"><span>Typescript</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 109 (1).png" alt="" loading="lazy"><span>React</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 93 (2).png" alt="" loading="lazy"><span>TailwindCSS</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 110.png" alt="" loading="lazy"><span>Bootstrap</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 111.png" alt="" loading="lazy"><span>Angular</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 91.png" alt="" loading="lazy"><span>Next.js</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 105 (1).png" alt="" loading="lazy"><span>Node.js</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/express-js 1.png" alt="" loading="lazy"><span>Express.js</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 107 (1).png" alt="" loading="lazy"><span>Nest.js</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 108 (1).png" alt="" loading="lazy"><span>Python</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 109.png" alt="" loading="lazy"><span>Django</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 93.png" alt="" loading="lazy"><span>FastAPI</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 112.png" alt="" loading="lazy"><span>Flask</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 113.png" alt="" loading="lazy"><span>Java</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 114.png" alt="" loading="lazy"><span>Springboot</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 115.png" alt="" loading="lazy"><span>Laravel</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 116.png" alt="" loading="lazy"><span>.Net</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 117.png" alt="" loading="lazy"><span>Flutter</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 109 (2).png" alt="" loading="lazy"><span>React Native</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 118.png" alt="" loading="lazy"><span>Swift</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 119.png" alt="" loading="lazy"><span>Kotlin</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 120.png" alt="" loading="lazy"><span>SwiftUI</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 121.png" alt="" loading="lazy"><span>Jetpack Compose</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 122.png" alt="" loading="lazy"><span>Android</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 123.png" alt="" loading="lazy"><span>iOS</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 98.png" alt="" loading="lazy"><span>PostgreSQL</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 124.png" alt="" loading="lazy"><span>MySQL</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 102.png" alt="" loading="lazy"><span>MongoDB</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 125.png" alt="" loading="lazy"><span>Redis</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 104.png" alt="" loading="lazy"><span>Firebase</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 126.png" alt="" loading="lazy"><span>Supabase</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 105.png" alt="" loading="lazy"><span>Html5</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 106.png" alt="" loading="lazy"><span>CSS3</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 107.png" alt="" loading="lazy"><span>Javascript</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 108.png" alt="" loading="lazy"><span>Typescript</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 109 (1).png" alt="" loading="lazy"><span>React</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 93 (2).png" alt="" loading="lazy"><span>TailwindCSS</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 110.png" alt="" loading="lazy"><span>Bootstrap</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 111.png" alt="" loading="lazy"><span>Angular</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 91.png" alt="" loading="lazy"><span>Next.js</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 105 (1).png" alt="" loading="lazy"><span>Node.js</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/express-js 1.png" alt="" loading="lazy"><span>Express.js</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 107 (1).png" alt="" loading="lazy"><span>Nest.js</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 108 (1).png" alt="" loading="lazy"><span>Python</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 109.png" alt="" loading="lazy"><span>Django</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 93.png" alt="" loading="lazy"><span>FastAPI</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 112.png" alt="" loading="lazy"><span>Flask</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 113.png" alt="" loading="lazy"><span>Java</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 114.png" alt="" loading="lazy"><span>Springboot</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 115.png" alt="" loading="lazy"><span>Laravel</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 116.png" alt="" loading="lazy"><span>.Net</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 117.png" alt="" loading="lazy"><span>Flutter</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 109 (2).png" alt="" loading="lazy"><span>React Native</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 118.png" alt="" loading="lazy"><span>Swift</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 119.png" alt="" loading="lazy"><span>Kotlin</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 120.png" alt="" loading="lazy"><span>SwiftUI</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 121.png" alt="" loading="lazy"><span>Jetpack Compose</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 122.png" alt="" loading="lazy"><span>Android</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 123.png" alt="" loading="lazy"><span>iOS</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 98.png" alt="" loading="lazy"><span>PostgreSQL</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 124.png" alt="" loading="lazy"><span>MySQL</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 102.png" alt="" loading="lazy"><span>MongoDB</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 125.png" alt="" loading="lazy"><span>Redis</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 104.png" alt="" loading="lazy"><span>Firebase</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 126.png" alt="" loading="lazy"><span>Supabase</span></li>
+        </ul>
+      </div>
+      <div class="tech-ticker-row tech-ticker-row--right">
+        <ul class="tech-ticker-track">
+          <li class="tech-ticker-item"><img src="/imgs/image 127 (2).png" alt="" loading="lazy"><span>Sqlite</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 128.png" alt="" loading="lazy"><span>DynamoDB</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 129.png" alt="" loading="lazy"><span>Elasticsearch</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/openai-com-logo-dark 1.png" alt="" loading="lazy"><span>OpenAI</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 130.png" alt="" loading="lazy"><span>Gemini</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 131.png" alt="" loading="lazy"><span>Anthropic</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 132.png" alt="" loading="lazy"><span>TensorFlow</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 133.png" alt="" loading="lazy"><span>Huggingface</span></li>
+          <li class="tech-ticker-item"><img class="is-wide" src="/imgs/image 134.png" alt="" loading="lazy"><span>LangChain</span></li>
+          <li class="tech-ticker-item"><img class="is-wide" src="/imgs/image 135.png" alt="" loading="lazy"><span>LangGraph</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 136.png" alt="" loading="lazy"><span>LlamaIndex</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/opencv.png" alt="" loading="lazy"><span>OpenCV</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 97.png" alt="" loading="lazy"><span>AWS</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 138.png" alt="" loading="lazy"><span>Microsoft Azure</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 139.png" alt="" loading="lazy"><span>Google Cloud</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 140.png" alt="" loading="lazy"><span>Cloudflare</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 99.png" alt="" loading="lazy"><span>Vercel</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 141.png" alt="" loading="lazy"><span>DigitalOcean</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 89.png" alt="" loading="lazy"><span>Dockers</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 95.png" alt="" loading="lazy"><span>Kubernetes</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 142.png" alt="" loading="lazy"><span>GitHub Actions</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 143.png" alt="" loading="lazy"><span>Terraform</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 144.png" alt="" loading="lazy"><span>Jenkins</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 145.png" alt="" loading="lazy"><span>GitLab CI/CD</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 146.png" alt="" loading="lazy"><span>Ansible</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 147.png" alt="" loading="lazy"><span>Nginx</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 148.png" alt="" loading="lazy"><span>RestAPI</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 149.png" alt="" loading="lazy"><span>GraphQL</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 150.png" alt="" loading="lazy"><span>WebSockets</span></li>
+          <li class="tech-ticker-item"><img class="is-mono" src="/imgs/image 151.png" alt="" loading="lazy"><span>OAuth</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 152.png" alt="" loading="lazy"><span>JWT</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 153.png" alt="" loading="lazy"><span>Stripe</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 154.png" alt="" loading="lazy"><span>Google Maps API</span></li>
+          <li class="tech-ticker-item"><img src="/imgs/image 155.png" alt="" loading="lazy"><span>Twilio</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 127 (2).png" alt="" loading="lazy"><span>Sqlite</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 128.png" alt="" loading="lazy"><span>DynamoDB</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 129.png" alt="" loading="lazy"><span>Elasticsearch</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/openai-com-logo-dark 1.png" alt="" loading="lazy"><span>OpenAI</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 130.png" alt="" loading="lazy"><span>Gemini</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 131.png" alt="" loading="lazy"><span>Anthropic</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 132.png" alt="" loading="lazy"><span>TensorFlow</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 133.png" alt="" loading="lazy"><span>Huggingface</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-wide" src="/imgs/image 134.png" alt="" loading="lazy"><span>LangChain</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-wide" src="/imgs/image 135.png" alt="" loading="lazy"><span>LangGraph</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 136.png" alt="" loading="lazy"><span>LlamaIndex</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/opencv.png" alt="" loading="lazy"><span>OpenCV</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 97.png" alt="" loading="lazy"><span>AWS</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 138.png" alt="" loading="lazy"><span>Microsoft Azure</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 139.png" alt="" loading="lazy"><span>Google Cloud</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 140.png" alt="" loading="lazy"><span>Cloudflare</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 99.png" alt="" loading="lazy"><span>Vercel</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 141.png" alt="" loading="lazy"><span>DigitalOcean</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 89.png" alt="" loading="lazy"><span>Dockers</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 95.png" alt="" loading="lazy"><span>Kubernetes</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 142.png" alt="" loading="lazy"><span>GitHub Actions</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 143.png" alt="" loading="lazy"><span>Terraform</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 144.png" alt="" loading="lazy"><span>Jenkins</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 145.png" alt="" loading="lazy"><span>GitLab CI/CD</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 146.png" alt="" loading="lazy"><span>Ansible</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 147.png" alt="" loading="lazy"><span>Nginx</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 148.png" alt="" loading="lazy"><span>RestAPI</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 149.png" alt="" loading="lazy"><span>GraphQL</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 150.png" alt="" loading="lazy"><span>WebSockets</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img class="is-mono" src="/imgs/image 151.png" alt="" loading="lazy"><span>OAuth</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 152.png" alt="" loading="lazy"><span>JWT</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 153.png" alt="" loading="lazy"><span>Stripe</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 154.png" alt="" loading="lazy"><span>Google Maps API</span></li>
+          <li class="tech-ticker-item" aria-hidden="true"><img src="/imgs/image 155.png" alt="" loading="lazy"><span>Twilio</span></li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="solutions-list">
-      <div class="solutions-item reveal">
-        <button class="solutions-row" type="button" aria-expanded="false" aria-controls="solutions-panel-product">
-          <img class="solutions-thumb" src="/imgs/Frame 38103.png" alt="Product">
-          <h3 class="solutions-title">Product</h3>
-          <span class="solutions-toggle" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2.5v13M2.5 9h13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
+  <section class="big-idea big-idea--split big-idea--panels">
+    <div class="big-idea-frame">
+
+      <!-- Headline panel -->
+      <div class="big-idea-panel">
+        <div class="big-idea-panel-top">
+          <span class="big-idea-pill reveal">
+            <span class="big-idea-pill-dot" aria-hidden="true"></span>
+            THE BIG IDEA
           </span>
-        </button>
-        <div class="solutions-panel" id="solutions-panel-product">
-          <div class="solutions-panel-inner">
-            <p class="solutions-panel-text">Web Development &middot; Android / iOS &middot; eCommerce &middot; Custom Software &middot; Blockchain</p>
+
+          <h2 class="big-idea-heading">
+            The best technology<br>
+            doesn't feel complicated.<br>
+            It simply works.
+          </h2>
+
+          <p class="big-idea-intro reveal">
+            We transform complex business challenges into digital experiences
+            that are intuitive for people, powerful for businesses, and ready to evolve.
+          </p>
+
+          <a class="big-idea-cta-pill reveal" href="/contact#contact-form">
+            <span>Start a Project</span>
+            <span class="big-idea-cta-pill-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11L11 5M6 5h5v5"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="big-idea-stage">
+          <div class="big-idea-portrait" aria-hidden="true">
+            <span class="big-idea-portrait-glow" aria-hidden="true"></span>
+            <img src="/imgs/big-idea-portrait.webp" alt="" width="900" height="1065" loading="lazy">
+          </div>
+
+          <span class="big-idea-stage-label">READY TO BUILD<br>WHAT'S NEXT?</span>
+          <span class="big-idea-stage-counter">02</span>
+
+          <div class="big-idea-stage-card">
+            <strong>Let's talk.</strong>
+            <span>Every great product starts with a conversation. Tell us what you're working on, and let's explore how we can bring it to life.</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- The four steps as a scrolling card rail -->
+      <div class="wn">
+        <h3 class="wn-title">How we work</h3>
+
+        <div class="wn-rail" role="region" aria-label="Our four-step approach" tabindex="0">
+          <article class="wn-card wn-card--overlay wn-card--dark">
+            <img class="wn-card-img" src="/imgs/idea-strategy.jpg" alt="A gold chess king among silver pieces on a cream and peach chessboard" loading="lazy" width="822" height="1358">
+            <div class="wn-card-panel">
+              <h4 class="wn-card-title">Strategy</h4>
+              <p class="wn-card-desc">We understand your goals, audience, and challenges to create a focused digital strategy that gives your product the right direction.</p>
+              <a class="wn-card-more" href="/about">Read more</a>
+              <div class="wn-card-foot"><span>Step 01</span><a class="wn-card-go" href="/about" aria-label="Strategy: our approach"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="wn-card wn-card--media">
+            <div class="wn-card-media"><img class="wn-card-img" src="/imgs/idea-design.jpg" alt="A bright designer desk with a UI/UX design on a monitor, a phone mockup and a plant" loading="lazy" width="822" height="1358" style="object-position: 50% 62%"></div>
+            <div class="wn-card-body">
+              <h4 class="wn-card-title">Design</h4>
+              <p class="wn-card-desc">We transform strategy into thoughtful digital experiences that connect your brand with the people who use it.</p>
+              <a class="wn-card-more" href="/about">Read more</a>
+              <div class="wn-card-foot"><span>Step 02</span><a class="wn-card-go" href="/about" aria-label="Design: our approach"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="wn-card wn-card--media">
+            <div class="wn-card-media"><img class="wn-card-img" src="/imgs/idea-technology.jpg" alt="A laptop showing code with a glass cloud and integration tiles floating above it" loading="lazy" width="822" height="1358" style="object-position: 50% 52%"></div>
+            <div class="wn-card-body">
+              <h4 class="wn-card-title">Technology</h4>
+              <p class="wn-card-desc">We combine modern engineering, AI, and scalable technologies to turn ideas into powerful digital products.</p>
+              <a class="wn-card-more" href="/about">Read more</a>
+              <div class="wn-card-foot"><span>Step 03</span><a class="wn-card-go" href="/about" aria-label="Technology: our approach"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="wn-card wn-card--overlay">
+            <img class="wn-card-img" src="/imgs/idea-growth.jpg" alt="Glass bar chart with a glowing upward arrow and gold coins" loading="lazy" width="822" height="1358">
+            <div class="wn-card-panel">
+              <h4 class="wn-card-title">Growth</h4>
+              <p class="wn-card-desc">We continuously improve, optimize, and scale your digital solutions to keep them performing as your needs change.</p>
+              <a class="wn-card-more" href="/about">Read more</a>
+              <div class="wn-card-foot"><span>Step 04</span><a class="wn-card-go" href="/about" aria-label="Growth: our approach"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="wn-nav">
+          <div class="wn-btns">
+            <button class="wn-btn wn-prev" type="button" aria-label="Previous cards" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="wn-btn wn-next" type="button" aria-label="Next cards"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+          <span class="wn-track" aria-hidden="true"><i class="wn-thumb"></i></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="solutions solutions--wheel" id="solutions" aria-label="Solutions">
+    <div class="sol-sticky">
+      <div class="sol-header">
+        <span class="sol-eyebrow"><span class="sol-eyebrow-dot" aria-hidden="true"></span>SOLUTIONS</span>
+        <span class="sol-counter">03</span>
+      </div>
+      <!-- Half-circle wheel: rotates with scroll to bring each solution forward -->
+      <div class="sol-wheel-wrap">
+        <div class="sol-wheel">
+          <span class="sol-ring sol-ring--arc" aria-hidden="true"></span>
+          <span class="sol-ring sol-ring--ticks" aria-hidden="true"></span>
+          <span class="sol-ring sol-ring--dash" aria-hidden="true"></span>
+          <span class="sol-core" aria-hidden="true"></span>
+          <span class="sol-core-glass" aria-hidden="true"></span>
+          <button class="sol-node is-active" type="button" style="--i: 0" data-index="0" aria-controls="sol-detail-product" aria-current="true">
+            <span class="sol-node-inner">
+              <span class="sol-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M8 21h8M12 17v4M7 9l2.5 2L7 13M12 13h4"/></svg></span>
+              <span class="sol-node-label"><b>01</b>Product</span>
+            </span>
+          </button>
+          <button class="sol-node" type="button" style="--i: 1" data-index="1" aria-controls="sol-detail-experience">
+            <span class="sol-node-inner">
+              <span class="sol-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/><circle cx="18.5" cy="18.5" r="2"/></svg></span>
+              <span class="sol-node-label"><b>02</b>Experience</span>
+            </span>
+          </button>
+          <button class="sol-node" type="button" style="--i: 2" data-index="2" aria-controls="sol-detail-intelligence">
+            <span class="sol-node-inner">
+              <span class="sol-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8zM5.5 15.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg></span>
+              <span class="sol-node-label"><b>03</b>Intelligence</span>
+            </span>
+          </button>
+          <button class="sol-node" type="button" style="--i: 3" data-index="3" aria-controls="sol-detail-enterprise">
+            <span class="sol-node-inner">
+              <span class="sol-node-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/><path d="M17.25 13.5v7.5M13.5 17.25H21"/></svg></span>
+              <span class="sol-node-label"><b>04</b>Enterprise</span>
+            </span>
+          </button>
+        </div>
+        <!-- 3D core (three.js), replaces the glass disc when WebGL is available -->
+        <div class="sol-core3d" aria-hidden="true"></div>
+      </div>
+      <div class="sol-content">
+        <div class="sol-details">
+          <article class="sol-detail is-active" id="sol-detail-product" data-index="0">
+            <span class="sol-detail-num">01 <i>/ 04</i></span>
+            <h3 class="sol-detail-title">Product</h3>
+            <p class="sol-detail-lead">Digital products engineered from first idea to launch and beyond.</p>
+            <ul class="sol-detail-tags">
+              <li>Web Development</li>
+              <li>Android / iOS</li>
+              <li>eCommerce</li>
+              <li>Custom Software</li>
+              <li>Blockchain</li>
+            </ul>
             <!-- TODO: replace href="#" with the real Product service detail page URL -->
-            <a class="solutions-detail-btn" href="#" data-service="product">
-              View Service Detail
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="solutions-item reveal">
-        <button class="solutions-row" type="button" aria-expanded="false" aria-controls="solutions-panel-experience">
-          <img class="solutions-thumb" src="/imgs/Frame 38105.png" alt="Experience">
-          <h3 class="solutions-title">Experience</h3>
-          <span class="solutions-toggle" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2.5v13M2.5 9h13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </span>
-        </button>
-        <div class="solutions-panel" id="solutions-panel-experience">
-          <div class="solutions-panel-inner">
-            <p class="solutions-panel-text">UI/UX Design &middot; Product Design &middot; UX Strategy &middot; Design Systems &middot; Prototyping</p>
+            <a class="sol-detail-link" href="#" data-service="product">View Service Detail <span class="sol-detail-link-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </article>
+          <article class="sol-detail" id="sol-detail-experience" data-index="1" aria-hidden="true">
+            <span class="sol-detail-num">02 <i>/ 04</i></span>
+            <h3 class="sol-detail-title">Experience</h3>
+            <p class="sol-detail-lead">Interfaces people understand at first glance, and enjoy coming back to.</p>
+            <ul class="sol-detail-tags">
+              <li>UI/UX Design</li>
+              <li>Product Design</li>
+              <li>UX Strategy</li>
+              <li>Design Systems</li>
+              <li>Prototyping</li>
+            </ul>
             <!-- TODO: replace href="#" with the real Experience service detail page URL -->
-            <a class="solutions-detail-btn" href="#" data-service="experience">
-              View Service Detail
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="solutions-item reveal">
-        <button class="solutions-row" type="button" aria-expanded="false" aria-controls="solutions-panel-intelligence">
-          <img class="solutions-thumb" src="/imgs/Frame 38104.png" alt="Intelligence">
-          <h3 class="solutions-title">Intelligence</h3>
-          <span class="solutions-toggle" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2.5v13M2.5 9h13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </span>
-        </button>
-        <div class="solutions-panel" id="solutions-panel-intelligence">
-          <div class="solutions-panel-inner">
-            <p class="solutions-panel-text">AI Solutions &middot; AI Chatbot Agents &middot; AI Applications &middot; AI Assistants &middot; Automation</p>
+            <a class="sol-detail-link" href="#" data-service="experience" tabindex="-1">View Service Detail <span class="sol-detail-link-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </article>
+          <article class="sol-detail" id="sol-detail-intelligence" data-index="2" aria-hidden="true">
+            <span class="sol-detail-num">03 <i>/ 04</i></span>
+            <h3 class="sol-detail-title">Intelligence</h3>
+            <p class="sol-detail-lead">AI that works inside your business, automating the work that slows you down.</p>
+            <ul class="sol-detail-tags">
+              <li>AI Solutions</li>
+              <li>AI Chatbot Agents</li>
+              <li>AI Applications</li>
+              <li>AI Assistants</li>
+              <li>Automation</li>
+            </ul>
             <!-- TODO: replace href="#" with the real Intelligence service detail page URL -->
-            <a class="solutions-detail-btn" href="#" data-service="intelligence">
-              View Service Detail
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="solutions-item reveal">
-        <button class="solutions-row" type="button" aria-expanded="false" aria-controls="solutions-panel-enterprise">
-          <img class="solutions-thumb" src="/imgs/Frame 38106.png" alt="Enterprise">
-          <h3 class="solutions-title">Enterprise</h3>
-          <span class="solutions-toggle" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2.5v13M2.5 9h13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </span>
-        </button>
-        <div class="solutions-panel" id="solutions-panel-enterprise">
-          <div class="solutions-panel-inner">
-            <p class="solutions-panel-text">Custom ERP &middot; Business Solutions &middot; System Integration &middot; Enterprise Software &middot; Automation</p>
+            <a class="sol-detail-link" href="#" data-service="intelligence" tabindex="-1">View Service Detail <span class="sol-detail-link-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </article>
+          <article class="sol-detail" id="sol-detail-enterprise" data-index="3" aria-hidden="true">
+            <span class="sol-detail-num">04 <i>/ 04</i></span>
+            <h3 class="sol-detail-title">Enterprise</h3>
+            <p class="sol-detail-lead">Connected systems that run your operations and scale with your growth.</p>
+            <ul class="sol-detail-tags">
+              <li>Custom ERP</li>
+              <li>Business Solutions</li>
+              <li>System Integration</li>
+              <li>Enterprise Software</li>
+              <li>Automation</li>
+            </ul>
             <!-- TODO: replace href="#" with the real Enterprise service detail page URL -->
-            <a class="solutions-detail-btn" href="#" data-service="enterprise">
-              View Service Detail
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+            <a class="sol-detail-link" href="#" data-service="enterprise" tabindex="-1">View Service Detail <span class="sol-detail-link-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </article>
+        </div>
+        <div class="sol-footer">
+          <div class="sol-progress" aria-hidden="true">
+            <span class="sol-progress-dot is-active"></span>
+            <span class="sol-progress-dot"></span>
+            <span class="sol-progress-dot"></span>
+            <span class="sol-progress-dot"></span>
           </div>
+          <a class="sol-cta" href="/solution">Explore Capabilities <span class="sol-cta-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
       </div>
     </div>
-
-    <a class="solutions-cta reveal" href="/solution">
-      Explore Capabilities
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
   </section>
 
-  <section class="tech-stack" id="tech-stack">
-    <div class="tech-header reveal">
-      <span class="tech-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        TECHNOLOGY STACK
-      </span>
-      <span class="tech-counter">04</span>
-    </div>
-
-    <h2 class="tech-heading">
-      The tools change.<br>
-      The thinking doesn't.
-    </h2>
-
-    <p class="tech-intro reveal">
-      We use modern technologies to build products that are fast, reliable, secure, and ready to scale.
-    </p>
-
-    <div class="tech-marquee-wrap reveal">
-      <div class="tech-marquee">
-        <div class="tech-track tech-track-1">
-          <div class="tech-badge"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></div>
-          <div class="tech-badge"><img src="/imgs/image 91.png" alt=""><span>Next.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 95.png" alt=""><span>Kubernetes</span></div>
-          <div class="tech-badge"><img src="/imgs/image 100.png" alt=""><span>Tensorflow</span></div>
-          <div class="tech-badge"><img src="/imgs/image 101.png" alt=""><span>Node.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 99.png" alt=""><span>Vercel</span></div>
-          <div class="tech-badge"><img src="/imgs/image 102.png" alt=""><span>MongoDB</span></div>
-          <div class="tech-badge"><img src="/imgs/image 97.png" alt=""><span>AWS</span></div>
-          <!-- duplicate set for seamless loop -->
-          <div class="tech-badge"><img src="/imgs/openai-com-logo-dark 1.png" alt=""><span>OpenAI</span></div>
-          <div class="tech-badge"><img src="/imgs/image 91.png" alt=""><span>Next.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 95.png" alt=""><span>Kubernetes</span></div>
-          <div class="tech-badge"><img src="/imgs/image 100.png" alt=""><span>Tensorflow</span></div>
-          <div class="tech-badge"><img src="/imgs/image 101.png" alt=""><span>Node.js</span></div>
-          <div class="tech-badge"><img src="/imgs/image 99.png" alt=""><span>Vercel</span></div>
-          <div class="tech-badge"><img src="/imgs/image 102.png" alt=""><span>MongoDB</span></div>
-          <div class="tech-badge"><img src="/imgs/image 97.png" alt=""><span>AWS</span></div>
+  <section class="tech-stack tech-stack--wave" id="tech-stack">
+    <div class="ts-frame">
+        <div class="ts-row ts-row--top" data-dir="1">
+          <ul class="ts-track" aria-label="Technologies, part 1">
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Html5"><img src="/imgs/image 105.png" alt="Html5" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Javascript"><img src="/imgs/image 107.png" alt="Javascript" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="React"><img src="/imgs/image 109 (1).png" alt="React" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Bootstrap"><img src="/imgs/image 110.png" alt="Bootstrap" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Next.js"><img src="/imgs/image 91.png" alt="Next.js" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Express.js"><img src="/imgs/express-js 1.png" alt="Express.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Python"><img src="/imgs/image 108 (1).png" alt="Python" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="FastAPI"><img src="/imgs/image 93.png" alt="FastAPI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Java"><img src="/imgs/image 113.png" alt="Java" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Laravel"><img src="/imgs/image 115.png" alt="Laravel" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Flutter"><img src="/imgs/image 117.png" alt="Flutter" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Swift"><img src="/imgs/image 118.png" alt="Swift" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="SwiftUI"><img src="/imgs/image 120.png" alt="SwiftUI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Android"><img src="/imgs/image 122.png" alt="Android" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="PostgreSQL"><img src="/imgs/image 98.png" alt="PostgreSQL" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="MongoDB"><img src="/imgs/image 102.png" alt="MongoDB" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Firebase"><img src="/imgs/image 104.png" alt="Firebase" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Sqlite"><img src="/imgs/image 127 (2).png" alt="Sqlite" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Elasticsearch"><img src="/imgs/image 129.png" alt="Elasticsearch" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Gemini"><img src="/imgs/image 130.png" alt="Gemini" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="TensorFlow"><img src="/imgs/image 132.png" alt="TensorFlow" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="LangChain"><img src="/imgs/image 134.png" alt="LangChain" class="is-wide" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="LlamaIndex"><img src="/imgs/image 136.png" alt="LlamaIndex" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="AWS"><img src="/imgs/image 97.png" alt="AWS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Google Cloud"><img src="/imgs/image 139.png" alt="Google Cloud" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Vercel"><img src="/imgs/image 99.png" alt="Vercel" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Dockers"><img src="/imgs/image 89.png" alt="Dockers" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="GitHub Actions"><img src="/imgs/image 142.png" alt="GitHub Actions" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Jenkins"><img src="/imgs/image 144.png" alt="Jenkins" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="Ansible"><img src="/imgs/image 146.png" alt="Ansible" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="RestAPI"><img src="/imgs/image 148.png" alt="RestAPI" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="WebSockets"><img src="/imgs/image 150.png" alt="WebSockets" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="JWT"><img src="/imgs/image 152.png" alt="JWT" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Google Maps API"><img src="/imgs/image 154.png" alt="Google Maps API" loading="lazy"></li>
+          </ul>
         </div>
 
-        <div class="tech-track tech-track-2">
-          <div class="tech-badge"><img src="/imgs/image 104.png" alt=""><span>Shopify</span></div>
-          <div class="tech-badge"><img src="/imgs/image 92.png" alt=""><span>TypeScript</span></div>
-          <div class="tech-badge"><img src="/imgs/image 93.png" alt=""><span>TailwindCSS</span></div>
-          <div class="tech-badge"><img src="/imgs/image 98.png" alt=""><span>PostgreSQL</span></div>
-          <div class="tech-badge"><img src="/imgs/image 94.png" alt=""><span>Python</span></div>
-          <div class="tech-badge"><img src="/imgs/image 89.png" alt=""><span>Dockers</span></div>
-          <div class="tech-badge"><img src="/imgs/image 90.png" alt=""><span>React</span></div>
-          <div class="tech-badge"><img src="/imgs/image 103.png" alt=""><span>WordPress</span></div>
-          <!-- duplicate set for seamless loop -->
-          <div class="tech-badge"><img src="/imgs/image 104.png" alt=""><span>Shopify</span></div>
-          <div class="tech-badge"><img src="/imgs/image 92.png" alt=""><span>TypeScript</span></div>
-          <div class="tech-badge"><img src="/imgs/image 93.png" alt=""><span>TailwindCSS</span></div>
-          <div class="tech-badge"><img src="/imgs/image 98.png" alt=""><span>PostgreSQL</span></div>
-          <div class="tech-badge"><img src="/imgs/image 94.png" alt=""><span>Python</span></div>
-          <div class="tech-badge"><img src="/imgs/image 89.png" alt=""><span>Dockers</span></div>
-          <div class="tech-badge"><img src="/imgs/image 90.png" alt=""><span>React</span></div>
-          <div class="tech-badge"><img src="/imgs/image 103.png" alt=""><span>WordPress</span></div>
-        </div>
-      </div>
-    </div>
+      <div class="ts-center">
+        <span class="ts-eyebrow reveal"><span class="ts-eyebrow-dot" aria-hidden="true"></span>TECHNOLOGY STACK <i>04</i></span>
 
-    <a class="tech-cta reveal" href="/tech-stack">
-      Explore Technology
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </section>
+        <h2 class="tech-heading">
+          The tools change.<br>
+          The thinking doesn't.
+        </h2>
 
-  <section class="ai-solutions">
-    <div class="ai-header reveal">
-      <span class="ai-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        AI SOLUTIONS
-      </span>
-      <span class="ai-counter">05</span>
-    </div>
+        <p class="tech-intro reveal">
+          We use modern technologies to build products that are fast, reliable, secure, and ready to scale.
+        </p>
 
-    <div class="ai-body">
-      <img class="ai-image reveal" src="/imgs/ChatGPT Image Sep 13, 2026, 02_41_18 AM 1.png" alt="AI Solutions">
-
-      <div class="ai-content">
-        <h2 class="ai-heading">What if your software could think with you?</h2>
-        <p class="ai-desc reveal">We build intelligent systems that can understand information, automate repetitive work, assist customers, and help teams make better decisions.</p>
-        <a class="ai-cta reveal" href="/solution#ai-services">
-          Explore AI Solutions
+        <a class="tech-cta reveal" href="/tech-stack">
+          Explore Technology
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
+
+        <div class="ts-row ts-row--bottom" data-dir="-1">
+          <ul class="ts-track" aria-label="Technologies, part 2">
+            <li class="ts-tile" style="--tile: #FFF3E6" title="CSS3"><img src="/imgs/image 106.png" alt="CSS3" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Typescript"><img src="/imgs/image 108.png" alt="Typescript" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="TailwindCSS"><img src="/imgs/image 93 (2).png" alt="TailwindCSS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Angular"><img src="/imgs/image 111.png" alt="Angular" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Node.js"><img src="/imgs/image 105 (1).png" alt="Node.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Nest.js"><img src="/imgs/image 107 (1).png" alt="Nest.js" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Django"><img src="/imgs/image 109.png" alt="Django" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="Flask"><img src="/imgs/image 112.png" alt="Flask" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Springboot"><img src="/imgs/image 114.png" alt="Springboot" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title=".Net"><img src="/imgs/image 116.png" alt=".Net" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="React Native"><img src="/imgs/image 109 (2).png" alt="React Native" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Kotlin"><img src="/imgs/image 119.png" alt="Kotlin" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="Jetpack Compose"><img src="/imgs/image 121.png" alt="Jetpack Compose" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="iOS"><img src="/imgs/image 123.png" alt="iOS" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="MySQL"><img src="/imgs/image 124.png" alt="MySQL" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Redis"><img src="/imgs/image 125.png" alt="Redis" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="Supabase"><img src="/imgs/image 126.png" alt="Supabase" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="DynamoDB"><img src="/imgs/image 128.png" alt="DynamoDB" loading="lazy"></li>
+            <li class="ts-tile ts-tile--dark" title="OpenAI"><img src="/imgs/openai-com-logo-dark 1.png" alt="OpenAI" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Anthropic"><img src="/imgs/image 131.png" alt="Anthropic" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="Huggingface"><img src="/imgs/image 133.png" alt="Huggingface" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="LangGraph"><img src="/imgs/image 135.png" alt="LangGraph" class="is-wide" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="OpenCV"><img src="/imgs/opencv.png" alt="OpenCV" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Microsoft Azure"><img src="/imgs/image 138.png" alt="Microsoft Azure" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Cloudflare"><img src="/imgs/image 140.png" alt="Cloudflare" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FCE4EC" title="DigitalOcean"><img src="/imgs/image 141.png" alt="DigitalOcean" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #F1E8F8" title="Kubernetes"><img src="/imgs/image 95.png" alt="Kubernetes" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFF3E6" title="Terraform"><img src="/imgs/image 143.png" alt="Terraform" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FDEBE5" title="GitLab CI/CD"><img src="/imgs/image 145.png" alt="GitLab CI/CD" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Nginx"><img src="/imgs/image 147.png" alt="Nginx" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #EAF4FF" title="GraphQL"><img src="/imgs/image 149.png" alt="GraphQL" loading="lazy"></li>
+            <li class="ts-tile ts-tile--grad" title="OAuth"><img src="/imgs/image 151.png" alt="OAuth" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFFFFF" title="Stripe"><img src="/imgs/image 153.png" alt="Stripe" loading="lazy"></li>
+            <li class="ts-tile" style="--tile: #FFE8DC" title="Twilio"><img src="/imgs/image 155.png" alt="Twilio" loading="lazy"></li>
+          </ul>
+        </div>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="about-header reveal">
-      <span class="about-eyebrow">
-        <img class="eyebrow-icon" src="/imgs/Vector.png" alt="">
-        ABOUT RELYCO
-      </span>
-      <span class="about-counter">06</span>
+  <section class="ai-solutions ai-solutions--phone" aria-labelledby="ai-heading">
+    <!-- Soft photographic-style clouds (SVG fractal noise, tinted) -->
+    <svg class="ai-clouds" aria-hidden="true" focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 760">
+      <defs>
+        <filter id="aiCloudNoise" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.0032 0.0075" numOctaves="6" seed="11" result="noise"/>
+          <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.96  0 0 0 0 0.84  0 0 0 0 0.82  2.3 0 0 0 -0.9"/>
+          <feGaussianBlur stdDeviation="2"/>
+        </filter>
+        <linearGradient id="aiCloudFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity="0.2"/>
+          <stop offset="0.35" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="0.75" stop-color="#fff" stop-opacity="0.85"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="aiCloudMask"><rect width="1440" height="760" fill="url(#aiCloudFade)"/></mask>
+      </defs>
+      <rect width="1440" height="760" filter="url(#aiCloudNoise)" mask="url(#aiCloudMask)"/>
+    </svg>
+    <span class="ai-sun" aria-hidden="true"></span>
+
+    <div class="ai-top">
+      <span class="ai-pill reveal"><span class="ai-pill-dot" aria-hidden="true"></span>AI SOLUTIONS <i>05</i></span>
+      <h2 class="ai-heading" id="ai-heading">What if your software could think with you?</h2>
     </div>
 
-    <div class="about-body">
-      <p class="about-lead">Relyco Tech Solutions is a Saudi Arabia&ndash;based technology company focused on building digital products and intelligent solutions that help businesses move forward.</p>
-      <p class="about-text">We bring together design, engineering, and AI to turn complex ideas and challenges into technology that is simple, scalable, and built for real-world impact.</p>
-      <p class="about-text">From custom software to AI-powered solutions, we build technology around what your business actually needs &mdash; today and as it grows.</p>
+    <div class="ai-stage">
+      <!-- Phone: an AI assistant listening to a request -->
+      <span class="ai-phone-floor" aria-hidden="true"></span>
+      <div class="ai-phone" aria-hidden="true">
+        <span class="ai-phone-btn ai-phone-btn--action"></span>
+        <span class="ai-phone-btn ai-phone-btn--up"></span>
+        <span class="ai-phone-btn ai-phone-btn--down"></span>
+        <span class="ai-phone-btn ai-phone-btn--power"></span>
+        <div class="ai-phone-screen">
+          <span class="ai-phone-glare"></span>
+          <div class="ai-phone-status">
+            <span>9:41</span>
+            <span class="ai-phone-island"><i></i></span>
+            <span class="ai-phone-icons">
+              <svg viewBox="0 0 18 12" width="17" height="11"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+              <svg viewBox="0 0 16 12" width="15" height="11"><path d="M8 11.6l2.4-2.9a3.6 3.6 0 0 0-4.8 0z"/><path d="M8 4.6a7 7 0 0 1 4.9 2l1.4-1.7A9.2 9.2 0 0 0 8 2.3 9.2 9.2 0 0 0 1.7 4.9l1.4 1.7A7 7 0 0 1 8 4.6z" opacity=".95"/></svg>
+              <svg viewBox="0 0 27 13" width="25" height="12"><rect x="0.5" y="0.5" width="22" height="12" rx="3.6" fill="none" stroke="currentColor" opacity=".4"/><rect x="2.2" y="2.2" width="16" height="8.6" rx="2.2"/><path d="M24.4 4.4v4.2c.9-.3 1.5-1.1 1.5-2.1s-.6-1.8-1.5-2.1z" opacity=".45"/></svg>
+            </span>
+          </div>
+
+          <span class="ai-orb"><i></i></span>
+          <span class="ai-listening">AI assistant is listening&hellip;</span>
+
+          <p class="ai-transcript">
+            <span>Every Monday I sort the support tickets</span>
+            <span>and write the same replies again.</span>
+            <span>Summarise this week's tickets and draft</span>
+            <span>answers for the common ones&hellip;</span>
+          </p>
+
+          <span class="ai-mic"><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+
+      <!-- Floating cards: what the AI does (from the section copy) -->
+      <div class="ai-card ai-card--info" aria-hidden="true">
+        <span class="ai-card-title">Understand<br>information</span>
+        <span class="ai-card-docs"><i></i><i></i><i></i></span>
+        <span class="ai-card-foot">
+          <span>Docs &middot; Data &middot; Email</span>
+          <span class="ai-card-bars"><i></i><i></i><i></i><i></i></span>
+        </span>
+      </div>
+
+      <div class="ai-card ai-card--agent" aria-hidden="true">
+        <span class="ai-card-kicker">Chatbot agent</span>
+        <span class="ai-card-badge">Live</span>
+        <span class="ai-card-title">Assist<br>customers</span>
+        <span class="ai-card-chip"><i></i>Replying&hellip;<b>Always on</b></span>
+      </div>
+
+      <div class="ai-card ai-card--ask" aria-hidden="true">
+        <span class="ai-card-title">What should AI handle today?</span>
+        <span class="ai-card-options">
+          <span><i>&#9998;</i>Automate<br>tasks</span>
+          <span><i>&#9733;</i>Summarise<br>data</span>
+          <span class="is-on"><i>&#10003;</i>Better<br>decisions</span>
+          <span><i>&#9993;</i>Draft<br>replies</span>
+        </span>
+      </div>
     </div>
 
-    <a class="about-cta reveal" href="/about">
-      Learn More About The Company
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </section>
-
-  <section class="final-cta">
-    <img class="final-cta-bg" src="/imgs/ChatGPT Image Sep 13, 2026, 05_49_26 PM 1.png" alt="">
-
-    <div class="final-cta-content">
-      <span class="final-cta-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
-      <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
-      <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
-      <a class="final-cta-button reveal" href="/contact">
-        Start a Conversation
+    <div class="ai-bottom">
+      <p class="ai-desc reveal">We build intelligent systems that can understand information, automate repetitive work, assist customers, and help teams make better decisions.</p>
+      <a class="ai-cta reveal" href="/solution#ai-services">
+        Explore AI Solutions
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
-        <p class="footer-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+  <section class="about about--bento" id="about">
+    <div class="ab-wrap">
+      <!-- Left: statement -->
+      <div class="ab-copy">
+        <span class="ab-pill reveal"><span class="ab-pill-dot" aria-hidden="true"></span>ABOUT RELYCO <i>06</i></span>
+
+        <div class="about-body">
+          <p class="about-lead">Relyco Tech Solutions is a Saudi Arabia&ndash;based technology company focused on building digital products and intelligent solutions that help businesses move forward.</p>
+          <p class="about-text">We bring together design, engineering, and AI to turn complex ideas and challenges into technology that is simple, scalable, and built for real-world impact.</p>
+          <p class="about-text">From custom software to AI-powered solutions, we build technology around what your business actually needs &mdash; today and as it grows.</p>
+        </div>
+
+        <a class="about-cta reveal" href="/about">
+          Learn More About The Company
+          <span class="ab-cta-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Solutions</h4>
-        <a href="/solution#web-dev">Web Development</a>
-        <a href="/solution#mobile-app">Mobile App Development</a>
-        <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
-        <a href="/solution#ux-ui">UI UX Design</a>
-        <a href="/solution#ecommerce">eCommerce Development</a>
-        <a href="/solution#digital-marketing">Digital Marketing</a>
-        <a href="/solution#erp">Custom ERP Solutions</a>
-        <a href="/solution#blockchain">Blockchain Development</a>
-      </div>
+      <!-- Right: bento cards -->
+      <div class="ab-bento">
+        <article class="ab-card ab-card--team reveal">
+          <span class="ab-card-kicker">How we work</span>
+          <h3 class="ab-card-title">One team.<br>Three disciplines.</h3>
+          <ul class="ab-disciplines">
+            <li><span class="ab-dot" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/></svg></span>Design</li>
+            <li><span class="ab-dot" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>Engineering</li>
+            <li><span class="ab-dot" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8L5.5 9.4l4.7-1.8z"/></svg></span>AI</li>
+          </ul>
+        </article>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Industries</h4>
-        <a href="/industries#retail">Retail</a>
-        <a href="/industries#manufacturing">Manufacturing</a>
-        <a href="/industries#real-estate">Real Estate</a>
-        <a href="/industries#bfsi">BFSI</a>
-        <a href="/industries#hospitality">Hospitality</a>
-        <a href="/industries#healthcare">Healthcare</a>
-        <a href="/industries#logistics">Logistics</a>
-        <a href="/industries#automotive">Automotive</a>
-      </div>
+        <a class="ab-card ab-card--stat reveal" href="/tech-stack">
+          <span class="ab-logos" aria-hidden="true">
+            <span><img src="/imgs/image 102.png" alt=""></span>
+            <span><img src="/imgs/image 90.png" alt=""></span>
+            <span><img src="/imgs/image 97.png" alt=""></span>
+          </span>
+          <strong class="ab-num">16<sup>+</sup></strong>
+          <span class="ab-label">Technologies in our stack</span>
+        </a>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Company</h4>
-        <a href="/about">About us</a>
-        <a href="/contact">Contact us</a>
+        <a class="ab-card ab-card--stat ab-card--soft reveal" href="/industries">
+          <span class="ab-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <strong class="ab-num">8</strong>
+          <span class="ab-label">Industries served</span>
+        </a>
+
+        <article class="ab-card ab-card--place reveal">
+          <span class="ab-place-pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          </span>
+          <span class="ab-card-kicker">Headquartered in</span>
+          <h3 class="ab-card-title">Saudi Arabia</h3>
+          <p class="ab-place-text">Building simple, scalable technology for businesses that want to move forward.</p>
+          <span class="ab-place-grid" aria-hidden="true"></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq faq--clean" id="faq" aria-labelledby="faq-heading">
+    <!-- faint orbit lines and floating technology tiles -->
+    <div class="fq-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="fq-tiles" aria-hidden="true">
+      <span class="fq-tile" style="--x: 4%; --y: 14%; --d: 0s"><img src="/imgs/image 109 (1).png" alt=""></span>
+      <span class="fq-tile" style="--x: 21%; --y: 30%; --d: -1.6s"><img src="/imgs/image 105 (1).png" alt=""></span>
+      <span class="fq-tile" style="--x: 9%; --y: 58%; --d: -3.1s"><img src="/imgs/image 108 (1).png" alt=""></span>
+      <span class="fq-tile" style="--x: 72%; --y: 10%; --d: -0.8s"><img src="/imgs/image 102.png" alt=""></span>
+      <span class="fq-tile" style="--x: 86%; --y: 34%; --d: -2.4s"><img src="/imgs/image 117.png" alt=""></span>
+      <span class="fq-tile" style="--x: 93%; --y: 64%; --d: -4s"><img src="/imgs/image 104.png" alt=""></span>
+    </div>
+
+    <div class="fq-top">
+      <span class="fq-chip"><span class="fq-chip-dots" aria-hidden="true"><i></i><i></i><i></i></span><b>08</b> answers <em>(FAQ)</em></span>
+      <h2 class="fq-heading" id="faq-heading">Frequently asked<br>questions</h2>
+      <p class="fq-sub">From the first idea to launch and beyond, here are clear answers to what businesses ask us most about working with Relyco. Can&rsquo;t find yours? Talk to us directly.</p>
+      <div class="fq-actions">
+        <a class="fq-btn fq-btn--dark" href="/contact">Schedule a Consultation</a>
+        <a class="fq-btn fq-btn--soft" href="mailto:info@relycoltd.com">Email Our Team</a>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
-      <div class="footer-legal">
+    <!-- big title on the left, only the question cards on the right -->
+    <div class="fq-window fq-split">
+      <figure class="fq-media" data-caps="What we do|Our services|Industries|How we start|Technologies|Improving products|Time and cost|After launch">
+        <img class="fq-shot is-active" src="/imgs/photos/team-workshop.jpg" alt="A team discussing a project around laptops at a shared table" loading="lazy" data-i="0">
+        <img class="fq-shot" src="/imgs/photos/solution-web.jpg" alt="A laptop showing code on a bright, tidy desk" loading="lazy" data-i="1">
+        <img class="fq-shot" src="/imgs/photos/industry-logistics.jpg" alt="A large warehouse with shelves and parcels" loading="lazy" data-i="2">
+        <img class="fq-shot" src="/imgs/photos/solution-ai.jpg" alt="A woman presenting ideas on a large screen in a meeting room" loading="lazy" data-i="3">
+        <img class="fq-shot" src="/imgs/photos/solution-blockchain.jpg" alt="A laptop screen full of code in a dark room" loading="lazy" data-i="4">
+        <img class="fq-shot" src="/imgs/photos/solution-uxui.jpg" alt="Colour swatches and design samples on a desk" loading="lazy" data-i="5">
+        <img class="fq-shot" src="/imgs/photos/solution-erp.jpg" alt="A laptop showing a dashboard with charts" loading="lazy" data-i="6">
+        <img class="fq-shot" src="/imgs/photos/team-developer.jpg" alt="Developers working together at a computer" loading="lazy" data-i="7">
+        <figcaption class="fq-cap"><b>01</b><span>What we do</span></figcaption>
+      </figure>
+      <div class="fq-body">
+        <div class="fq-list">
+            <div class="faq-item reveal is-open">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-a-01" id="faq-q-01">
+                  <span class="faq-num">01</span><span class="faq-qtext">What does Relyco Tech Solutions do?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-01" role="region" aria-labelledby="faq-q-01"><div class="faq-panel-inner"><p>Relyco is a Saudi Arabia&ndash;based technology company. We build digital products, software solutions and intelligent technologies &mdash; from web and mobile apps to AI-powered systems &mdash; that help businesses move forward.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-02" id="faq-q-02">
+                  <span class="faq-num">02</span><span class="faq-qtext">Which services do you offer?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-02" role="region" aria-labelledby="faq-q-02"><div class="faq-panel-inner"><p>Web development, mobile app development, AI services, UX/UI design, e-commerce, digital marketing, ERP solutions and blockchain development. You can explore each one on our <a href="/solution">Solutions</a> page.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-03" id="faq-q-03">
+                  <span class="faq-num">03</span><span class="faq-qtext">Which industries do you work with?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-03" role="region" aria-labelledby="faq-q-03"><div class="faq-panel-inner"><p>Retail, manufacturing, real estate, BFSI, hospitality, healthcare, logistics and automotive. Every industry has different challenges, so we shape each solution around how your business operates. See <a href="/industries">Industries</a>.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-04" id="faq-q-04">
+                  <span class="faq-num">04</span><span class="faq-qtext">How does a project with Relyco start?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-04" role="region" aria-labelledby="faq-q-04"><div class="faq-panel-inner"><p>With a conversation. We follow four steps: <b>Understand</b> the real challenge, <b>Design</b> an experience that makes technology clear, <b>Build</b> it with the right technologies, and <b>Evolve</b> it so your business stays ahead.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-05" id="faq-q-05">
+                  <span class="faq-num">05</span><span class="faq-qtext">Which technologies do you use?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-05" role="region" aria-labelledby="faq-q-05"><div class="faq-panel-inner"><p>Modern, proven tools such as React, Next.js, Node.js, Python, Flutter, PostgreSQL, AWS and leading AI platforms. We choose what best fits your product, users and long-term goals &mdash; not what&rsquo;s simply popular. See our <a href="/tech-stack">Tech Stack</a>.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-06" id="faq-q-06">
+                  <span class="faq-num">06</span><span class="faq-qtext">Can you improve an existing product?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-06" role="region" aria-labelledby="faq-q-06"><div class="faq-panel-inner"><p>Yes. Whether you&rsquo;re starting from an idea or evolving an existing product, we can review what you have, then redesign, extend or modernise it.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-07" id="faq-q-07">
+                  <span class="faq-num">07</span><span class="faq-qtext">How long does a project take, and what does it cost?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-07" role="region" aria-labelledby="faq-q-07"><div class="faq-panel-inner"><p>It depends on scope, features and integrations. Once we understand what you need, we share a clear plan with timelines and an estimate before any work begins.</p></div></div>
+            </div>
+            <div class="faq-item reveal">
+              <h3 class="faq-q-row">
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-08" id="faq-q-08">
+                  <span class="faq-num">08</span><span class="faq-qtext">Do you support products after launch?</span><span class="faq-ico" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-a-08" role="region" aria-labelledby="faq-q-08"><div class="faq-panel-inner"><p>Great products should be built to evolve. After launch we keep improving, maintaining and scaling what we&rsquo;ve built together.</p></div></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews reviews--full" id="reviews" aria-labelledby="reviews-heading">
+    <div class="rv-header">
+      <span class="ab-pill reveal"><span class="ab-pill-dot" aria-hidden="true"></span>CLIENT REVIEWS <i>08</i></span>
+      <h2 class="rv-heading reveal" id="reviews-heading">Trusted by teams<br><span>across the map.</span></h2>
+      <p class="rv-intro reveal">From Riyadh to Tokyo and São Paulo, here is what the people we build with say about working with Relyco. Pick a pin to read their story.</p>
+      <span class="rv-legend reveal"><i class="rv-legend-on"></i>Client countries <i class="rv-legend-hatch"></i>Wider GCC reach</span>
+    </div>
+
+    <div class="rv-stage">
+      <div class="rv-map-area">
+        <div class="rv-viewport">
+        <div class="rv-map">
+          <img class="rv-map-base" src="/imgs/world-map.svg" alt="" width="1000" height="500" loading="lazy">
+          <svg class="rv-map-active" viewBox="0 0 1000 500" aria-hidden="true">
+            <path data-region="ca" d="M198,129L197.7,129L194.7,125.9L193.8,124.6L190.1,123.3L190.5,120.6L192,118.7L189.7,117.3L190.9,114.9L189.5,112.6L190.6,111.1L192.9,109.6L194.1,107.7L191.5,105.8L191.6,102.4L191.8,100.2L190.7,98.9L190.1,97.7L190.1,96.1L187,97.1L183.5,98.7L183,96.8L182.4,95.5L180.9,94.7L178.7,94.6L193.2,78.2L203.2,68L206.5,68.6L208.5,69.9L210.5,70.2L213.4,69L216.8,68.2L219.6,68.5L223.9,67.3L228,66.7L228.4,67.8L230.5,67.1L232.2,65.9L233.3,66.2L234.7,68.6L239.1,66.7L237.6,68.8L240.6,68.4L242.1,67.6L244.5,67.7L246.7,68.9L250.8,69.9L253.4,70.3L255.6,70.2L257.3,71.6L253.2,72.9L256.6,73.5L262.7,73.2L264.9,72.7L265.9,74.4L269.3,73L268,71.8L270.1,70.9L272.7,70.7L274.7,70.5L275.9,71.1L276.9,72.6L279.5,72.4L282.4,73.6L286,73.2L289.1,73.3L290,71.5L292.2,71.1L294.9,72L293.2,74.6L296,72.4L297.7,72.5L300.4,69.7L299.3,68L297.6,66.9L299.9,64L303.7,62L306.1,62.4L307.4,63.6L308.2,66.7L305.4,68L309,68.5L307.2,71.3L311.4,69.2L312.8,71L310.9,73L311.9,74.9L315.3,72.9L318.3,70.5L320.2,67.5L323.1,67.7L326,68.1L328,69.5L327.4,70.8L325,72.3L325.6,73.8L324.6,75.1L319.3,77.1L316,77.5L314.3,76.7L312.8,78.1L309.4,80.5L308,81.7L304.4,83.6L301.1,83.8L298.6,85L297.4,86.9L294.6,87.2L290.5,89.6L286.2,92.9L284,95.2L282,98.6L285.1,99.1L284.7,101.9L284.6,104.2L288.2,103.6L291.9,104.9L293.7,106L294.7,107.4L297.2,108.3L299.1,109.6L303,109.7L305.4,110L303.9,112.7L303.3,115.7L303.7,119.2L306.1,122.1L308.4,121.1L310.9,117.9L311.6,113.1L310.6,111.5L315,110.1L318.5,107.9L320.7,105.8L321.3,103.8L320.9,101.3L319.1,99L323.2,95.9L323.4,93.3L324.8,88.7L326.7,88.1L330.1,88.9L332.3,89.1L334.5,88.4L336.2,89.4L338.2,91L338.4,92.2L342.3,92.4L341.3,94.9L340.5,98.6L342.4,99L343.4,100.8L347.4,99.1L350.8,95.9L352.9,94.5L353.7,97.1L355.3,100.9L356.6,104.5L355,106.4L357.6,108.1L359.2,109.9L362.7,110.6L363.9,111.6L364.1,114.2L365.8,114.6L366.5,115.8L365.7,119.2L363.6,120.4L361.6,121.5L357.3,122.6L353.5,125.1L349.2,125.6L344.2,125L340.5,125L338,125.2L335.2,127.4L331.7,128.8L326.8,133L323.1,135.9L325.3,135.4L330.6,131.2L336.5,128.6L340.3,128.3L342,129.8L339.1,131.9L338.9,135.3L339.1,137.7L341.9,139.3L346.2,138.9L349.6,135.3L349.1,137.6L350.5,138.7L346.9,140.8L340.8,142.7L338,144L334.6,146.3L332.7,146.1L333.3,143.4L338.4,140.7L334.3,140.8L331.4,141.2L330.3,139.4L331.5,135.1L330.7,134.2L328.9,134.7L328.3,133.9L325.7,136.3L324.2,138.8L322.9,140.2L321.7,140.7L320.8,140.9L320.4,141.6L315.7,141.6L311.9,141.7L310.6,142.3L307.2,144.5L306.9,144.8L305.7,146L303.3,146L300.9,146.1L299.6,146.6L299.8,147.2L299.7,148.2L299.6,148.5L295.8,150.1L293,150.6L289.5,152.3L288.9,152.3L288.1,151.8L288,151.3L288.2,151L289.1,149.9L290.8,148.1L292.2,146.2L292.5,143.5L293,140.6L290.9,139.1L291.4,138.5L291.1,138.1L290.5,138.1L290.1,137.6L290.3,136.9L289.7,137.2L289,137.1L289.3,136.8L288.8,136.5L288.9,135.6L287.3,134.6L285.7,133.6L283.8,132.4L281.9,131.2L279.3,132.1L278.5,132.1L275.8,131.3L273.6,131.7L271.6,130.8L269.3,130.3L267.7,130.1L267.1,129.5L267.5,127.8L266.6,127.8L266.1,129L261,129L252.6,129L244.2,129L236.9,129L229.5,129L222.2,129L214.7,129L212.3,129L205,129ZM311.8,88.4L314.1,87L317.2,87L316.9,87.6L313.4,89.2L311.9,89.1ZM336.9,59.7L335.5,58.3L336.2,57.4L337.3,57.2L341.8,57.5L344.4,58.9L344.2,59.6L342,59.5L339.9,59.5L337.4,59.8ZM319.5,89.4L320.8,88.5L321.7,88.6L322,89.2L320.3,90.7L319.5,90.5L319.3,89.6ZM312.8,54L311,55L308.2,54.8L306.3,54.2L308.3,53L311.7,52.3L312.7,53.2ZM317.5,47.7L316.6,47.8L313.1,47.6L313.2,46.9L317,47L318,47.4ZM314.6,44.7L316.2,45.5L314.8,46.4L311.5,46.9L310.5,46.3L310.5,45.4L311.3,44.4L313.7,44.5ZM322.7,55.5L319.7,55.2L314.9,54.4L315.3,53L316.1,51.7L315,50.6L311.1,50.3L309.5,49.6L311.1,48.6L315,48.7L316.5,49.5L320.4,49.5L321.4,50.3L320.2,51.3L322.1,51.8L322.9,52.4L325.5,52.5L328.2,52.8L331.8,52.2L336,52L339.1,52.2L340.5,53.1L340.3,54.2L338.6,54.9L335.2,55.4L332.9,55.1L326.8,55.5ZM285.3,46.2L287.6,46.5L286.2,47.3L281.9,48L279.8,47.2L282.2,46.4ZM287.5,44.6L289.5,45.1L286.6,45.5L283.5,45.5L283.9,45.2L286.6,44.5ZM365.2,121.8L363.4,123.7L361,126.5L362.9,125.4L364.4,126.1L363.2,127.2L365.2,128L366.5,127.3L368.7,128.2L367.4,130.5L369.3,130L369.2,131.7L369.5,133.6L367.8,136.4L366.7,136.5L365.2,135.9L366.3,133.3L365.7,132.9L362.2,135.7L360.7,135.6L362.8,134.1L360.6,133.3L357.9,133.5L353.2,133.4L353,132.5L354.8,131.4L354,130.5L356.6,128.6L360.4,123.7L362.4,121.9L364.8,120.8L365.9,121ZM316.1,80.7L318,81.7L320,82.6L319.5,84L321.2,83.7L322.3,84.7L319.9,85.6L316.8,84.9L316.3,83.6L313.2,85.1L309.3,86.6L309.4,84.9L306.3,85.2L309,83.8L310.5,81.6L312.7,79L314.2,79.2L313.9,80.4L315.2,80ZM338.3,60.9L340.8,59.8L344.6,61.2L346.7,62.4L346.4,63.6L350.5,63L351.8,64.7L356.3,65.8L357.6,66.8L358.3,69.4L353.8,70.7L358,72.5L361.1,73.1L363.1,75.6L366.4,75.8L364.9,77.8L359.7,81.1L357.5,79.9L355.3,77.1L352.3,77.5L351.3,79.1L352.9,80.8L355.3,82.1L355.9,82.8L356.2,85.6L354.6,87.7L352.1,86.9L347.5,84.6L349.6,87.1L351.2,88.9L351.1,89.9L345.5,88.7L341.4,87L339.4,85.6L340.5,84.8L337.9,83.3L335.3,82L335,82.8L328.4,83.2L327,82.3L329.5,80.2L333.6,80.1L338.3,79.8L338.1,78.8L339.5,77.4L343.7,74.6L343.7,73.4L343.3,72.5L340.8,71.1L337,70.2L338.7,69.5L337.4,67.8L335.6,67.6L334.5,66.7L332.9,67.5L328.9,67.9L321.6,67.3L317.6,66.5L314.5,66.1L313.4,65.1L316.4,63.9L313.4,63.9L314.6,61.2L317.8,58.8L320.6,57.8L326.3,57.1L323.7,58.7L324.2,60.4L327.5,58.3L333.3,57.2L335.1,59.9L333.7,61.6ZM309.4,56.2L313.5,56.3L316.9,56.9L312.2,59.3L309.4,59.8L305.8,61.7L303.5,61.6L304,59.3L305,58L306.9,56.9ZM257.3,51.2L262.7,49.3L268.4,47.7L271.3,47.7L274.4,47.4L272.1,49.3L269.7,50.1L267.8,50.2L263,51.3L259.5,51.7ZM183.8,113.4L186.2,113.2L183.2,116.6L183.7,119.1L182.7,119.1L182.2,117.7L182.2,116.3L181.7,115.3L182.1,114L182.9,113ZM299.2,43.4L302.6,43.8L306.9,44.6L307.3,45.7L307.1,46.7L304.2,46.5L301.8,45.7L297.6,45.6L300.1,44.9L298.4,44.3ZM195.5,130.6L194.1,131L190.8,129.6L190.7,128.5L189.1,127.4L189.2,126.5L187,125.9L187.1,124.2L187.8,123.5L189.9,124.2L191.1,124.6L193.2,125L193.4,126.1L193.8,127.5L195.5,128.8ZM255.7,55.4L258,55.9L263,56.1L264.3,56.8L265.5,57.9L262.3,58.6L255.6,60.4L251.4,62.3L250.3,63.4L243.7,64.7L243.7,63.6L240.2,62.2L242.2,61L245.4,59.1L248.9,57.4L248.5,55.8ZM286.4,51.8L288.6,51.4L290.5,51.5L289.8,52.8L287.5,54L280.4,54.4L274.3,55.5L271.2,55.5L271.7,54.7L276.9,53.6L267.6,53.9L265.3,53.4L270.4,50.9L273,50.2L277.7,51.1L279.8,52.6L283.1,52.8L282.5,50.4L285.2,49.5L286.9,49.8L286.5,50.9ZM282.8,59L284.3,60L283.5,62.6L282.7,64.5L285.2,65.8L288,67.1L286.9,68.3L283.3,68.5L283.9,69.6L282.5,70.6L278.9,70.2L275.8,69.4L273.3,69.6L268.6,70.5L262.9,70.9L258.9,71.2L258.7,69.9L256.5,69.1L254.3,69.4L253.5,67.3L255.2,67L258.8,66.5L261.6,66.7L264.8,66.2L261.2,65.6L256.6,65.8L253.7,65.7L253.4,64.7L259.2,63.6L255.9,63.7L253,63L256.5,61L258.8,59.9L265.7,58.3L267.4,58.8L265.3,60.1L270.5,59.3L272.2,60.6L275.7,59.3L276.8,60.1L276.3,62.7L278.3,61.6L279.1,58.9L281.2,58.5ZM294.5,59.9L293.6,58.2L297,57L299,57.5L302.8,57.2L302.8,57.9L299.9,59.2L302.2,60.3L300.1,62.7L295.9,63.7L294.1,63.5L293.4,62.5L289.9,60.5L290.6,59.6ZM283.8,57.6L286.6,57.5L287.7,58.1L284.5,59.8L282.8,58ZM306.7,49.7L307.3,50.8L306.2,52.1L303.8,54L300.3,54.2L298.5,53.8L299.8,52.4L296.3,52.5L297.9,50.6L300,50.7L303.7,49.8L306.3,50ZM320.3,40.5L322.4,39.8L324.4,39.6L324.2,39.1L328.6,39L329.7,40.2L332.4,40.7L335.1,41.1L335.1,42.6L336.7,43.4L333.5,44L328.4,45.8L324.9,46L321.2,45.7L320,44.7L320.8,43.9L322.9,43.3L319.4,43.3L318.1,42.5L318,41.5ZM331.7,37.7L334.9,37.3L337.1,37.2L341.1,36.9L344.7,36.1L346.8,36.2L348.1,36.8L350.8,35.7L353.5,35.4L357,35.2L362.6,35.1L363.3,35.3L368.9,35L372.7,35.1L376.5,35.2L381.1,35.4L384.8,35.6L387.6,36.2L387.1,36.7L381.8,37.6L377,38L375,38.5L379,38.5L373.6,39.8L370,40.4L365.4,42.3L361.2,42.7L359.6,43.1L353.7,43.4L356.1,43.7L354.4,44.1L355.1,45.3L352.7,46.1L349.2,46.8L347.6,47.7L344.4,48.4L344.2,49L347.7,48.9L347.3,49.5L341,51L336.3,50.3L330.3,50.7L327.5,50.4L323.9,50.3L324.6,49.1L328.7,48.5L329.2,46.8L330.5,46.6L334.8,47.6L333.4,46.1L330.7,45.6L333,44.7L336.9,44.1L338.1,43.3L336.3,42.4L336.6,41.3L341.6,41.4L342.9,41.6L346.6,40.8L342.6,40.5L335.9,40.7L333.3,39.9L332.7,39L331.3,38.4ZM338.4,74.2L336.6,75L334.1,75.2L334.2,73.8L336,72.2L338.1,71.9L339.4,72.6L338.8,73.8ZM296.9,68.6L297.5,69.6L295.5,70.6L293.3,69.7L291.3,70L289.3,68.8L291.7,68L294,66.8L295.7,67.6L296.7,68ZM342.2,126.3L343.1,126L346.1,126.8L348.3,128.1L348.2,128.7L347,128.8L344.1,127.8ZM340.9,135.2L341.3,136.7L343,137.2L345.4,137.1L343.8,138.4L342.8,138.6L340,137.2L339.7,136.2Z"/>
+            <path data-region="us" d="M198,129L205,129L212.3,129L214.7,129L222.2,129L229.5,129L236.9,129L244.2,129L252.6,129L261,129L266.1,129L266.6,127.8L267.5,127.8L267.1,129.5L267.7,130.1L269.3,130.3L271.6,130.8L273.6,131.7L275.8,131.3L278.5,132.1L279.3,132.1L281.9,131.2L283.8,132.4L285.7,133.6L287.3,134.6L288.9,135.6L288.8,136.5L289.3,136.8L289,137.1L289.7,137.2L290.3,136.9L290.1,137.6L290.5,138.1L291.1,138.1L291.4,138.5L290.9,139.1L293,140.6L292.5,143.5L292.2,146.2L290.8,148.1L289.1,149.9L288.2,151L288,151.3L288.1,151.8L288.9,152.3L289.5,152.3L293,150.6L295.8,150.1L299.6,148.5L299.7,148.2L299.8,147.2L299.6,146.6L300.9,146.1L303.3,146L305.7,146L306.9,144.8L307.2,144.5L310.6,142.3L311.9,141.7L315.7,141.6L320.4,141.6L320.8,140.9L321.7,140.7L322.9,140.2L324.2,138.8L325.7,136.3L328.3,133.9L328.9,134.7L330.7,134.2L331.5,135.1L330.3,139.4L331.4,141.2L331.6,142.3L328.5,143.8L325.6,144.9L322.7,145.9L320.8,147.8L320.2,148.5L319.7,150.2L320.1,151.9L321.1,152L321.2,150.8L321.8,151.5L321.3,152.4L319.5,152.9L318.2,152.9L316.2,153.4L315.1,153.6L313.5,153.8L311.1,154.7L315.1,154.1L315.7,154.7L311.8,155.7L310.2,155.7L310.4,155.3L309.4,156.2L310.1,156.3L308.9,158.6L306.4,161.1L306.4,160.3L305.9,160.1L305.3,159.3L305.3,161L305.8,161.6L305.6,162.8L304.4,164.1L302.3,166.7L302.1,166.6L303.5,164.4L302.5,163.1L302.8,160.4L302,161.8L302,163.9L300.4,163.4L302,164.4L301.3,167.5L302,167.7L302,168.8L301.6,172.1L299.4,174.5L296.4,175.5L294.3,177.4L292.9,177.6L291.3,178.8L290.7,179.8L287.3,182L285.5,183.5L283.8,185.4L282.9,187.7L282.9,190L283.3,192.8L284,195.1L283.8,196.5L284.3,200.2L283.9,202.4L283.5,203.7L282.5,205.7L281.6,206.1L280.4,205.7L280.2,204.3L279.3,203.5L278.4,200.7L277.6,198.2L277.4,197L278.4,194.8L278,193L276.5,190.3L275.5,189.8L272.5,191.3L272.1,191.1L271.1,189.6L269.6,188.8L266.5,189.2L264.2,188.9L262.1,189.1L260.9,189.6L261.2,190.4L260.9,191.8L261.3,192.4L260.7,192.8L259.8,192.4L258.7,193L256.7,192.9L255.1,191.2L252.7,191.6L250.9,190.8L249.2,191L246.8,191.8L243.8,194.2L240.8,195.6L239,197.2L238.1,198.6L237.5,200.9L237.3,202.4L237.6,203.5L236.5,203.6L234.8,202.9L232.9,201.9L232.5,200.4L232.4,198.1L231.2,196.2L230.7,194.3L230,192.1L228.4,190.8L226.2,190.9L223.9,193.5L221.9,192.5L220.8,191.5L220.6,189.7L220.1,188L218.9,186.6L217.9,185.6L217.2,184.4L212.6,184.4L212.2,185.7L210.1,185.7L204.8,185.8L199.4,183.5L195.9,181.9L196.4,181.3L192.9,181.6L189.8,181.9L189.9,180.2L188.8,178.3L187.7,177.9L187.8,177L186.3,176.9L185.7,176L183.4,175.7L182.9,175.1L183.2,173.4L181.9,170.1L181.4,165.6L181.8,164.9L181.1,163.8L180.2,161.1L181,158.4L180.4,156.7L182.1,154L183.3,151.3L183.6,148.8L186.1,145.8L187.8,142.9L189.6,140L191.3,135.8L192,133L192.1,131.6L192.7,131L195.7,132L195.4,135L196.5,134.2L197.5,131.6ZM74.7,222.3L75.2,222.6L75.5,223L75.9,224.2L75.8,224.4L74.6,225L73.6,225.5L73,226.1L72.5,225.6L72.8,224.7L72.6,223.5L72.8,223.2L73.4,222.7L73.4,222L73.6,221.7L73.8,221.8ZM73.7,220.1L73.4,220.5L72.4,220.7L72.1,220L71.9,219.8L71.9,219.6L72.2,219.3L73.1,219.6ZM72,218.8L71.8,219.1L70.4,219L70.7,218.6ZM69,217L69.2,217.2L69.7,218.3L69.5,218.5L69.3,218.4L68.4,218.3L68.2,217.6L68.1,217.5ZM65.8,215.4L65.6,216.2L65.2,216.5L64.5,215.9L64.7,215.6L65.2,215.3ZM120.9,94.4L122.4,94.6L121.6,95.8L119.7,96.2L118.7,95.7L118.2,94.9ZM144.7,101.5L146.1,101.7L146.3,102.7L143,104.1L139.7,105.2L139.2,104.5L140.1,103L143.1,102ZM203.2,68L193.2,78.2L178.7,94.6L180.9,94.7L182.4,95.5L183,96.8L183.5,98.7L187,97.1L190.1,96.1L190.1,97.7L190.7,98.9L191.8,100.2L191.6,102.4L191.5,105.8L194.1,107.7L192.9,109.6L190.6,111.1L190,109.9L188.6,109L189.8,106.3L188.6,103.9L189.5,101.1L187.4,100.9L183.8,100.8L181.7,99.9L179.4,96.9L177.7,96.3L174.6,95.3L171.2,95.5L167.9,94.2L166.3,92.9L163.2,93.5L161.9,95.6L160.4,95.8L157.3,96.4L154.4,97.4L151.3,98L152.5,96.3L156.1,93.4L159.3,92.5L159.4,91.7L155,93.4L151.7,95.3L146.5,97.4L146.9,98.9L142.8,101L139.3,102.3L136.1,103.2L134.4,104.5L129.4,106L127.5,107.5L123.6,108.8L122.2,108.5L119.3,109.4L116,110.4L113.1,111.4L108.3,112.3L108.4,111.8L112.2,110.4L115.3,109.4L119.3,107.8L122.5,107.4L124.7,106.2L129.5,104.4L130.6,103.8L133.2,102.7L135.6,100.5L138.4,98.7L134.9,99.6L134.6,99.1L132.4,100.2L132.3,98.7L130.7,99.7L131.2,98.3L127.8,99.4L126.4,99.4L127.8,97.7L129.3,96.6L128.8,95.5L125.3,96.1L124.7,94.7L123.8,94L125.4,92.4L124.9,91.1L127.5,89.4L131,87.8L133.3,86.4L135.3,86.1L136.4,86.6L139.6,85.2L141,85.5L143.6,84.6L144.5,83.3L143.8,82.8L146.5,81.7L145.2,81.7L142.2,82.3L140.9,82.9L139.8,82.3L136.3,82.6L133.8,81.9L134.1,80.8L133.2,79.2L137.5,78L143.9,76.6L145.7,76.6L143.8,78L148.5,77.9L148.7,76.2L147.2,75.1L147.2,73.7L146.5,72.5L144.6,71.7L147.4,70.2L151.3,70.1L155.4,68.9L157.4,67.6L161.1,66.3L163.5,66L168.8,64.8L170.5,65L175.4,63.5L177.9,64.1L178,65.3L179.5,64.8L182.9,64.9L182.1,65.6L184.8,66L187.2,65.7L190.7,66.6L194.4,66.9L195.7,67.2L198.9,66.8L201.3,67.6ZM119.3,84.5L120.1,85.1L121.8,84.8L122.8,85.5L124.6,85.9L124.1,86.2L121.7,86.8L120.7,86.2L120.4,85.7L118.3,85.9L118,85.6Z"/>
+            <path data-region="za" d="M543.8,379.7L545.2,378.1L546.2,379L546.6,380.4L547.8,380.6L549.4,381.2L550.9,381L553.4,379.3L553.9,367.3L554.6,367.8L556.1,370.9L555.7,372.9L556.3,374L558.2,373.7L559.6,372.2L561,371.3L561.7,369.7L563.1,369L564.2,369.4L565.4,370.3L567.6,370.4L569.4,369.7L569.7,368.7L570.3,367.1L571.8,366.8L572.6,365.6L573.7,363.5L576.2,361L580.2,358.6L581.3,358.7L582.6,359.2L583.5,358.8L585,359.2L586,363.7L586.6,366L585.9,369.7L586,370.8L584.7,370.2L583.9,370.5L583.6,371.4L582.7,372.6L582.7,373.8L584.2,375.5L585.8,375.2L586.4,373.7L588.5,373.7L587.6,376.1L587.1,378.8L586.3,380.3L584.3,381.9L583.8,382.4L582.5,384L581.7,385.7L580,388L576.7,391.4L574.7,393.3L572.6,394.8L569.7,396.1L568.4,396.3L567.9,397.2L566.4,396.7L565,397.3L562.2,396.7L560.6,397.1L559.5,396.9L556.7,398.2L554.4,398.7L552.7,399.9L551.5,400L550.5,398.8L549.6,398.8L548.5,397.3L548.4,397.8L548.1,396.9L548.2,395L547.5,392.8L548.3,392.2L548.4,389.7L546.8,386.7L545.6,383.9L545.6,383.9ZM577.6,380.9L576.5,379.9L575.2,380.6L573.7,381.9L572.1,383.9L573.9,386.4L574.9,386.1L575.5,385.1L577,384.6L577.5,383.5L578.5,381.9Z"/>
+            <path data-region="mx" d="M189.8,181.9L192.9,181.6L196.4,181.3L195.9,181.9L199.4,183.5L204.8,185.8L210.1,185.7L212.2,185.7L212.6,184.4L217.2,184.4L217.9,185.6L218.9,186.6L220.1,188L220.6,189.7L220.8,191.5L221.9,192.5L223.9,193.5L226.2,190.9L228.4,190.8L230,192.1L230.7,194.3L231.2,196.2L232.4,198.1L232.5,200.4L232.9,201.9L234.8,202.9L236.5,203.6L237.6,203.5L236,206.4L235.1,208.7L234,213.1L233.5,214.7L233.6,216.4L234.2,218L234.3,220.5L235.8,222.9L236.1,224.8L237,226.4L239.7,227.2L240.7,228.6L243.2,227.7L245.4,227.4L247.5,226.8L249.3,226.2L251.2,224.9L252.2,223L252.8,220.3L253.4,219.3L255.4,218.5L258.4,217.7L260.8,217.8L262.5,217.6L263,218.3L262.7,219.8L261,221.8L260,223.7L260.5,224.3L259.8,225.7L258.8,228.2L258.2,227.4L257.7,227.4L257.1,227.5L255.9,229.4L255.4,229.1L255.1,229.2L255.1,229.7L252.5,229.6L250,229.7L249.7,231.5L248.5,231.5L249.4,232.6L250.3,233.3L250.5,234L250.9,234.2L250.7,235.3L247.2,235.3L245.6,238L245.9,238.6L245.5,239.3L245.3,240.3L242.6,236.8L241.3,235.7L239.1,234.9L237.6,235.1L235.2,236.3L233.8,236.7L231.9,235.8L229.9,235.2L227.6,233.7L225.6,233.3L222.6,231.7L220.6,230.2L220,229.3L218.5,229.1L215.8,228.1L214.9,226.6L212.3,224.8L211.2,222.8L210.9,221.2L211.8,220.9L211.7,219.9L212.5,219.1L212.7,218L212.1,216.5L212.1,215.2L211.5,213.6L209.7,210.4L207.5,207.8L206.7,205.8L204.7,204.5L204.4,203.7L205.2,201.7L204,200.9L202.8,199.3L202.7,197.1L201.4,196.8L200.3,195.1L199.4,193.5L199.6,192.5L198.8,190L198.6,187.5L199,186.3L197.5,185L196.5,185.2L195.3,184.3L194.5,185.6L194.4,187.1L194,189.6L194.5,190.9L195.9,193.2L196.1,193.9L196.5,194.1L196.5,195.3L197,195.2L197,197.3L197.6,198.1L197.9,199.3L199.1,200.9L199.3,204L199.8,205.4L200.2,206.9L199.9,208.6L201.2,208.7L202,210.2L202.7,211.7L202.5,212.2L201.1,213.4L200.6,213.4L200.3,211.4L198.9,209.6L197.3,208L196.1,207.2L196.8,204.8L196.8,203.1L195.7,202.1L194.2,200.6L193.8,201L193.3,200.2L191.9,199.4L190.8,197.5L191,197.3L192.1,197.4L193.4,196.2L193.9,194.8L192.5,192.4L191.2,191.5L190.8,189.5L190.4,187.4L190,184.8Z"/>
+            <path data-region="br" d="M359.3,396.6L358.2,394.7L359.2,393.2L357.3,391L355,389.2L351.9,387.1L351,387.2L347.9,384.7L346.3,385L349.2,380.6L351.8,377.5L353.4,376.1L355.5,374.3L355.2,371.7L353.7,369.9L352.4,370.5L352.7,368.6L352.9,366.7L352.7,364.9L351.6,364.3L350.7,364.8L349.7,364.7L349.2,363.5L348.6,360.5L348,359.5L346.1,358.6L345,359.3L342.1,358.6L341.8,354.2L340.9,352.4L341.6,351.8L341.2,349.9L341.8,348.5L342.1,345.9L341.3,343.9L339.7,343L339.3,341.7L339.6,339.9L334.3,339.7L332.9,336L333.7,335.9L333.6,334.5L333,333.6L332.7,331.7L331.1,330.7L329.3,330.8L328.1,329.8L326.2,329.2L325,328L321.9,327.5L318.7,324.6L318.8,322.4L318.4,321.2L318.6,318.7L315,319.3L313.6,320.5L311.2,321.8L310.7,322.8L309.2,322.8L307.2,322.6L305.6,323.1L304.3,322.8L304.2,317.9L302.1,319.8L299.6,319.7L298.5,317.9L296.6,317.8L297.1,316.4L295.5,314.4L294.2,311.5L294.9,310.9L294.8,309.5L296.5,308.6L296.1,306.9L296.8,305.7L297,304.2L300.1,302L302.3,301.4L302.7,300.9L305.2,301.1L306.3,292.2L306.4,290.8L305.9,289L304.7,287.8L304.7,285.5L306.3,284.9L306.9,285.3L306.9,284L305.3,283.7L305.3,281.7L310.7,281.8L311.7,280.6L312.4,281.7L313,283.6L313.5,283.2L315,284.9L317.2,284.7L317.7,283.7L319.8,282.9L321,282.4L321.3,281L323.3,280.1L323.2,279.4L320.8,279.2L320.4,277.1L320.6,275L319.4,274.1L319.9,273.8L321.9,274.2L324.1,275.1L325,274.3L327,273.8L330.1,272.6L331.2,271.4L330.8,270.4L332.3,270.3L332.9,271L332.5,272.5L333.5,272.9L334.1,274.4L333.3,275.6L332.8,278.3L333.5,280L333.7,281.5L335.4,283L336.7,283.1L337,282.5L337.9,282.4L339.2,281.8L340.1,280.9L341.7,281.2L342.3,281.1L343.8,281.4L344.1,280.7L343.6,280.1L343.9,279.1L345.1,279.4L346.4,279.1L348,279.8L349.2,280.4L350,279.6L350.7,279.7L351,280.6L352.4,280.4L353.5,279.1L354.3,276.8L356,273.8L357,273.7L357.7,275.4L359.1,281.1L360.6,281.6L360.7,283.8L358.6,286.5L359.5,287.5L364.4,288L364.5,291.2L366.6,289.1L370.1,290.3L374.8,292.2L376.1,294.1L375.7,295.9L378.9,294.9L384.4,296.6L388.5,296.5L392.7,299.2L396.3,302.8L398.5,303.7L400.8,303.8L401.9,304.9L402.9,309L403.4,310.9L402.4,316.3L401,318.4L397.3,322.9L395.6,326.5L393.7,329.3L393,329.4L392.3,331.8L392.8,337.8L392.3,342.8L392.1,345L391.3,346.2L391.1,350.6L388.6,354.8L388.4,358.1L386.3,359.5L385.8,361.5L382.8,361.5L378.7,362.7L376.9,364.2L373.9,365.1L371,367.7L369,370.9L368.9,373.4L369.5,375.2L369.4,378.4L369,380L367.3,381.8L365.1,387.5L363.1,390.1L361.5,391.6L360.7,394.7Z"/>
+            <path data-region="ng" d="M507.5,267L507.6,261.8L507.6,259.8L508.1,257.7L508.9,256.7L510.3,254.7L510,253.9L510.5,252.6L509.9,250.7L510,249.6L510.2,246.7L511,245.4L511.4,243.5L512.1,242.8L515,242.4L517.8,243.7L518.9,244.9L520.3,244.9L521.6,244.1L525,245.8L526.4,245.7L528,244.3L529.6,244.4L530.4,244L531.9,244.2L534,245.1L536.2,243.3L536.8,243.4L538.8,247L539.3,246.9L540.4,248.2L540.1,248.8L540,249.9L537.7,252.4L536.9,254.4L536.6,256.1L536,256.8L535.4,259.1L534,260.4L533.6,262L532.9,263.3L532.7,264.7L530.8,265.8L529.2,264.5L528.2,264.5L526.5,266.4L525.7,266.4L524.4,269.5L523.7,271.8L520.8,273L519.7,272.8L518.7,273.5L516.4,273.5L514.9,271.4L514,269.1L512,267L509.9,267Z"/>
+            <path data-region="ae" d="M639.9,208.8L640.3,208.6L640.5,209.5L642.6,209L644.9,209.1L646.5,209.2L648.1,207L649.9,204.9L651.4,202.9L652,204L652.7,206.6L651.3,206.6L651.3,208.7L651.9,209.2L650.7,209.8L650.8,211.1L650.2,212.5L650.3,213.8L649.8,214.5L641.4,212.8L640.1,209.6Z"/>
+            <path data-region="in" d="M761.2,195.8L761.7,197L760.9,197.6L761.5,199.6L759.5,199L756.5,201.2L756.9,203.1L756,205.8L756.2,207.4L755.5,210.1L753.2,209.3L753.7,212.7L753.3,213.8L753.8,215.2L752.6,216L750.3,210.8L749.5,210.8L749.4,212.9L747.6,211.2L748.2,209.4L749.3,209.2L750.1,206.4L748.4,205.9L745.9,205.9L743.2,205.5L742.6,203.2L741.3,203.1L738.9,201.7L738.3,203.9L740.6,205.6L739.1,206.8L738.7,208L740.6,208.8L740.4,210.8L741.8,213.2L742.6,215.9L742.5,217.1L740.6,217.1L737.3,217.7L737.9,220.2L736.7,222.1L733,224.3L730.5,228.1L728.6,230.1L726.2,232.2L726.3,233.7L725,234.5L722.7,235.7L721.4,235.9L720.8,238.3L721.8,242.5L722.2,245.2L721.2,248.3L721.6,253.8L720.2,253.9L719.1,256.4L720,257.5L717.5,258.4L716.7,260.6L715.6,261.5L712.8,258.5L711.3,254L710,250.7L708.9,249.2L707.2,246.1L706.2,242L705.6,240L702.6,235.6L700.9,229.3L699.6,225.1L699.1,221.2L698.2,218.2L694.5,220.1L692.5,219.7L688.5,215.8L689.7,214.6L688.7,213.4L685.1,210.6L686.6,208.4L692.6,208.4L691.7,205.7L689.9,204L689.2,201.5L687.2,200L689.7,196.6L692.8,196.9L695,193.5L696.1,190.2L698.1,186.9L697.6,184.6L699.5,182.7L697,181.1L695.6,178.9L694.1,176.1L695.1,174.7L699.2,175.5L702.1,175L704,172.3L707.7,176.1L708,178.7L709.4,180.4L709.7,182L707.7,181.6L709.2,185.2L712.3,187.2L716.4,189.5L715,191L714.6,194L717.4,195.3L720.3,196.8L724.1,198.7L727.9,199.1L729.8,200.7L731.9,201.1L735.3,201.8L737.5,201.8L737.6,200.5L736.8,198.4L736.7,197L738.2,196.3L739,198.9L739.2,199.5L741.9,200.8L743.5,200.3L745.8,200.5L748,200.4L747.7,198.4L746.4,197.3L748.5,196.9L750.4,194.5L753,192.5L755.5,193.3L757.1,191.9L758.8,193.9L758.2,195.3Z"/>
+            <path data-region="de" d="M533.7,114.3L534.4,115.8L533.8,116.7L534.7,117.7L535.4,119.4L535.3,120.5L536.5,122.4L535.4,122.8L534.7,122.4L534.2,123L532.4,123.6L531.6,124.4L529.9,125.1L530.3,126L530.7,127.3L532,128.1L533.4,129.4L532.7,130.9L531.8,131.3L532.3,133.3L532.1,133.8L531.3,133.2L530.1,133.1L528.3,133.7L526.1,133.5L525.8,134.4L524.5,133.5L523.8,133.7L521.1,132.7L520.6,133.4L518.5,133.4L518.7,131.1L519.9,129L516.3,128.4L515.2,127.6L515.3,126.2L514.8,125.5L515,123.4L514.5,120.1L515.9,120.1L516.5,119L517,116.2L516.5,115.1L517,114.5L518.9,114.3L519.4,115L521,113.5L520.4,112.3L520.2,110.6L522,111L523.5,110.5L523.6,111.7L526,112.4L526.1,113.5L528.5,112.9L529.7,112.1L532.5,113.3Z"/>
+            <path data-region="au" d="M878.6,419.4L880,419.6L878.1,423.4L876.7,424.5L874.9,427.1L874.6,426.2L871.5,428.4L871.1,428.2L869.6,428.1L869.6,425.4L870.4,423.3L870.4,420.5L871.2,419L872.8,419.3L874.7,420.4L876.3,420ZM834.4,391.5L831,393.2L828.5,394L827.4,395.7L825.9,397L823.7,397.1L821.9,397.3L819.8,396.8L817.8,397.1L815.9,397.3L813.8,399L813,398.8L811.4,399.8L809.8,400.8L807.9,400.7L806.1,400.7L804.1,398.6L802.9,398L803.5,396.1L805,395.7L805.7,394.9L806,393.8L807,391.5L807.3,389.6L806.9,386.3L807,384.4L807.6,382.6L807.2,380.5L807.4,379.5L806.5,378.2L806.9,375.7L806,373.1L805.9,371.7L806.8,373.1L806.6,370.1L807.7,371L808.2,372.3L808.6,370.6L807.8,368.1L807.8,367.1L807.4,366.1L808.1,364.2L808.9,363.4L809.6,361.8L809.7,359.9L811.3,357.6L811,360L812.6,357.8L815.1,356.7L816.7,355.3L819,354.1L820.3,353.9L821,354.3L823.3,353.1L825.1,352.7L825.6,352L826.4,351.7L827.9,351.8L831,350.8L832.7,349.4L833.8,347.7L835.7,346L836,344.7L836.4,343L838.8,340.2L839.5,343L840.8,342.4L840,340.8L841.2,339.3L842.3,340L843,337.5L844.7,335.9L845.6,334.6L847.1,334.1L847.2,333.2L848.4,333.6L848.6,332.7L849.9,332.3L851.3,331.8L853.1,333.3L854.3,335.2L856,335.3L857.8,335.6L857.4,333.8L859.1,331.2L860.5,330.4L860.2,329.5L861.6,327.7L863.5,326.6L864.8,326.9L867.2,326.3L867.4,324.7L865.5,323.6L867,323.1L868.8,323.9L870.1,325.3L872.3,326.1L873.1,325.8L874.7,326.8L876.5,325.8L877.5,326.1L878.2,325.5L879.3,327.1L878.3,328.8L877.1,330.1L876.1,330.2L876.2,331.5L875.2,333.2L873.9,334.7L874,335.7L875.9,337.4L877.8,338.5L879,339.6L880.7,341.5L881.4,341.5L882.7,342.3L882.9,343.3L885.4,344.4L887.4,343.3L888.3,341.6L889.1,340.2L889.8,338.4L891.1,335.8L890.9,334.2L891.3,333.3L891.3,331.5L892,329L892.6,328.4L892.4,327.3L893.3,325.6L894,323.8L894.2,322.9L895.4,321.7L896,323.2L895.9,325.3L896.5,325.7L896.5,327L897.2,328.7L897.2,330.5L896.9,331.7L897.5,334.2L899.4,333L900.1,334.4L901.2,335.6L900.7,337.1L900.8,339.8L900.9,341.4L901.5,341.8L901.7,344.6L901,346.3L901.4,348.5L904,350.2L905.6,351.7L907.1,353.1L906.5,353.9L907.6,356L907.7,359.5L909,358.7L909.7,360.2L910.5,359.7L910,363.1L911.3,365.1L912.2,366.3L913.5,369L913.4,371.6L912.9,373.4L912,375.4L912.3,378.2L911.1,381.1L910.1,382.6L908.2,385.5L907.6,387.3L906.1,389.7L903.7,392.6L901.1,394.2L899,396.7L897.4,398.3L895.4,401.1L893.7,402.8L891.9,405.2L890.5,407.4L890.1,408.4L888.1,409.6L885.1,409.7L882.1,411L880.3,412.3L878,413.6L876.6,412.2L875.3,411.6L876.5,410L874.8,410.6L871.4,412.9L869.6,412L868.3,411.5L867,411.3L864.9,410.4L864.1,408.4L864.7,405.9L864.8,404.3L864.1,403L861.8,402.6L863.3,401L863.6,398.6L861.4,400.8L858.9,401.4L861,399.6L862.1,397.8L863.8,396.2L864.5,393.8L861.3,396.5L859.2,397.6L857.2,400.2L855.6,398.9L856.4,397.2L855.6,394.8L854.7,393.6L855.5,392.8L852.8,390.9L851,390.8L849,389.2L844.1,389.5L840.3,390.7L836.9,391.8Z"/>
+            <path data-region="gb" d="M485.2,113.9L483.4,113.3L482,113.3L482.5,111.7L482.1,110.1L484.1,109.9L486.6,111.8ZM492.6,115.4L492.6,115.4L493,113.6L491.4,111.7L491.4,111.6L488.5,111.1L488,110.3L488.9,108.9L488.1,108.1L486.8,109.5L486.7,106.6L485.6,105.1L486.6,102L488.4,99.6L490.3,99.8L493.1,99.5L490.5,102.8L492.9,102.4L495.4,102.4L494.8,104.8L492.7,107.5L495.1,107.7L495.3,108L497.4,111.6L499,112.1L500.4,115.6L501.1,116.8L504,117.4L503.8,119.4L502.5,120.3L503.5,121.9L501.3,123.5L498.1,123.5L493.9,124.3L492.8,123.7L491.2,125.2L488.9,124.8L487.2,126L485.9,125.4L489.5,122.1L491.7,121.5L491.7,121.5L487.9,120.9L487.3,119.7L489.8,118.7L488.5,117.1L489,115.1Z"/>
+            <path data-region="my" d="M778.6,266.4L779.1,265.8L781.4,267.2L781.7,268.9L783.5,268.5L784.4,267.1L785,267.4L786.8,269.4L788,271.6L788.3,273.7L788,275.2L788.3,276.3L788.6,278.2L789.6,279.1L790.7,282L790.7,283L788.7,283.3L786,280.9L782.7,278.3L782.3,276.7L780.6,274.5L780.2,271.8L779.1,270.1L779.3,267.7ZM828.5,273.9L826.1,273.3L822.9,273.3L822,277L821,278.1L819.7,282.6L817.4,283.3L814.7,282.4L813.4,282.7L811.8,284.3L810,284.1L808.2,284.7L806.3,282.9L805.8,280.7L807.9,281.9L810,281.2L810.5,278.5L811.7,277.9L815,277.2L816.9,274.7L818.2,272.6L819.6,274.3L820.1,273.2L821.4,273.3L821.5,271.2L821.6,269.6L823.6,267.4L824.8,264.9L826,264.9L827.5,266.5L827.7,267.9L829.6,268.8L832,269.8L831.8,271L830,271.2L830.5,272.8Z"/>
+            <path data-region="jp" d="M866.3,160.3L865.5,163.6L867.1,166.9L867.2,169.5L868.4,171.1L868,173.4L865.3,174.9L860.7,175.1L858.5,178.9L856.2,177.6L855.1,175.2L850.8,175.9L848.3,177.4L845.3,177.5L848.8,179.9L849,185.4L847.8,186.8L846.1,185.5L845.7,182.6L843.7,181.6L841.8,179.4L843.9,178.4L844.5,176.4L846.5,174.7L847.6,172.5L852.4,171.5L855.5,172.2L855.8,166.4L858.2,167.9L860.6,164.7L861.5,163.5L861.2,159.5L859,155.9L859.1,153.8L861.5,153.3L865.1,157.7ZM865.2,145L866.2,143.6L868.8,147.2L865.6,148.1L865.1,151.3L859.9,149.1L860.4,152.6L857.5,152.6L855.5,149.5L855.5,147L858.1,146.8L856.3,142.4L855.7,139.9L860.5,143.2L863.1,144.3ZM849.4,178.9L850.2,176.9L851.8,177.3L852.4,175.9L854.6,176.6L855.3,177.7L854.6,179.7L853.1,178.7L852,179.4L852.1,181.3L850,180.4Z"/>
+            <path data-region="sa" d="M593.5,192.2L596.5,192.7L597.6,191.7L598.1,190.5L600.1,190.1L600.5,189L601.3,188.5L598.3,185.2L603.5,183.6L603.9,183.1L607.2,184L611.4,186.2L619.7,192.8L624.7,193L627.1,193.3L627.9,194.9L629.8,194.8L631.2,197.6L632.6,198.4L633.2,199.5L635.2,200.9L635.5,202.2L635.3,203.3L635.8,204.4L636.7,205.3L637.1,206.4L637.6,207.2L638.5,207.8L639.2,207.6L639.9,208.8L640.1,209.6L641.4,212.8L649.8,214.5L650.3,213.8L651.7,216.1L650.5,222.6L642.6,225.8L634.8,227.1L632.3,228.5L630.6,231.9L629.3,232.5L628.6,231.4L627.5,231.5L624.8,231.2L624.3,230.9L621.2,231L620.4,231.3L619.3,230.4L618.6,232L619,233.4L617.8,234.4L617.4,233L616.5,232.1L616.2,230.8L614.7,229.6L613.1,226.9L612.2,224.2L610.1,222L608.9,221.5L606.8,218.4L606.4,216.1L606.4,214.2L604.5,210.6L603.2,209.3L601.6,208.7L600.6,206.8L600.7,206.1L599.8,204.4L599,203.7L597.7,201.3L595.9,198.6L594.3,196.4L593,196.4L593.3,194.6L593.3,193.5Z"/>
+            <path data-region="eg" d="M600.5,216.1L589.7,216.1L579.1,216.1L568.1,216.1L567.6,204.1L566.9,192.6L565.9,190L566.5,188L566,186.6L566.9,185L570.4,185L573,185.8L575.7,186.8L577,187.3L579,186.2L580,185.3L582.3,185L584.2,185.5L585.1,187.1L585.6,186L587.8,186.8L589.9,187L591.1,186.1L593,190.9L593.4,191.7L592.7,193L592.4,195.5L591.8,197.2L591.2,197.7L590.2,196.7L588.9,195.2L586.6,190.6L586.4,190.9L587.7,194.3L589.6,197.6L592.1,202.6L593.2,204.4L594.2,206.2L596.9,209.8L596.4,210.4L596.6,212.5L600,215.4Z"/>
+          </svg>
+          <button class="rv-marker is-active" type="button" data-review="sa" style="--x:62.2%; --y:42.2%" aria-label="Review 1: Riyadh, Saudi Arabia" aria-pressed="true"><span>1</span></button>
+          <button class="rv-marker" type="button" data-review="ae" style="--x:65%; --y:41.1%" aria-label="Review 2: Dubai, UAE" aria-pressed="false"><span>2</span></button>
+          <button class="rv-marker" type="button" data-review="eg" style="--x:58.3%; --y:38%" aria-label="Review 3: Cairo, Egypt" aria-pressed="false"><span>3</span></button>
+          <button class="rv-marker" type="button" data-review="in" style="--x:71.5%; --y:44.5%" aria-label="Review 4: Bengaluru, India" aria-pressed="false"><span>4</span></button>
+          <button class="rv-marker" type="button" data-review="de" style="--x:52.8%; --y:24.6%" aria-label="Review 5: Berlin, Germany" aria-pressed="false"><span>5</span></button>
+          <button class="rv-marker" type="button" data-review="gb" style="--x:49.6%; --y:23.4%" aria-label="Review 6: London, United Kingdom" aria-pressed="false"><span>6</span></button>
+          <button class="rv-marker" type="button" data-review="us" style="--x:29.4%; --y:31.9%" aria-label="Review 7: New York, USA" aria-pressed="false"><span>7</span></button>
+          <button class="rv-marker" type="button" data-review="ca" style="--x:25.7%; --y:20.9%" aria-label="Review 8: Toronto, Canada" aria-pressed="false"><span>8</span></button>
+          <button class="rv-marker" type="button" data-review="au" style="--x:86.5%; --y:73.9%" aria-label="Review 9: Sydney, Australia" aria-pressed="false"><span>9</span></button>
+          <button class="rv-marker" type="button" data-review="br" style="--x:37%; --y:67.8%" aria-label="Review 10: São Paulo, Brazil" aria-pressed="false"><span>10</span></button>
+          <button class="rv-marker" type="button" data-review="mx" style="--x:22.5%; --y:43.2%" aria-label="Review 11: Mexico City, Mexico" aria-pressed="false"><span>11</span></button>
+          <button class="rv-marker" type="button" data-review="ng" style="--x:52.1%; --y:51.3%" aria-label="Review 12: Lagos, Nigeria" aria-pressed="false"><span>12</span></button>
+          <button class="rv-marker" type="button" data-review="za" style="--x:56.7%; --y:75.9%" aria-label="Review 13: Johannesburg, South Africa" aria-pressed="false"><span>13</span></button>
+          <button class="rv-marker" type="button" data-review="my" style="--x:78.4%; --y:54.7%" aria-label="Review 14: Kuala Lumpur, Malaysia" aria-pressed="false"><span>14</span></button>
+          <button class="rv-marker" type="button" data-review="jp" style="--x:86.4%; --y:33.8%" aria-label="Review 15: Tokyo, Japan" aria-pressed="false"><span>15</span></button>
+        </div>
+        </div>
+        <div class="rv-cards">
+          <article class="rv-card is-active" data-review="sa" style="--x:62.2%; --y:42.2%; --tx:-50%; --ty:44px">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">KA</span>
+              <span class="rv-who"><strong>Khalid A.</strong><small>Operations Director, Retail Group</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Relyco turned a maze of spreadsheets into one platform our branches actually enjoy using. Delivered on time, and the team stayed with us after launch.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">SA</i>Riyadh, Saudi Arabia</span>
+              <span class="rv-proj">ERP &amp; Operations Platform &middot; Mar 2026</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="ae" style="--x:65%; --y:41.1%; --tx:-50%; --ty:calc(-100% - 40px)" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">SM</span>
+              <span class="rv-who"><strong>Sara M.</strong><small>Product Lead, Fintech Startup</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;They challenged our assumptions in week one and the app is better for it. Clean code, clear weekly updates, no surprises.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">AE</i>Dubai, UAE</span>
+              <span class="rv-proj">Mobile Banking App &middot; Jan 2026</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="eg" style="--x:58.3%; --y:38%; --tx:calc(-100% - 30px); --ty:-15%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">OH</span>
+              <span class="rv-who"><strong>Omar H.</strong><small>CTO, Healthcare Provider</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Bookings moved online in weeks, not months. The AI triage assistant took real pressure off our front desk.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">EG</i>Cairo, Egypt</span>
+              <span class="rv-proj">Patient Booking Portal &middot; Nov 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="in" style="--x:71.5%; --y:44.5%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">PN</span>
+              <span class="rv-who"><strong>Priya N.</strong><small>VP Engineering, SaaS Company</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Sharp engineers who ask the right questions. Our dashboards went from overnight batch jobs to near real-time.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">IN</i>Bengaluru, India</span>
+              <span class="rv-proj">Data &amp; Analytics Platform &middot; Oct 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="de" style="--x:52.8%; --y:24.6%; --tx:30px; --ty:-88%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">LW</span>
+              <span class="rv-who"><strong>Lukas W.</strong><small>Managing Director, Manufacturing</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Precise, structured and easy to work with across time zones. The monitoring system paid for itself on the factory floor.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">DE</i>Berlin, Germany</span>
+              <span class="rv-proj">IoT Monitoring System &middot; Sep 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="gb" style="--x:49.6%; --y:23.4%; --tx:-80%; --ty:34px" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">JR</span>
+              <span class="rv-who"><strong>James R.</strong><small>Founder, E-commerce Brand</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;It felt like an extension of our own team: fast, thoughtful and genuinely invested in how the product performs.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">GB</i>London, United Kingdom</span>
+              <span class="rv-proj">AI Customer Assistant &middot; Aug 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="us" style="--x:29.4%; --y:31.9%; --tx:-60%; --ty:34px" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">MD</span>
+              <span class="rv-who"><strong>Michael D.</strong><small>Director of Product, Media Group</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Great design instincts backed by solid engineering. Our editors publish faster and readers stay longer.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">US</i>New York, USA</span>
+              <span class="rv-proj">Content Platform Redesign &middot; Jul 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="ca" style="--x:25.7%; --y:20.9%; --tx:calc(-100% - 30px); --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">ET</span>
+              <span class="rv-who"><strong>Emily T.</strong><small>Head of Digital, Logistics Company</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;A careful, well-documented migration. Our customers never noticed the switch, which is exactly what we wanted.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">CA</i>Toronto, Canada</span>
+              <span class="rv-proj">Cloud Migration &middot; May 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="au" style="--x:86.5%; --y:73.9%; --tx:calc(-100% - 30px); --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">GL</span>
+              <span class="rv-who"><strong>Grace L.</strong><small>COO, Education Startup</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;From first workshop to app store launch, the process was transparent and calm. Our students love the new app.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">AU</i>Sydney, Australia</span>
+              <span class="rv-proj">Learning Mobile App &middot; Apr 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="br" style="--x:37%; --y:67.8%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">RC</span>
+              <span class="rv-who"><strong>Rafael C.</strong><small>CEO, Retail Chain</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Our online and in-store stock finally talk to each other. Sales from the new store grew every single month after launch.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">BR</i>São Paulo, Brazil</span>
+              <span class="rv-proj">Omnichannel E-commerce &middot; Mar 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="mx" style="--x:22.5%; --y:43.2%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">DR</span>
+              <span class="rv-who"><strong>Daniela R.</strong><small>Operations Manager, Logistics</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Our drivers adopted the app in days. Live tracking and route alerts made our dispatch team calmer and faster.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">MX</i>Mexico City, Mexico</span>
+              <span class="rv-proj">Fleet Tracking App &middot; Feb 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="ng" style="--x:52.1%; --y:51.3%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">TO</span>
+              <span class="rv-who"><strong>Tunde O.</strong><small>Co-founder, Payments Startup</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;They understood our market quickly and built a platform that handles real volume without breaking a sweat.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">NG</i>Lagos, Nigeria</span>
+              <span class="rv-proj">Merchant Payments Platform &middot; Jan 2025</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="za" style="--x:56.7%; --y:75.9%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">NM</span>
+              <span class="rv-who"><strong>Naledi M.</strong><small>Head of IT, Insurance Group</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Claims that took days now take hours. The AI document reader was accurate from the first week.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">ZA</i>Johannesburg, South Africa</span>
+              <span class="rv-proj">Claims Automation with AI &middot; Dec 2024</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="my" style="--x:78.4%; --y:54.7%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">AR</span>
+              <span class="rv-who"><strong>Aisyah R.</strong><small>Digital Director, Hospitality Group</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Beautiful design and rock-solid engineering. Repeat bookings through the app keep climbing.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">MY</i>Kuala Lumpur, Malaysia</span>
+              <span class="rv-proj">Booking &amp; Loyalty App &middot; Nov 2024</span>
+            </footer>
+          </article>
+          <article class="rv-card" data-review="jp" style="--x:86.4%; --y:33.8%; --tx:30px; --ty:-28%" aria-hidden="true">
+            <header class="rv-card-head">
+              <span class="rv-avatar" aria-hidden="true">KS</span>
+              <span class="rv-who"><strong>Kenji S.</strong><small>Product Manager, Electronics Maker</small></span>
+              <span class="rv-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M10 1.8l2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L10 14.5l-5.1 2.7 1.1-5.6L1.8 7.7l5.7-.7z"/></svg></span>
+            </header>
+            <p class="rv-quote">&ldquo;Thorough testing, clear documentation and a bilingual chatbot our customers actually like talking to.&rdquo;</p>
+            <footer class="rv-card-foot">
+              <span class="rv-place"><i class="rv-cc">JP</i>Tokyo, Japan</span>
+              <span class="rv-proj">Customer Support Chatbot &middot; Oct 2024</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="final-cta final-cta--ring">
+    <div class="fr-card">
+      <span class="fr-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16" opacity=".35"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      </span>
+
+      <div class="fr-content">
+        <span class="fr-eyebrow reveal">HAVE SOMETHING WORTH BUILDING?</span>
+        <h2 class="final-cta-heading">Let&rsquo;s make it real.</h2>
+        <p class="final-cta-desc reveal">Tell us what you're imagining, what you're trying to solve, or where your business needs to go next.</p>
+
+        <!-- Email capture: continues on the contact form with the email pre-filled -->
+        <form class="fr-form reveal" action="/contact/" method="get">
+          <label class="fr-sr" for="fr-email">Your email address</label>
+          <input id="fr-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="final-cta-button" type="submit">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="fr-alt reveal">
+          or email <a href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span aria-hidden="true">&middot;</span> Saudi Arabia
+        </p>
+      </div>
+
+      <!-- 3D plate chain rising from the bottom (shared plate ring) -->
+      <div class="fr-ring" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--v2">
+    <span class="sf-glow" aria-hidden="true"></span>
+
+    <div class="sf-top">
+      <!-- Left: invitation -->
+      <div class="sf-invite">
+        <h2 class="sf-heading">Have an idea worth building? Let&rsquo;s talk about what&rsquo;s next.</h2>
+        <p class="sf-tagline">Building digital solutions for a smarter, more connected tomorrow.</p>
+        <a class="sf-reach" href="/contact">
+          <span>Reach Out</span>
+          <span class="sf-reach-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L10.5 14.5"/><path d="M21 4l-6.5 17-4-6.5L4 10.5z"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Right: link columns + contact -->
+      <div class="sf-cols">
+        <nav class="sf-col" aria-label="Solutions">
+          <h3 class="sf-col-title">Solutions</h3>
+          <a href="/solution#web-dev">Web Development</a>
+          <a href="/solution#mobile-app">Mobile App Development</a>
+          <a href="/solution#ai-services">Artificial Intelligence Solutions</a>
+          <a href="/solution#ux-ui">UI UX Design</a>
+          <a href="/solution#ecommerce">eCommerce Development</a>
+          <a href="/solution#digital-marketing">Digital Marketing</a>
+          <a href="/solution#erp">Custom ERP Solutions</a>
+          <a href="/solution#blockchain">Blockchain Development</a>
+        </nav>
+
+        <nav class="sf-col" aria-label="Industries">
+          <h3 class="sf-col-title">Industries</h3>
+          <a href="/industries#retail">Retail</a>
+          <a href="/industries#manufacturing">Manufacturing</a>
+          <a href="/industries#real-estate">Real Estate</a>
+          <a href="/industries#bfsi">BFSI</a>
+          <a href="/industries#hospitality">Hospitality</a>
+          <a href="/industries#healthcare">Healthcare</a>
+          <a href="/industries#logistics">Logistics</a>
+          <a href="/industries#automotive">Automotive</a>
+        </nav>
+
+        <div class="sf-col sf-col--contact">
+          <h3 class="sf-col-title">Company</h3>
+          <a href="/services">Services</a>
+          <a href="/about">About us</a>
+          <a href="/contact">Contact us</a>
+
+          <h3 class="sf-col-title sf-col-title--gap">Contact</h3>
+          <a class="sf-mail" href="mailto:info@relycoltd.com">info@relycoltd.com</a>
+          <span class="sf-place">Saudi Arabia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sf-bottom">
+      <a class="sf-logo" href="/" aria-label="RELYCO Tech Solutions home">
+        <img src="/imgs/image 2.png" alt="RELYCO Tech Solutions">
+      </a>
+      <span class="sf-copy">&copy; 2026 Relyco Tech Solutions. All rights reserved.</span>
+      <div class="sf-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms Of Use</a>
       </div>
     </div>
+
+    <!-- Giant wordmark bleeding off the bottom edge -->
+    <div class="sf-wordmark" aria-hidden="true">RELYCO</div>
+    <!-- Robot rising in front of the wordmark -->
+    <img class="sf-robot" src="/imgs/photos/hero-robot.webp" alt="" aria-hidden="true" width="1200" height="1322" loading="lazy" decoding="async">
   </footer>
 
   <script type="module" src="/src/main.js"></script>
