@@ -32,4 +32,73 @@ export function initOutlineIcons() {
       svg.classList.add('outline-glyph');
     }
   });
+  toneIcons();
+}
+
+/* Site icon colour rule - every icon follows the background it sits on:
+     white / light  -> black icon            (default, no class)
+     orange         -> orange icon in a white circle   .ico-on-orange
+     black / dark   -> white icon            .ico-on-dark
+   The background is read from the page itself, so new sections follow
+   the rule without extra CSS. */
+const ICONS = [
+  '.outline-icon',
+  ':is(a, button) > svg.outline-glyph',
+  ':is(a, button) > i',
+  '.social-bubble > svg',
+  '.ai-card-badge',
+].join(',');
+
+function rgb(str) {
+  const m = str && str.match(/rgba?\(([^)]+)\)/);
+  if (!m) return null;
+  const [r, g, b, a = 1] = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+  return { r, g, b, a };
+}
+function hexOrRgb(str) {
+  const hex = str.match(/#([0-9a-f]{6}|[0-9a-f]{3})\b/i);
+  if (hex) {
+    const h = hex[1].length === 3 ? hex[1].replace(/./g, '$&$&') : hex[1];
+    return { r: parseInt(h.slice(0, 2), 16), g: parseInt(h.slice(2, 4), 16), b: parseInt(h.slice(4, 6), 16), a: 1 };
+  }
+  return rgb(str);
+}
+function toneOf({ r, g, b }) {
+  if (r > 170 && r - b > 90 && g < 175) return 'orange';
+  return (0.299 * r + 0.587 * g + 0.114 * b) < 128 ? 'dark' : 'light';
+}
+// first solid colour / gradient / photo found behind the element
+function backdropTone(el) {
+  for (let e = el.parentElement; e && e !== document.documentElement; e = e.parentElement) {
+    const cs = getComputedStyle(e);
+    const photo = [...e.children].some((k) => k !== el && !k.contains(el)
+      && (k.tagName === 'IMG' || k.tagName === 'VIDEO') && getComputedStyle(k).position === 'absolute');
+    if (photo) return 'dark';
+    const c = rgb(cs.backgroundColor);
+    if (c && c.a >= 0.35) return toneOf(c);
+    const img = cs.backgroundImage;
+    if (img && img !== 'none') {
+      if (/url\(/.test(img)) return 'dark';
+      const first = hexOrRgb(img);
+      if (first) return toneOf(first);
+    }
+  }
+  return 'light';
+}
+
+export function toneIcons(root = document) {
+  // Pause transitions while measuring: the stylesheet arrives after first
+  // paint, so backgrounds would otherwise read mid-fade (still transparent).
+  const html = document.documentElement;
+  html.classList.add('ico-measuring');
+  const tones = [...root.querySelectorAll(ICONS)]
+    // an icon nested in another icon follows its wrapper
+    .filter((el) => !el.parentElement?.closest(ICONS))
+    .map((el) => [el, backdropTone(el)]);
+  tones.forEach(([el, tone]) => {
+    el.classList.toggle('ico-on-orange', tone === 'orange');
+    el.classList.toggle('ico-on-dark', tone === 'dark');
+  });
+  void html.offsetWidth;
+  html.classList.remove('ico-measuring');
 }
