@@ -9,6 +9,7 @@ import { initCtaRing } from './ctaRing.js';
 import { initReviewsMap } from './reviewsMap.js';
 import { initFaq } from './faq.js';
 import { initWnRail } from './wnRail.js';
+import { initCurveStrip } from './curveStrip.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   initAnimations();
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initReviewsMap();
   initFaq();
   initWnRail();
+  initCurveStrip();
 
   /* Solutions accordion */
   var accordionItems = document.querySelectorAll('.solutions-item');

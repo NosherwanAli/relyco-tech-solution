@@ -10271,8 +10271,6 @@ a.contact-info-value {
   pointer-events: none;
   opacity: 0;
   transition: opacity 1.2s ease;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 18%);
 }
 
 .fr-ring.is-ready { opacity: 1; }
